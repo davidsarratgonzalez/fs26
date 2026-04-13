@@ -12,36 +12,66 @@ css: unocss
 <style>
 .hero-title {
   font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  font-size: 4em;
+  font-weight: 400;
+  font-size: 4.5em;
   text-transform: uppercase;
-  color: #10a34a;
+  color: #222;
   letter-spacing: 0.02em;
+}
+.hero-title span {
+  background: linear-gradient(90deg, #FFC500, #FF8801);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-sub {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 1.4em;
-  color: #ababab;
+  font-size: 1.3em;
+  color: #5e5e5e;
   margin-top: 0.5em;
 }
 .hero-authors {
   font-family: 'Roboto Mono', monospace;
-  font-size: 0.85em;
-  color: #666;
+  font-size: 0.8em;
+  color: #7c7c7c;
   margin-top: 2em;
+}
+.step-card {
+  text-align: center;
+  padding: 1.2em;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+.step-num {
+  font-size: 1.8em;
+  font-weight: 300;
+  color: #FFC500;
+  font-family: 'Roboto Mono', monospace;
+}
+.step-label {
+  color: #222;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  margin-top: 0.2em;
+}
+.step-desc {
+  font-size: 0.8em;
+  color: #7c7c7c;
+  margin-top: 0.5em;
 }
 </style>
 
 <div class="flex flex-col items-center justify-center h-full">
-  <div class="hero-title">dsFlower</div>
+  <div class="hero-title">ds<span>Flower</span></div>
   <div class="hero-sub">Federated Learning for DataSHIELD</div>
-  <div class="hero-sub" style="font-size: 1em; color: #666; margin-top: 0.5em;">
-    Powered by <a href="https://flower.ai" style="color: #10a34a;">Flower</a>
+  <div class="hero-sub" style="font-size: 0.95em; margin-top: 0.3em;">
+    Powered by <a href="https://flower.ai" style="color: #FFC500; text-decoration: underline;">flower.ai</a>
   </div>
   <div class="hero-authors">
     David Sarrat Gonz&aacute;lez &nbsp;&middot;&nbsp; Juan R Gonz&aacute;lez<br/>
-    <span style="color: #444;">Barcelona Institute for Global Health (ISGlobal)</span>
+    <span style="color: #aaa;">Barcelona Institute for Global Health (ISGlobal)</span>
   </div>
 </div>
 
@@ -99,39 +129,33 @@ Hospitals want to train ML models together **without sharing patient data**.
 
 </div>
 
-<div class="mt-4 text-center" style="color: #ababab; font-size: 0.9em;">
+<div class="mt-4 text-center" style="font-size: 0.9em;">
   DataSHIELD handles orchestration. <strong>Flower</strong> handles weight transport via gRPC.
-  <br/>Raw data stays on each hospital's server.
+  Raw data stays on each hospital's server.
 </div>
 
 ---
 
 ## How it works
 
-<div class="grid grid-cols-3 gap-6 mt-6">
+<div class="grid grid-cols-3 gap-6 mt-8">
 
-<div class="text-center p-4" style="background: #111; border-radius: 8px; border: 1px solid #222;">
-  <div style="font-size: 2em;">1</div>
-  <div style="color: #10a34a; font-family: 'Roboto Mono', monospace; font-size: 0.9em;">CONNECT</div>
-  <div style="font-size: 0.85em; color: #999; margin-top: 0.5em;">
-    Researcher connects to N hospital nodes via DataSHIELD
-  </div>
+<div class="step-card">
+  <div class="step-num">1</div>
+  <div class="step-label">Connect</div>
+  <div class="step-desc">Researcher connects to N hospital nodes via DataSHIELD</div>
 </div>
 
-<div class="text-center p-4" style="background: #111; border-radius: 8px; border: 1px solid #222;">
-  <div style="font-size: 2em;">2</div>
-  <div style="color: #10a34a; font-family: 'Roboto Mono', monospace; font-size: 0.9em;">TRAIN</div>
-  <div style="font-size: 0.85em; color: #999; margin-top: 0.5em;">
-    Each node trains on local data, sends weight updates to SuperLink
-  </div>
+<div class="step-card">
+  <div class="step-num">2</div>
+  <div class="step-label">Train</div>
+  <div class="step-desc">Each node trains on local data, sends weight updates to SuperLink</div>
 </div>
 
-<div class="text-center p-4" style="background: #111; border-radius: 8px; border: 1px solid #222;">
-  <div style="font-size: 2em;">3</div>
-  <div style="color: #10a34a; font-family: 'Roboto Mono', monospace; font-size: 0.9em;">AGGREGATE</div>
-  <div style="font-size: 0.85em; color: #999; margin-top: 0.5em;">
-    SuperLink averages updates, sends global model back. Repeat N rounds.
-  </div>
+<div class="step-card">
+  <div class="step-num">3</div>
+  <div class="step-label">Aggregate</div>
+  <div class="step-desc">SuperLink averages updates, sends global model back. Repeat N rounds.</div>
 </div>
 
 </div>
@@ -160,7 +184,7 @@ recipe <- ds.flower.recipe(
 result <- ds.flower.run(flower, recipe)
 ```
 
-<div style="color: #666; font-size: 0.8em; margin-top: 0.5em;">
+<div style="font-size: 0.8em; margin-top: 0.5em;">
   One function call. All orchestration is automatic.
 </div>
 
@@ -193,8 +217,7 @@ Each template includes:
 - `task.py` (data loading)
 - `privacy_utils.py` (DP, clipping)
 
-The researcher picks a model.
-The server does the rest.
+The researcher picks a model. The server does the rest.
 
 </div>
 </div>
@@ -215,7 +238,7 @@ The server does the rest.
 
 </div>
 
-<div class="mt-6" style="color: #ababab; font-size: 0.9em;">
+<div class="mt-6" style="font-size: 0.9em;">
 
 ```r
 recipe <- ds.flower.recipe(
@@ -231,29 +254,25 @@ recipe <- ds.flower.recipe(
 
 ## Privacy model
 
-<div class="mt-4">
-
 Four layers of protection against an untrusted researcher:
-
-</div>
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
 <div>
 
-### Layer 1 &mdash; DataSHIELD
+### Layer 1 — DataSHIELD
 Raw data stays on the server. The researcher only calls approved methods.
 
-### Layer 2 &mdash; SecAgg+
+### Layer 2 — SecAgg+
 Individual weight updates are encrypted. The researcher only sees the **aggregate**.
 
 </div>
 <div>
 
-### Layer 3 &mdash; DP-SGD
-Each node adds calibrated noise before sending updates. Formal privacy guarantees (Opacus).
+### Layer 3 — DP-SGD
+Each node adds calibrated noise before sending updates. Formal privacy guarantees via Opacus.
 
-### Layer 4 &mdash; Disclosure control
+### Layer 4 — Disclosure control
 Bucketed counts, suppressed per-node metrics, minimum sample sizes, class balance checks.
 
 </div>
@@ -262,8 +281,6 @@ Bucketed counts, suppressed per-node metrics, minimum sample sizes, class balanc
 ---
 
 ## Privacy profiles
-
-<div class="mt-4">
 
 | Profile | SecAgg | DP | Min rows | Per-node metrics | Use case |
 |---|---|---|---|---|---|
@@ -275,17 +292,13 @@ Bucketed counts, suppressed per-node metrics, minimum sample sizes, class balanc
 | `clinical_update_noise` | yes | clipping + noise | 200 | no | Update-level DP |
 | `high_sensitivity_dp` | yes | DP-SGD (Opacus) | 500 | no | Patient-level DP |
 
-</div>
-
-<div style="color: #666; font-size: 0.8em; margin-top: 0.5em;">
+<div style="font-size: 0.8em; margin-top: 0.5em;">
   Profiles are <strong>server-enforced</strong>. The researcher cannot bypass them.
 </div>
 
 ---
 
 ## Demo: 3 hospitals, 3 algorithms
-
-<div class="mt-4">
 
 ```r
 # Connect to 3 Opal nodes
@@ -307,8 +320,6 @@ r3 <- ds.flower.run(flower, ds.flower.recipe(
   model = ds.flower.model.xgboost(max_depth = 4L),
   target_column = "malignant", num_rounds = 5L))
 ```
-
-</div>
 
 ---
 
@@ -341,23 +352,23 @@ r3 <- ds.flower.run(flower, ds.flower.recipe(
 </div>
 </div>
 
-<div class="mt-4" style="color: #666; font-size: 0.85em;">
+<div class="mt-4" style="font-size: 0.8em;">
   Client packages are lightweight (no arrow, no aws.s3, no DBI). All heavy dependencies stay server-side.
 </div>
 
 ---
 
 <div class="flex flex-col items-center justify-center h-full">
-  <div style="font-family: 'Roboto Mono', monospace; font-weight: 300; font-size: 3em; text-transform: uppercase; color: #10a34a;">
-    dsFlower
+  <div style="font-family: 'Roboto Mono', monospace; font-weight: 400; font-size: 3.5em; text-transform: uppercase; color: #222;">
+    ds<span style="background: linear-gradient(90deg, #FFC500, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Flower</span>
   </div>
-  <div style="font-size: 1.2em; color: #ababab; margin-top: 0.5em;">
+  <div style="font-size: 1.1em; color: #5e5e5e; margin-top: 0.5em;">
     github.com/isglobal-brge/dsFlower
   </div>
-  <div style="font-size: 1em; color: #666; margin-top: 1.5em;">
+  <div style="font-size: 0.95em; color: #7c7c7c; margin-top: 1.5em;">
     David Sarrat Gonz&aacute;lez &nbsp;&middot;&nbsp; Juan R Gonz&aacute;lez
   </div>
-  <div style="font-size: 0.85em; color: #444; margin-top: 0.3em;">
+  <div style="font-size: 0.8em; color: #aaa; margin-top: 0.3em;">
     ISGlobal &nbsp;&middot;&nbsp; Barcelona
   </div>
 </div>
