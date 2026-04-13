@@ -1,147 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap');
 
-:root {
-  --flower-primary: #FFD000;
-  --flower-primary-dark: #FFC500;
-  --flower-primary-light: #FFE873;
-  --flower-primary-bg: #FFFBE6;
-  --flower-dark: #0a0a0a;
-  --flower-dark-2: #222222;
-  --flower-text: #222222;
-  --flower-text-secondary: #5e5e5e;
-  --flower-text-muted: #7c7c7c;
-  --flower-bg: #fafafa;
-  --flower-bg-2: #f5f5f5;
-  --flower-border: #e5e5e5;
-  --flower-orange: #FF8801;
-}
-
 .slidev-layout {
-  background: var(--flower-bg) !important;
-  color: var(--flower-text) !important;
-  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif !important;
+  background: #fff !important;
+  color: #1a1a1a !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: 'Roboto Mono', monospace !important;
-  color: var(--flower-dark) !important;
+  color: #1a1a1a !important;
 }
 
-h1 {
-  font-weight: 400 !important;
-  font-size: 2em !important;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-}
+h1 { font-weight: 400 !important; font-size: 1.8em !important; }
+h2 { font-weight: 400 !important; font-size: 1.3em !important; }
+h3 { font-weight: 500 !important; font-size: 0.95em !important; color: #555 !important; }
 
-h2 {
-  font-weight: 400 !important;
-  font-size: 1.4em !important;
-}
-
-h3 {
-  font-weight: 500 !important;
-  font-size: 1em !important;
-  color: var(--flower-text-secondary) !important;
-}
+p, li { color: #444; line-height: 1.65; }
+li { margin-bottom: 0.25em; }
+strong { color: #1a1a1a !important; }
+a { color: #1a1a1a !important; text-decoration: underline; text-underline-offset: 2px; }
 
 code {
   font-family: 'Roboto Mono', monospace !important;
-  background: var(--flower-primary-bg) !important;
-  color: var(--flower-dark) !important;
-  padding: 0.15em 0.4em;
+  background: #f5f5f5 !important;
+  color: #1a1a1a !important;
+  padding: 0.1em 0.35em;
   border-radius: 3px;
   font-size: 0.85em;
-  border: 1px solid #FFE87344;
 }
 
-pre code {
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-}
+pre code { padding: 0 !important; background: transparent !important; }
 
 .slidev-code {
-  background: #fff !important;
-  border: 1px solid var(--flower-border) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  background: #fafafa !important;
+  border: 1px solid #e8e8e8 !important;
+  border-radius: 6px !important;
 }
 
-table {
-  font-size: 0.82em;
-  border-collapse: collapse;
-  width: 100%;
-}
-
+table { font-size: 0.82em; width: 100%; border-collapse: collapse; }
 th {
   font-family: 'Roboto Mono', monospace !important;
   font-weight: 500 !important;
-  color: var(--flower-dark) !important;
-  border-bottom: 2px solid var(--flower-primary) !important;
-  text-align: left;
-  padding: 0.5em 0.7em;
-  font-size: 0.85em;
+  font-size: 0.8em;
   text-transform: uppercase;
+  color: #1a1a1a !important;
+  border-bottom: 2px solid #1a1a1a !important;
+  text-align: left;
+  padding: 0.5em 0.6em;
 }
-
 td {
-  border-bottom: 1px solid var(--flower-border) !important;
-  padding: 0.4em 0.7em;
-  color: var(--flower-text-secondary);
-}
-
-tr:hover td {
-  background: var(--flower-primary-bg);
-}
-
-strong {
-  color: var(--flower-dark) !important;
-  font-weight: 600;
-}
-
-em {
-  color: var(--flower-text-secondary);
-}
-
-a {
-  color: var(--flower-dark-2) !important;
-  text-decoration: underline;
-  text-decoration-color: var(--flower-primary);
-  text-underline-offset: 3px;
+  border-bottom: 1px solid #eee !important;
+  padding: 0.35em 0.6em;
+  color: #444;
 }
 
 blockquote {
-  border-left: 3px solid var(--flower-primary) !important;
+  border-left: 3px solid #ddd !important;
   padding-left: 1em;
-  color: var(--flower-text-secondary) !important;
+  color: #666 !important;
 }
 
-ul li::marker {
-  color: var(--flower-primary-dark);
-}
+ul li::marker { color: #bbb; }
 
-li {
-  margin-bottom: 0.3em;
-  color: var(--flower-text-secondary);
-}
-
-.slidev-layout p {
-  color: var(--flower-text-secondary);
-  line-height: 1.6;
-}
-
-/* Top accent bar */
 .slidev-layout::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--flower-primary) 0%, var(--flower-orange) 100%);
-}
-
-.slidev-page {
-  padding: 2em 3em !important;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD000 0%, #FF8801 100%);
 }
