@@ -6,7 +6,21 @@ let debounce = null
 
 onMounted(() => {
   if (!terminal.value) return
-  terminal.value.scrollTop = 0
+
+  // Check if coming from backward navigation (all v-clicks resolved)
+  const hasHidden = terminal.value.querySelector('.slidev-vclick-hidden')
+  if (!hasHidden) {
+    // Show everything instantly, no stagger, scroll to bottom
+    terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
+      el.style.opacity = '1'
+      el.style.animation = 'none'
+    })
+    terminal.value.scrollTop = terminal.value.scrollHeight
+  } else {
+    // Forward navigation - start from top
+    terminal.value.scrollTop = 0
+  }
+
   const observer = new MutationObserver(() => {
     clearTimeout(debounce)
     debounce = setTimeout(() => {
