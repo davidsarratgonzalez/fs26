@@ -1,8 +1,15 @@
 <script setup>
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { useNav } from '@slidev/client'
 
 const { currentPage, total } = useNav()
+
+// Reset demo slide when navigating backward past it
+watch(currentPage, (newPage, oldPage) => {
+  if (oldPage > newPage && window.__demoResetFn) {
+    window.__demoResetFn()
+  }
+})
 
 // Countdown: 10 minutes
 const totalSeconds = ref(10 * 60)

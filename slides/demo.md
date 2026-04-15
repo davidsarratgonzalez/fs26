@@ -6,19 +6,24 @@ const terminal = ref(null)
 const slideCtx = useSlideContext()
 let debounce = null
 
-onActivated(async () => {
-  // Reset clicks to 0 so demo restarts from scratch
+// Register global reset function for backward navigation
+function resetDemo() {
   slideCtx.$clicks.value = 0
-  await nextTick()
-  // Reset scroll and inline styles
-  if (terminal.value) {
-    terminal.value.scrollTop = 0
-    terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
-      el.style.opacity = ''
-      el.style.animation = ''
-    })
-  }
-})
+  nextTick(() => {
+    if (terminal.value) {
+      terminal.value.scrollTop = 0
+      terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
+        el.style.opacity = ''
+        el.style.animation = ''
+      })
+    }
+  })
+}
+
+onActivated(() => resetDemo())
+
+// Expose reset via window so global-top can trigger it
+window.__demoResetFn = resetDemo
 
 onMounted(() => {
   if (!terminal.value) return
