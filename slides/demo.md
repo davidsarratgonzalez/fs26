@@ -250,7 +250,7 @@ result$history
 <!-- Disconnect -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 <span style="color:#78a9ff;">ds.flower.disconnect</span>(flower)
-<br/><span style="color:#78a9ff;">datashield.logout</span>(conns)
+<br/>DSI::<span style="color:#78a9ff;">datashield.logout</span>(conns)
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
