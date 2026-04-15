@@ -51,6 +51,10 @@ src: ./slides/client-side.md
 ---
 
 ---
+src: ./slides/dsflower-workflow.md
+---
+
+---
 src: ./slides/problem.md
 ---
 
