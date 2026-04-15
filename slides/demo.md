@@ -1,16 +1,23 @@
 <script setup>
-import { ref, onMounted, onActivated } from 'vue'
+import { ref, onMounted, onActivated, nextTick } from 'vue'
+import { useSlideContext } from '@slidev/client'
 
 const terminal = ref(null)
+const slideCtx = useSlideContext()
 let debounce = null
 
-onActivated(() => {
-  if (!terminal.value) return
-  terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
-    el.style.opacity = '1'
-    el.style.animation = 'none'
-  })
-  terminal.value.scrollTop = terminal.value.scrollHeight
+onActivated(async () => {
+  // Reset clicks to 0 so demo restarts from scratch
+  slideCtx.$clicks.value = 0
+  await nextTick()
+  // Reset scroll and inline styles
+  if (terminal.value) {
+    terminal.value.scrollTop = 0
+    terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
+      el.style.opacity = ''
+      el.style.animation = ''
+    })
+  }
 })
 
 onMounted(() => {
