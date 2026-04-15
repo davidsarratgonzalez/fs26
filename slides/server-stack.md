@@ -23,8 +23,7 @@
   <text x="115" y="190" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">...</text>
   <text x="115" y="215" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Non-disclosive results</text>
   <text x="115" y="230" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Sandboxed execution</text>
-  <text x="115" y="245" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">...</text>
-  <text x="115" y="260" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">...</text>
+  <text x="115" y="250" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">...</text>
 
   <!-- Patient Data bar (bottom) -->
   <rect x="50" y="278" width="485" height="38" rx="8" fill="rgba(255,180,100,0.06)" stroke="rgba(255,180,100,0.12)" stroke-width="0.8"/>
