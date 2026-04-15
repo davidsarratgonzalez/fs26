@@ -181,7 +181,6 @@ td {
   stroke-dasharray: 8 6;
   fill: none;
   animation: dashDown 0.8s linear infinite;
-  marker-end: url(#arrowQ);
 }
 
 .flow-result {
@@ -190,7 +189,12 @@ td {
   stroke-dasharray: 8 6;
   fill: none;
   animation: dashDown 0.8s linear infinite;
-  marker-end: url(#arrowR);
+}
+
+.flow-arrow {
+  fill: none;
+  stroke-dasharray: none;
+  stroke-width: 1.5;
 }
 
 
