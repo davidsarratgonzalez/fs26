@@ -1,4 +1,4 @@
-## Researcher API
+## Analyst API
 
 ```r
 library(dsFlowerClient)
