@@ -57,8 +57,8 @@
   </g>
 
   <!-- Hospital label (left side, below lines) -->
-  <text x="90" y="125" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">N Hospital Servers</text>
-  <text x="90" y="137" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">(dsFlower installed)</text>
+  <text x="90" y="140" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">N Hospital Servers</text>
+  <text x="90" y="152" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">(dsFlower installed)</text>
 
 </svg>
 
