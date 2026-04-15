@@ -6,8 +6,8 @@
   <!-- ===== ALWAYS VISIBLE: Server box + DataSHIELD ecosystem + Patient Data ===== -->
 
   <!-- Outer server box -->
-  <rect x="30" y="5" width="520" height="300" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-width="0.8"/>
-  <text x="290" y="22" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4" font-weight="500">Hospital Server</text>
+  <rect x="30" y="5" width="520" height="310" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-width="0.8"/>
+  <text x="290" y="22" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4" font-weight="500">Hospital Server (DataSHIELD)</text>
 
   <!-- DataSHIELD ecosystem column (left) -->
   <rect x="50" y="32" width="130" height="220" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" stroke-width="0.8"/>
@@ -45,18 +45,22 @@
     <text x="367" y="100" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-weight="500">Flower SuperNode</text>
     <text x="367" y="113" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">gRPC client, spawned on demand</text>
 
-    <!-- Animated lines FROM SuperNode right edge to off-screen -->
-    <path d="M535,95 L720,95" fill="none" stroke="#FFD000" stroke-width="2" stroke-dasharray="6 4">
-      <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.8s" repeatCount="indefinite"/>
-    </path>
-    <path d="M720,105 L535,105" fill="none" stroke="#66ddaa" stroke-width="2" stroke-dasharray="6 4">
-      <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.8s" repeatCount="indefinite"/>
-    </path>
+    <!-- Analyst destination box (right side, outside server) -->
+    <rect x="600" y="82" width="110" height="38" rx="8" fill="rgba(136,204,255,0.06)" stroke="rgba(136,204,255,0.15)" stroke-width="0.8"/>
+    <text x="655" y="100" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3">Analyst</text>
+    <text x="655" y="112" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">SuperLink</text>
 
-    <!-- Labels above/below lines -->
-    <text x="628" y="91" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.2">weight updates →</text>
-    <text x="628" y="116" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">← global model</text>
-    <text x="628" y="128" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.5">Analyst SuperLink</text>
+    <!-- Line: weight updates (SuperNode → Analyst) -->
+    <line x1="535" y1="93" x2="600" y2="93" stroke="#FFD000" stroke-width="2.5" stroke-dasharray="6 4" fill="none">
+      <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+    <text x="567" y="89" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2">weights →</text>
+
+    <!-- Line: global model (Analyst → SuperNode) -->
+    <line x1="600" y1="107" x2="535" y2="107" stroke="#66ddaa" stroke-width="2.5" stroke-dasharray="6 4" fill="none">
+      <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.8s" repeatCount="indefinite"/>
+    </line>
+    <text x="567" y="117" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">← model</text>
   </g>
 
   <!-- ===== CLICK 3: Python environments ===== -->
@@ -89,8 +93,8 @@
     <text x="367" y="256" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.5">Trust profiles · SecAgg+ · DP-SGD · Disclosure control</text>
 
     <!-- Protection line over the analyst connection -->
-    <rect x="533" y="87" width="190" height="24" rx="6" fill="none" stroke="rgba(102,221,170,0.25)" stroke-width="0.8" stroke-dasharray="3 2"/>
-    <text x="628" y="84" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">encrypted · disclosure-controlled</text>
+    <rect x="530" y="84" width="185" height="40" rx="6" fill="none" stroke="rgba(102,221,170,0.25)" stroke-width="0.8" stroke-dasharray="3 2"/>
+    <text x="622" y="80" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">encrypted · disclosure-controlled</text>
   </g>
 
 </svg>
