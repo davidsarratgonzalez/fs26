@@ -1,7 +1,7 @@
 ## Server-Side Stack
 
 <div style="margin-top: 0.2em;">
-<svg viewBox="0 0 720 320" style="width: 100%; max-height: 410px;">
+<svg viewBox="0 0 720 330" style="width: 100%; max-height: 420px;">
 
   <!-- ===== ALWAYS VISIBLE: Server box + DataSHIELD ecosystem + Patient Data ===== -->
 
