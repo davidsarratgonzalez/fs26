@@ -24,7 +24,7 @@ const timeStr = computed(() =>
 const isLow = computed(() => totalSeconds.value < 60)
 
 // Slide counter: exclude cover (1) and closing (last)
-const showUI = computed(() => currentPage.value > 1 && currentPage.value < total.value)
+const showCountdown = computed(() => currentPage.value < total.value)
 const isContentSlide = computed(() => currentPage.value > 1 && currentPage.value < total.value)
 const contentIndex = computed(() => currentPage.value - 1)
 const contentTotal = computed(() => total.value - 2)
@@ -32,12 +32,12 @@ const contentTotal = computed(() => total.value - 2)
 
 <template>
   <!-- Countdown top-right (content slides only) -->
-  <div v-if="showUI" class="countdown" :class="{ low: isLow }">
+  <div v-if="showCountdown" class="countdown" :class="{ low: isLow }">
     {{ timeStr }}
   </div>
 
   <!-- Slide counter bottom-right (content slides only) -->
-  <div v-if="showUI" class="slide-counter">
+  <div v-if="isContentSlide" class="slide-counter">
     {{ contentIndex }} / {{ contentTotal }}
   </div>
 </template>
