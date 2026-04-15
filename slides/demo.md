@@ -11,9 +11,15 @@ function resetDemo() {
   nextTick(() => {
     if (terminal.value) {
       terminal.value.scrollTop = 0
+      // Force animation re-trigger: set none, then clear in next frame
       terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
         el.style.opacity = ''
-        el.style.animation = ''
+        el.style.animation = 'none'
+      })
+      requestAnimationFrame(() => {
+        terminal.value?.querySelectorAll('.exec-lines > div').forEach(el => {
+          el.style.animation = ''
+        })
       })
     }
   })
@@ -113,7 +119,7 @@ onMounted(() => {
 <!-- Login -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 builder <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">newDSLoginBuilder</span>()
-<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BCN"</span>, url = <span style="color:#ffaacc;">"https://rock.clinic.cat:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BCN"</span>, url = <span style="color:#ffaacc;">"https://rock.clinic.cat:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>) <span style="color:#666;"># + credentials</span>
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"MAD"</span>, url = <span style="color:#ffaacc;">"https://rock.lapaz.salud.es:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"LDN"</span>, url = <span style="color:#ffaacc;">"https://rock.kcl.nhs.uk:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BER"</span>, url = <span style="color:#ffaacc;">"https://rock.charite.de:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
@@ -202,6 +208,7 @@ result$history
 <!-- Predict on a real patient -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 <span style="color:#666;"># Predict on a new ICU admission</span>
+<br/><span style="color:#666;"># 72yo, tachycardic, hypotensive, elevated lactate, on ventilator</span>
 <br/>patient <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">data.frame</span>(
 <br/>&nbsp;&nbsp;age = <span style="color:#88ccff;">72</span>, heart_rate = <span style="color:#88ccff;">112</span>, systolic_bp = <span style="color:#88ccff;">85</span>,
 <br/>&nbsp;&nbsp;spo2 = <span style="color:#88ccff;">89</span>, creatinine = <span style="color:#88ccff;">2.4</span>, lactate = <span style="color:#88ccff;">4.1</span>,
@@ -211,8 +218,7 @@ result$history
 
 <div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
 &nbsp; mortality_prob<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#FFD000;">0.73</span><br/>
-<span style="color:#888;"># High risk: 72yo, tachycardic, hypotensive, elevated lactate, on ventilator</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#FFD000;">0.73</span>
 </div>
 
 <!-- Disconnect -->
