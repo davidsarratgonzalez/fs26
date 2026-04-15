@@ -1,6 +1,6 @@
 ## Analyst API
 
-<div class="flex items-center" style="height: 75%; margin-top: -1em;">
+<div style="margin-top: 2em;">
 
 ```r
 library(dsFlowerClient)
