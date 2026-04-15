@@ -14,10 +14,10 @@ function resetDemo() {
         terminal.value.scrollTop = 0
         // Force-reset animations via reflow trick
         terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
-          el.style.animation = 'none'
-          void el.offsetHeight  // force reflow - resets animation state
-          el.style.animation = ''
           el.style.opacity = ''
+          el.style.animationName = 'none'
+          void el.offsetHeight
+          el.style.animationName = ''
         })
       }
     })
