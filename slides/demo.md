@@ -1,9 +1,28 @@
+<script setup>
+import { ref, watch, nextTick } from 'vue'
+import { useSlideContext } from '@slidev/client'
+
+const { $clicks } = useSlideContext()
+const terminal = ref(null)
+
+watch($clicks, async () => {
+  await nextTick()
+  await nextTick()
+  if (terminal.value) {
+    terminal.value.scrollTo({
+      top: terminal.value.scrollHeight,
+      behavior: 'smooth'
+    })
+  }
+})
+</script>
+
 ## Live Demo
 
-<div style="overflow: hidden; height: 440px; margin-top: 0.3em;">
-<div style="font-size: 0.6em; line-height: 1.45; font-family: 'Roboto Mono', monospace;" v-motion :initial="{ y: 0 }" :click-5="{ y: -20 }" :click-6="{ y: -50 }" :click-7="{ y: -80 }" :click-8="{ y: -200 }" :click-9="{ y: -250 }" :click-10="{ y: -320 }" :click-11="{ y: -380 }" :click-12="{ y: -430 }" :click-13="{ y: -480 }" :click-14="{ y: -520 }">
+<div ref="terminal" style="overflow-y: auto; scroll-behavior: smooth; height: 430px; margin-top: 0.3em; scrollbar-width: none;">
+<div style="font-size: 0.6em; line-height: 1.45; font-family: 'Roboto Mono', monospace;">
 
-<!-- Login code -->
+<!-- Login code (always visible) -->
 <div style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; color: #c8b8a8;">
 <span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">DSI</span>); <span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">DSOpal</span>); <span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">dsFlowerClient</span>)
 <br/>
@@ -16,7 +35,7 @@
 <br/>conns <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">datashield.login</span>(logins = builder$<span style="color:#78a9ff;">build</span>(), assign = <span style="color:#88ccff;">TRUE</span>, symbol = <span style="color:#ffaacc;">"D"</span>)
 </div>
 
-<!-- Login output (staggered) -->
+<!-- Login output -->
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
 <div>Logging into the collaborating servers</div>
 <div>&nbsp; Login site1: <span style="color:#66ddaa;">OK</span></div>
@@ -25,12 +44,12 @@
 <div>Assigned table <span style="color:#c8b8a8;">BRCA.diagnosis</span> to symbol <span style="color:#c8b8a8;">"D"</span></div>
 </div>
 
-<!-- Connect code -->
+<!-- Connect -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 flower <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.connect</span>(conns, symbol = <span style="color:#ffaacc;">"D"</span>)
 </div>
 
-<!-- Connect output (staggered) -->
+<!-- Connect output -->
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
 <div>Initializing dsFlower on 3 servers...</div>
 <div>&nbsp; site1: dsFlower v0.1.0 <span style="color:#888;">(847 rows x 12 cols)</span></div>
@@ -38,7 +57,7 @@ flower <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.fl
 <div>&nbsp; site3: dsFlower v0.1.0 <span style="color:#888;">(531 rows x 12 cols)</span></div>
 </div>
 
-<!-- Recipe code -->
+<!-- Recipe -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 recipe <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.recipe</span>(
 <br/>&nbsp;&nbsp;model &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= ds.flower.model.<span style="color:#FFD000;">sklearn_logreg</span>(),
@@ -46,12 +65,12 @@ recipe <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.fl
 <br/>&nbsp;&nbsp;target_column = <span style="color:#ffaacc;">"diagnosis"</span>, num_rounds = <span style="color:#88ccff;">5L</span>)
 </div>
 
-<!-- Run code -->
+<!-- Run -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 result <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.run</span>(flower, recipe)
 </div>
 
-<!-- Run output (staggered - the big one) -->
+<!-- Run output -->
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
 <div>SuperLink started (PID: 26677, TLS)</div>
 <div>&nbsp; site1: SuperNode <span style="color:#66ddaa;">connected</span></div>
@@ -67,7 +86,7 @@ result <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.fl
 <div>SuperLink stopped</div>
 </div>
 
-<!-- Result history -->
+<!-- History -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 result$history
 </div>
@@ -79,18 +98,6 @@ result$history
 <div>&nbsp;&nbsp;&nbsp; 3 &nbsp;&nbsp; 0.3104 &nbsp;&nbsp;&nbsp;&nbsp; 3</div>
 <div>&nbsp;&nbsp;&nbsp; 4 &nbsp;&nbsp; 0.2567 &nbsp;&nbsp;&nbsp;&nbsp; 3</div>
 <div>&nbsp;&nbsp;&nbsp; 5 &nbsp;&nbsp; 0.2201 &nbsp;&nbsp;&nbsp;&nbsp; 3</div>
-</div>
-
-<!-- Weights -->
-<div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
-result$weights
-</div>
-
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>$coef</div>
-<div>&nbsp; [1] &nbsp;0.4231 -0.1872 &nbsp;0.6543 -0.3218 &nbsp;0.5102 -0.0891 &nbsp;0.7234 ...</div>
-<div>$intercept</div>
-<div>&nbsp; [1] -0.2341</div>
 </div>
 
 <!-- Predict -->
