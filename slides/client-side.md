@@ -42,16 +42,17 @@
 
   <!-- ===== CLICK 4: Recipe composition ===== -->
   <g v-click>
-    <rect x="195" y="192" width="330" height="55" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-    <text x="360" y="209" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Composable Recipe</text>
-    <text x="360" y="225" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.8">model + strategy + task</text>
-    <text x="360" y="240" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">20 models · 5 strategies · 4 task types</text>
+    <rect x="195" y="192" width="330" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    <text x="360" y="208" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Composable Recipe</text>
+    <text x="360" y="222" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.5">model · strategy · target data · num_rounds</text>
+    <text x="360" y="236" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">What to train · How to aggregate · On which columns · How long</text>
+    <text x="360" y="248" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">Privacy is server-enforced, not analyst-chosen</text>
   </g>
 
   <!-- ===== CLICK 5: Code integrity ===== -->
   <g v-click>
-    <rect x="195" y="255" width="330" height="18" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
-    <text x="360" y="267" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Code integrity: SHA-256 verification against all servers</text>
+    <rect x="195" y="262" width="330" height="18" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
+    <text x="360" y="274" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">App authenticity: SHA-256 verified against all servers before execution</text>
   </g>
 
   <!-- Hospital indicators (right side, always visible) -->
