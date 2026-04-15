@@ -202,7 +202,7 @@ result$history
 &nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp; 0.6814 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
 &nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp; 0.5923 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
 &nbsp;&nbsp;&nbsp; ... &nbsp;&nbsp; ... &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
-&nbsp;&nbsp;&nbsp;10 &nbsp; <span style="color:#FFD000;">0.3148</span> &nbsp;&nbsp;&nbsp;&nbsp; 5
+&nbsp;&nbsp;&nbsp;10 &nbsp; <span style="color:#FFD000;">0.3148</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5
 </div>
 
 <!-- Predict on a real patient -->
@@ -217,8 +217,7 @@ result$history
 </div>
 
 <div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-&nbsp; mortality_prob<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#FFD000;">0.73</span>
+[1] <span style="color:#FFD000;">0.7321</span> <span style="color:#888;">&nbsp;&nbsp;# 73% ICU mortality risk</span>
 </div>
 
 <!-- Disconnect -->
