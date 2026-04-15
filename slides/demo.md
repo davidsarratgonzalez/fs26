@@ -109,14 +109,12 @@ onMounted(() => {
 <!-- Login -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 builder <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">newDSLoginBuilder</span>()
-<br/><span style="color:#78a9ff;">for</span> (i <span style="color:#78a9ff;">in</span> <span style="color:#88ccff;">1</span>:<span style="color:#88ccff;">3</span>) {
-<br/>&nbsp;&nbsp;builder$<span style="color:#78a9ff;">append</span>(
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;server &nbsp;= <span style="color:#78a9ff;">paste0</span>(<span style="color:#ffaacc;">"site"</span>, i),
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;url &nbsp;&nbsp;&nbsp;&nbsp;= <span style="color:#78a9ff;">paste0</span>(<span style="color:#ffaacc;">"https://opal"</span>, i, <span style="color:#ffaacc;">":8443"</span>),
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;table &nbsp;&nbsp;= <span style="color:#ffaacc;">"CLINICAL.breast_cancer"</span>,
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;driver &nbsp;= <span style="color:#ffaacc;">"OpalDriver"</span>, <span style="color:#666;">...</span> <span style="color:#666;"># credentials omitted</span>
-<br/>&nbsp;&nbsp;)
-<br/>}
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"site1"</span>, url = <span style="color:#ffaacc;">"https://opal1.hospital-a.org"</span>,
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table = <span style="color:#ffaacc;">"CLINICAL.breast_cancer"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"site2"</span>, url = <span style="color:#ffaacc;">"https://opal2.hospital-b.org"</span>,
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table = <span style="color:#ffaacc;">"CLINICAL.breast_cancer"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"site3"</span>, url = <span style="color:#ffaacc;">"https://opal3.hospital-c.org"</span>,
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table = <span style="color:#ffaacc;">"CLINICAL.breast_cancer"</span>, <span style="color:#666;">...</span>)
 <br/>conns <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">datashield.login</span>(logins = builder$<span style="color:#78a9ff;">build</span>(), assign = <span style="color:#88ccff;">TRUE</span>, symbol = <span style="color:#ffaacc;">"D"</span>)
 </div>
 
