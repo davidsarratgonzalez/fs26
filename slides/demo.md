@@ -197,7 +197,7 @@ preds <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flo
 <!-- Disconnect -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 <span style="color:#78a9ff;">ds.flower.disconnect</span>(flower)
-<br/>DSI::<span style="color:#78a9ff;">datashield.logout</span>(conns)
+<br/><span style="color:#78a9ff;">datashield.logout</span>(conns)
 </div>
 
 </div>
