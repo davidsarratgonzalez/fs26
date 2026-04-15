@@ -70,13 +70,13 @@ Hospitals want to train ML models together **without sharing patient data**.
 ## Architecture
 
 <div style="margin-top: 0.5em;">
-<svg viewBox="0 0 700 340" style="width: 100%; max-height: 390px;">
+<svg viewBox="0 0 780 340" style="width: 100%; max-height: 390px;">
   <defs>
-    <marker id="arrowQ" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#FFD000"/>
+    <marker id="arrowQ" viewBox="0 0 8 4" refX="7" refY="2" markerWidth="6" markerHeight="3" orient="auto">
+      <path d="M0,0.5 L8,2 L0,3.5" fill="none" stroke="#FFD000" stroke-width="0.8"/>
     </marker>
-    <marker id="arrowR" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto">
-      <path d="M0,0 L6,3 L0,6 Z" fill="#66ddaa"/>
+    <marker id="arrowR" viewBox="0 0 8 4" refX="7" refY="2" markerWidth="6" markerHeight="3" orient="auto">
+      <path d="M0,0.5 L8,2 L0,3.5" fill="none" stroke="#66ddaa" stroke-width="0.8"/>
     </marker>
   </defs>
 
@@ -109,8 +109,8 @@ Hospitals want to train ML models together **without sharing patient data**.
   </g>
 
   <!-- Server-side annotation (right of Hospital C) -->
-  <text x="670" y="58" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Local Compute</text>
-  <text x="670" y="70" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">Disclosure controls applied</text>
+  <text x="670" y="64" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Local Compute +</text>
+  <text x="670" y="74" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Disclosure Measures</text>
 
   <!-- Researcher node (bottom center) -->
   <g transform="translate(350,280)">
