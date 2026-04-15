@@ -47,6 +47,10 @@ src: ./slides/server-stack.md
 ---
 
 ---
+src: ./slides/client-side.md
+---
+
+---
 src: ./slides/problem.md
 ---
 
