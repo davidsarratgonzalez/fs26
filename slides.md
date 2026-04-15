@@ -40,34 +40,7 @@ css: unocss
 
 ---
 
-## The problem
-
-Hospitals want to train ML models together **without sharing patient data**.
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-<div>
-
-### Without federation
-- Pool all data in one place
-- Privacy regulations block this
-- Legal, ethical, and technical barriers
-- Data stays siloed
-
-</div>
-<div>
-
-### With dsFlower
-- Data **never leaves** the hospital
-- Only model weight updates travel
-- Each site trains locally
-- Coordinated by a central aggregator
-
-</div>
-</div>
-
----
-
-## Architecture
+## Classic DataSHIELD Workflow
 
 <div style="margin-top: 0.5em;">
 <svg viewBox="0 0 780 340" style="width: 100%; max-height: 390px;">
@@ -119,12 +92,12 @@ Hospitals want to train ML models together **without sharing patient data**.
   <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Result Pooling</text>
   <text x="470" y="290" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">ds.glm() · ds.mean() · ds.var()</text>
 
-  <!-- Query paths (researcher → hospitals) — left side of each connection -->
+  <!-- Query paths (researcher → hospitals) -->
   <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none"/>
   <path id="qB" d="M335,242 L340,105" fill="none"/>
   <path id="qC" d="M335,242 C400,185 535,145 565,105" fill="none"/>
 
-  <!-- Result paths (hospitals → researcher) — right side, well separated -->
+  <!-- Result paths (hospitals → researcher) -->
   <path id="rA" d="M140,105 C170,155 305,195 365,242" fill="none"/>
   <path id="rB" d="M360,105 L365,242" fill="none"/>
   <path id="rC" d="M600,105 C570,155 435,195 365,242" fill="none"/>
@@ -139,18 +112,13 @@ Hospitals want to train ML models together **without sharing patient data**.
   <use href="#rB" class="flow-result"/>
   <use href="#rC" class="flow-result"/>
 
-
-  <!-- Label paths — physically offset from flow lines -->
-  <!-- Left queries: BELOW/outside the yellow qA line -->
+  <!-- Label paths -->
   <path id="lblQL" d="M82,118 C108,160 245,200 320,258" fill="none" stroke="none"/>
-  <!-- Left results: ABOVE/outside the green rA line -->
   <path id="lblRL" d="M122,88 C148,135 280,172 348,225" fill="none" stroke="none"/>
-  <!-- Right queries: ABOVE/outside the yellow qC line -->
   <path id="lblQR" d="M352,218 C420,165 552,128 578,80" fill="none" stroke="none"/>
-  <!-- Right results: BELOW/outside the green rC line (already good) -->
   <path id="lblRR" d="M385,252 C455,205 588,165 622,115" fill="none" stroke="none"/>
 
-  <!-- Labels centered on paths -->
+  <!-- Labels -->
   <text fill="#FFD000" font-family="Roboto Mono" font-size="3.5" text-anchor="middle"><textPath href="#lblQL" startOffset="50%">queries</textPath></text>
   <text fill="#66ddaa" font-family="Roboto Mono" font-size="2.8" text-anchor="middle"><textPath href="#lblRL" startOffset="50%">aggregated results</textPath></text>
   <text fill="#FFD000" font-family="Roboto Mono" font-size="3.5" text-anchor="middle"><textPath href="#lblQR" startOffset="50%">queries</textPath></text>
@@ -159,7 +127,34 @@ Hospitals want to train ML models together **without sharing patient data**.
 </svg>
 </div>
 
-Data **never leaves** the hospital. Only aggregated results travel back.
+Data **never leaves** the hospital. Only aggregated results travel back and get pooled locally by the analyst.
+
+---
+
+## The problem
+
+Hospitals want to train ML models together **without sharing patient data**.
+
+<div class="grid grid-cols-2 gap-8 mt-6">
+<div>
+
+### Without federation
+- Pool all data in one place
+- Privacy regulations block this
+- Legal, ethical, and technical barriers
+- Data stays siloed
+
+</div>
+<div>
+
+### With dsFlower
+- Data **never leaves** the hospital
+- Only model weight updates travel
+- Each site trains locally
+- Coordinated by a central aggregator
+
+</div>
+</div>
 
 ---
 
