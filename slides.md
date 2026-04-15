@@ -71,30 +71,41 @@ Hospitals want to train ML models together **without sharing patient data**.
 
 <div style="margin-top: 0.5em;">
 <svg viewBox="0 0 700 340" style="width: 100%; max-height: 390px;">
+  <defs>
+    <marker id="arrowQ" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#FFD000"/>
+    </marker>
+    <marker id="arrowR" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#66ddaa"/>
+    </marker>
+  </defs>
 
   <!-- Hospital nodes (top row) -->
   <g transform="translate(120,65)">
     <rect x="-80" y="-40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-    <rect x="-10" y="-22" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
-    <line x1="0" y1="-18" x2="0" y2="-10" stroke="#e0d8d0" stroke-width="1.3"/>
-    <line x1="-4" y1="-14" x2="4" y2="-14" stroke="#e0d8d0" stroke-width="1.3"/>
-    <text y="22" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital A</text>
+    <rect x="-10" y="-24" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="0" y1="-20" x2="0" y2="-12" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="-4" y1="-16" x2="4" y2="-16" stroke="#e0d8d0" stroke-width="1.3"/>
+    <text y="14" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital A</text>
+    <text y="24" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.8" opacity="0.7">local data · local compute</text>
   </g>
 
   <g transform="translate(350,65)">
     <rect x="-80" y="-40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-    <rect x="-10" y="-22" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
-    <line x1="0" y1="-18" x2="0" y2="-10" stroke="#e0d8d0" stroke-width="1.3"/>
-    <line x1="-4" y1="-14" x2="4" y2="-14" stroke="#e0d8d0" stroke-width="1.3"/>
-    <text y="22" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital B</text>
+    <rect x="-10" y="-24" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="0" y1="-20" x2="0" y2="-12" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="-4" y1="-16" x2="4" y2="-16" stroke="#e0d8d0" stroke-width="1.3"/>
+    <text y="14" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital B</text>
+    <text y="24" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.8" opacity="0.7">local data · local compute</text>
   </g>
 
   <g transform="translate(580,65)">
     <rect x="-80" y="-40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-    <rect x="-10" y="-22" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
-    <line x1="0" y1="-18" x2="0" y2="-10" stroke="#e0d8d0" stroke-width="1.3"/>
-    <line x1="-4" y1="-14" x2="4" y2="-14" stroke="#e0d8d0" stroke-width="1.3"/>
-    <text y="22" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital C</text>
+    <rect x="-10" y="-24" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="0" y1="-20" x2="0" y2="-12" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="-4" y1="-16" x2="4" y2="-16" stroke="#e0d8d0" stroke-width="1.3"/>
+    <text y="14" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital C</text>
+    <text y="24" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.8" opacity="0.7">local data · local compute</text>
   </g>
 
   <!-- Researcher node (bottom center) -->
@@ -108,8 +119,8 @@ Hospitals want to train ML models together **without sharing patient data**.
   </g>
 
   <!-- Result pooling label (right of researcher) -->
-  <text x="470" y="278" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Result Pooling</text>
-  <text x="470" y="286" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">ds.glm() · ds.mean() · ds.var()</text>
+  <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Result Pooling</text>
+  <text x="470" y="290" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">ds.glm() · ds.mean() · ds.var()</text>
 
   <!-- Query paths (researcher → hospitals) — left side of each connection -->
   <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none"/>
