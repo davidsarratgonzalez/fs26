@@ -109,12 +109,12 @@ Hospitals want to train ML models together **without sharing patient data**.
 
   <!-- Query paths (researcher → hospitals) — left side of each connection -->
   <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none"/>
-  <path id="qB" d="M340,242 L340,105" fill="none"/>
+  <path id="qB" d="M335,242 L340,105" fill="none"/>
   <path id="qC" d="M335,242 C400,185 535,145 565,105" fill="none"/>
 
   <!-- Result paths (hospitals → researcher) — right side, well separated -->
   <path id="rA" d="M140,105 C170,155 305,195 365,242" fill="none"/>
-  <path id="rB" d="M360,105 L360,242" fill="none"/>
+  <path id="rB" d="M360,105 L365,242" fill="none"/>
   <path id="rC" d="M600,105 C570,155 435,195 365,242" fill="none"/>
 
   <!-- Queries flowing UP (yellow) -->
@@ -127,13 +127,21 @@ Hospitals want to train ML models together **without sharing patient data**.
   <use href="#rB" class="flow-result"/>
   <use href="#rC" class="flow-result"/>
 
-  <!-- Query labels -->
-  <text x="200" y="190" fill="#FFD000" font-family="Roboto Mono" font-size="3.5" opacity="0.8" transform="rotate(35,200,190)">queries</text>
-  <text x="480" y="190" fill="#FFD000" font-family="Roboto Mono" font-size="3.5" opacity="0.8" transform="rotate(-35,480,190)">queries</text>
+  <!-- Label paths — physically offset from flow lines -->
+  <!-- Left queries: BELOW/outside the yellow qA line -->
+  <path id="lblQL" d="M82,118 C108,160 245,200 320,258" fill="none" stroke="none"/>
+  <!-- Left results: ABOVE/outside the green rA line -->
+  <path id="lblRL" d="M122,88 C148,135 280,172 348,225" fill="none" stroke="none"/>
+  <!-- Right queries: ABOVE/outside the yellow qC line -->
+  <path id="lblQR" d="M352,218 C420,165 552,128 578,80" fill="none" stroke="none"/>
+  <!-- Right results: BELOW/outside the green rC line (already good) -->
+  <path id="lblRR" d="M385,252 C455,205 588,165 622,115" fill="none" stroke="none"/>
 
-  <!-- Result labels -->
-  <text x="240" y="165" fill="#66ddaa" font-family="Roboto Mono" font-size="3.5" opacity="0.8" transform="rotate(35,240,165)">aggregated results</text>
-  <text x="440" y="165" fill="#66ddaa" font-family="Roboto Mono" font-size="3.5" opacity="0.8" transform="rotate(-35,440,165)">aggregated results</text>
+  <!-- Labels centered on paths -->
+  <text fill="#FFD000" font-family="Roboto Mono" font-size="3.5" text-anchor="middle"><textPath href="#lblQL" startOffset="50%">queries</textPath></text>
+  <text fill="#66ddaa" font-family="Roboto Mono" font-size="2.8" text-anchor="middle"><textPath href="#lblRL" startOffset="50%">aggregated results</textPath></text>
+  <text fill="#FFD000" font-family="Roboto Mono" font-size="3.5" text-anchor="middle"><textPath href="#lblQR" startOffset="50%">queries</textPath></text>
+  <text fill="#66ddaa" font-family="Roboto Mono" font-size="2.8" text-anchor="middle"><textPath href="#lblRR" startOffset="50%">aggregated results</textPath></text>
 
 </svg>
 </div>
