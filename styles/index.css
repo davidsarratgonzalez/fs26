@@ -192,11 +192,6 @@ td {
   animation: dashUp 0.8s linear infinite;
 }
 
-.node-card {
-  fill: rgba(255, 255, 255, 0.55);
-  stroke: rgba(255, 255, 255, 0.35);
-  stroke-width: 1;
-}
 
 /* ————————————————————————————————
    Miscellaneous

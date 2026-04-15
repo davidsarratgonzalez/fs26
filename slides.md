@@ -70,67 +70,73 @@ Hospitals want to train ML models together **without sharing patient data**.
 ## Architecture
 
 <div style="margin-top: 0.5em;">
-<svg viewBox="0 0 700 330" style="width: 100%; max-height: 380px;">
+<svg viewBox="0 0 700 340" style="width: 100%; max-height: 390px;">
 
-  <!-- Flow paths (defined once, drawn twice for bidirectional flow) -->
-  <path id="pA" d="M350,72 C250,150 140,200 120,255" fill="none"/>
-  <path id="pB" d="M350,72 L350,255" fill="none"/>
-  <path id="pC" d="M350,72 C450,150 560,200 580,255" fill="none"/>
+  <!-- Hospital nodes (top row) -->
+  <g transform="translate(120,65)">
+    <rect x="-80" y="-40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <rect x="-10" y="-26" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="0" y1="-22" x2="0" y2="-14" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="-4" y1="-18" x2="4" y2="-18" stroke="#e0d8d0" stroke-width="1.3"/>
+    <rect x="-7" y="-4" width="4" height="4" rx="0.5" fill="#e0d8d0" opacity="0.4"/>
+    <rect x="3" y="-4" width="4" height="4" rx="0.5" fill="#e0d8d0" opacity="0.4"/>
+    <text y="26" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="12" font-weight="500">Hospital A</text>
+  </g>
 
-  <!-- Query flow — blue dashes flowing down -->
-  <use href="#pA" class="flow-query"/>
-  <use href="#pB" class="flow-query"/>
-  <use href="#pC" class="flow-query"/>
+  <g transform="translate(350,65)">
+    <rect x="-80" y="-40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <rect x="-10" y="-26" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="0" y1="-22" x2="0" y2="-14" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="-4" y1="-18" x2="4" y2="-18" stroke="#e0d8d0" stroke-width="1.3"/>
+    <rect x="-7" y="-4" width="4" height="4" rx="0.5" fill="#e0d8d0" opacity="0.4"/>
+    <rect x="3" y="-4" width="4" height="4" rx="0.5" fill="#e0d8d0" opacity="0.4"/>
+    <text y="26" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="12" font-weight="500">Hospital B</text>
+  </g>
 
-  <!-- Result flow — lighter blue dashes flowing up -->
-  <use href="#pA" class="flow-result"/>
-  <use href="#pB" class="flow-result"/>
-  <use href="#pC" class="flow-result"/>
+  <g transform="translate(580,65)">
+    <rect x="-80" y="-40" width="160" height="80" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <rect x="-10" y="-26" width="20" height="18" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="0" y1="-22" x2="0" y2="-14" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="-4" y1="-18" x2="4" y2="-18" stroke="#e0d8d0" stroke-width="1.3"/>
+    <rect x="-7" y="-4" width="4" height="4" rx="0.5" fill="#e0d8d0" opacity="0.4"/>
+    <rect x="3" y="-4" width="4" height="4" rx="0.5" fill="#e0d8d0" opacity="0.4"/>
+    <text y="26" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="12" font-weight="500">Hospital C</text>
+  </g>
+
+  <!-- Researcher node (bottom center) -->
+  <g transform="translate(350,280)">
+    <rect x="-100" y="-38" width="200" height="76" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <circle cx="-16" cy="-16" r="7" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <path d="M-26,-4 C-26,-10 -6,-10 -6,-4" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <rect x="8" y="-20" width="22" height="15" rx="2" fill="none" stroke="#e0d8d0" stroke-width="1.3"/>
+    <line x1="5" y1="-2" x2="33" y2="-2" stroke="#e0d8d0" stroke-width="1.3" stroke-linecap="round"/>
+    <text y="26" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="12" font-weight="500">Researcher</text>
+  </g>
+
+  <!-- Animated flow lines -->
+  <path id="lineA" d="M350,242 C280,190 150,150 120,105" fill="none"/>
+  <path id="lineB" d="M350,242 L350,105" fill="none"/>
+  <path id="lineC" d="M350,242 C420,190 550,150 580,105" fill="none"/>
+
+  <!-- Queries flowing UP (bright) -->
+  <use href="#lineA" class="flow-query"/>
+  <use href="#lineB" class="flow-query"/>
+  <use href="#lineC" class="flow-query"/>
+
+  <!-- Results flowing DOWN (subtle) -->
+  <use href="#lineA" class="flow-result"/>
+  <use href="#lineB" class="flow-result"/>
+  <use href="#lineC" class="flow-result"/>
 
   <!-- Flow labels -->
-  <text x="210" y="148" fill="#1a3fff" font-family="Roboto Mono" font-size="9" opacity="0.8" transform="rotate(-28,210,148)">queries</text>
-  <text x="470" y="148" fill="#1a3fff" font-family="Roboto Mono" font-size="9" opacity="0.8" transform="rotate(28,470,148)">queries</text>
-  <text x="360" y="168" fill="#1a3fff" font-family="Roboto Mono" font-size="9" opacity="0.5">pooled results</text>
-
-  <!-- Researcher node -->
-  <g transform="translate(350,45)">
-    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
-    <rect x="-10" y="-16" width="20" height="14" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
-    <line x1="-14" y1="1" x2="14" y2="1" stroke="#333" stroke-width="2" stroke-linecap="round"/>
-    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Researcher</text>
-  </g>
-
-  <!-- Hospital A -->
-  <g transform="translate(120,285)">
-    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
-    <rect x="-10" y="-18" width="20" height="20" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
-    <line x1="0" y1="-14" x2="0" y2="-4" stroke="#333" stroke-width="1.5"/>
-    <line x1="-5" y1="-9" x2="5" y2="-9" stroke="#333" stroke-width="1.5"/>
-    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Hospital A</text>
-  </g>
-
-  <!-- Hospital B -->
-  <g transform="translate(350,285)">
-    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
-    <rect x="-10" y="-18" width="20" height="20" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
-    <line x1="0" y1="-14" x2="0" y2="-4" stroke="#333" stroke-width="1.5"/>
-    <line x1="-5" y1="-9" x2="5" y2="-9" stroke="#333" stroke-width="1.5"/>
-    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Hospital B</text>
-  </g>
-
-  <!-- Hospital C -->
-  <g transform="translate(580,285)">
-    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
-    <rect x="-10" y="-18" width="20" height="20" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
-    <line x1="0" y1="-14" x2="0" y2="-4" stroke="#333" stroke-width="1.5"/>
-    <line x1="-5" y1="-9" x2="5" y2="-9" stroke="#333" stroke-width="1.5"/>
-    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Hospital C</text>
-  </g>
+  <text x="195" y="195" fill="#6888ff" font-family="Roboto Mono" font-size="9.5" opacity="0.7" transform="rotate(32,195,195)">queries</text>
+  <text x="490" y="195" fill="#6888ff" font-family="Roboto Mono" font-size="9.5" opacity="0.7" transform="rotate(-32,490,195)">queries</text>
+  <text x="365" y="178" fill="#6888ff" font-family="Roboto Mono" font-size="9.5" opacity="0.5">pooled results ↓</text>
 
 </svg>
 </div>
 
-Data **never leaves** the hospital. Only aggregated results travel back via DataSHIELD.
+Data **never leaves** the hospital. Only aggregated results travel back.
 
 ---
 
