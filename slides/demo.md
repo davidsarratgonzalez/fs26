@@ -51,7 +51,7 @@ onMounted(() => {
 })
 </script>
 
-## Live Demo
+## Usage Demo
 
 <div ref="terminal" style="overflow-y: auto; scroll-behavior: smooth; height: 430px; margin-top: 0.3em; scrollbar-width: none;">
 <div style="font-size: 0.62em; line-height: 1.4; font-family: 'Roboto Mono', monospace;">
@@ -98,15 +98,15 @@ onMounted(() => {
     <div style="color: #b8b0a8; font-size: 0.9em;">11,131 patients total (data never pooled)</div>
   </div>
   <div style="flex: 1;">
-    <div style="color: #ffb366; font-weight: 500; margin-bottom: 3px;">Target</div>
-    <div style="margin-bottom: 4px;"><span style="background:rgba(102,221,170,0.12); border:1px solid rgba(102,221,170,0.25); border-radius:4px; padding:3px 10px; color:#66ddaa;">icu_mortality</span></div>
-    <div style="color: #c0b8b0; font-size: 0.9em;">binary &middot; 14.2% prevalence</div>
+    <div style="color: #ffb366; font-weight: 500; margin-bottom: 5px;">Target</div>
+    <div style="margin-bottom: 6px;"><span style="background:rgba(102,221,170,0.12); border:1px solid rgba(102,221,170,0.25); border-radius:4px; padding:3px 10px; color:#66ddaa;">icu_mortality</span></div>
+    <div style="color: #c8c0b8; font-size: 0.9em;">binary &middot; 14.2% prevalence</div>
   </div>
 </div>
 
 <!-- Features -->
 <div style="margin-bottom: 10px;">
-  <div style="color: #ffb366; font-weight: 500; margin-bottom: 4px;">Features <span style="color: #888; font-weight: 400;">(17 clinical variables)</span></div>
+  <div style="color: #ffb366; font-weight: 500; margin-bottom: 4px;">Features <span style="color: #c8c0b8; font-weight: 400;">(17 clinical variables)</span></div>
   <div style="display: flex; flex-wrap: wrap; gap: 4px;">
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">age</span>
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">heart_rate</span>
