@@ -139,11 +139,19 @@ recipe_mlp <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">d
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
 <div>SuperLink started (PID: 29346)</div>
+<div>&nbsp; Fleet API (SuperNodes): 127.0.0.1:9092</div>
+<div>&nbsp; site1: SuperLink reachable at host.docker.internal:9092</div>
+<div>&nbsp; site2: SuperLink reachable at host.docker.internal:9092</div>
+<div>&nbsp; site3: SuperLink reachable at host.docker.internal:9092</div>
 <div>&nbsp; site1: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div>&nbsp; site2: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div>&nbsp; site3: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div>&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers</div>
-<div><span style="color:#88ccff;">[ROUND 1-5/5]</span> 3 clients, 0 failures each round</div>
+<div><span style="color:#88ccff;">[ROUND 1/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div><span style="color:#88ccff;">[ROUND 2/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div><span style="color:#88ccff;">[ROUND 3/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div><span style="color:#88ccff;">[ROUND 4/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div><span style="color:#88ccff;">[ROUND 5/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
 <div><span style="color:#66ddaa;">Model saved to ./dsflower_output/pytorch_mlp_FedProx_5r_20260325_223934</span></div>
 <div>SuperLink stopped.</div>
 </div>
@@ -181,7 +189,7 @@ preds <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flo
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;1</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;1</div>
 <div>&nbsp; benign &nbsp;48 &nbsp;&nbsp;3</div>
 <div>&nbsp; malign &nbsp;&nbsp;5 &nbsp;31</div>
 </div>
