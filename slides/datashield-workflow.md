@@ -33,8 +33,8 @@
 
   <!-- Server-side annotation (right of Hospital C) -->
   <text x="720" y="52" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" text-anchor="middle">Local Compute</text>
-  <text x="720" y="64" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6" text-anchor="middle">+</text>
-  <text x="720" y="76" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6" text-anchor="middle">Disclosure Control</text>
+  <text x="720" y="64" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.85" text-anchor="middle">+</text>
+  <text x="720" y="76" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.85" text-anchor="middle">Disclosure Control</text>
 
   <!-- Researcher node (bottom center) -->
   <g transform="translate(350,280)">
@@ -48,7 +48,7 @@
 
   <!-- Result pooling label (right of researcher) -->
   <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Result Pooling</text>
-  <text x="470" y="290" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">ds.glm() · ds.mean() · ds.var()</text>
+  <text x="470" y="290" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.85">ds.glm() · ds.mean() · ds.var()</text>
 
   <!-- Query paths (researcher → hospitals) -->
   <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none"/>
