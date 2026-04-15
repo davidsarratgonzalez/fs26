@@ -229,6 +229,12 @@ td {
 .exec-lines:not(.slidev-vclick-hidden) > div:nth-child(10) { animation-delay: 2.5s; }
 .exec-lines:not(.slidev-vclick-hidden) > div:nth-child(11) { animation-delay: 2.75s; }
 .exec-lines:not(.slidev-vclick-hidden) > div:nth-child(12) { animation-delay: 3.0s; }
+.exec-lines:not(.slidev-vclick-hidden) > div:nth-child(13) { animation-delay: 3.25s; }
+.exec-lines:not(.slidev-vclick-hidden) > div:nth-child(14) { animation-delay: 3.5s; }
+.exec-lines:not(.slidev-vclick-hidden) > div:nth-child(15) { animation-delay: 3.75s; }
+.exec-lines:not(.slidev-vclick-hidden) > div:nth-child(16) { animation-delay: 4.0s; }
+.exec-lines:not(.slidev-vclick-hidden) > div:nth-child(17) { animation-delay: 4.25s; }
+.exec-lines:not(.slidev-vclick-hidden) > div:nth-child(18) { animation-delay: 4.5s; }
 
 /* ————————————————————————————————
    Miscellaneous
