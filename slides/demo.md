@@ -181,9 +181,9 @@ preds <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flo
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp; 1</div>
-<div>&nbsp; benign &nbsp; 48 &nbsp; 3</div>
-<div>&nbsp; malign &nbsp;&nbsp; 5 &nbsp;31</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;1</div>
+<div>&nbsp; benign &nbsp;48 &nbsp;&nbsp;3</div>
+<div>&nbsp; malign &nbsp;&nbsp;5 &nbsp;31</div>
 </div>
 
 <!-- Disconnect -->
