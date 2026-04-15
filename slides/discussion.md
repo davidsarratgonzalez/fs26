@@ -1,7 +1,7 @@
 ## Discussion
 
-<div class="flex flex-col items-center justify-center" style="margin-top: 2.5em;">
-<div style="text-align: left; max-width: 680px; line-height: 2.2;">
+<div class="flex flex-col items-center justify-center h-full" style="margin-top: -2em;">
+<div style="text-align: left; max-width: 720px; line-height: 2.4; font-size: 1.1em; color: #e0d8d0;">
 
 - External SuperLink instead of client-hosted?
 - Allow analysts to create custom apps with security checks?
