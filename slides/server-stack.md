@@ -1,7 +1,7 @@
-## Server-Side Stack
+## Server-Side Package
 
 <div style="margin-top: 0.2em;">
-<svg viewBox="0 0 720 340" style="width: 100%; max-height: 430px;">
+<svg viewBox="0 -15 720 355" style="width: 100%; max-height: 430px;">
 
   <!-- ===== ALWAYS VISIBLE ===== -->
 
