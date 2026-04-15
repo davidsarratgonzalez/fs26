@@ -1,5 +1,4 @@
 ## Server-Side Stack
-<span style="color: #b0b8c0; font-size: 0.6em;">Batteries-included</span>
 
 <div style="margin-top: 0.2em;">
 <svg viewBox="0 0 820 310" style="width: 100%; max-height: 370px;">
