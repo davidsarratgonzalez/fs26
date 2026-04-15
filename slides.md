@@ -55,14 +55,6 @@ src: ./slides/client-side.md
 ---
 
 ---
-src: ./slides/problem.md
----
-
----
-src: ./slides/how-it-works.md
----
-
----
 src: ./slides/researcher-api.md
 ---
 
@@ -84,10 +76,6 @@ src: ./slides/privacy-profiles.md
 
 ---
 src: ./slides/demo.md
----
-
----
-src: ./slides/ecosystem.md
 ---
 
 ---
