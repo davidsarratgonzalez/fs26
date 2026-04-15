@@ -73,7 +73,7 @@
 <!-- viewBox: 0 -15 720 355 → left% = svgX/720*100, top% = (svgY+15)/355*100 -->
 
 <!-- Animated dashed line: weights → -->
-<div v-click="2" class="marching-line marching-right" style="position:absolute; left:74.3%; top:32%; width:9%; height:3px;"></div>
+<div v-click="2" class="marching-line marching-right" style="position:absolute; left:74.3%; top:33%; width:9%; height:3px;"></div>
 <div v-click="2" style="position:absolute; left:74.3%; top:29%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.55em; color:#88ccff;">weights</div>
 
 <!-- Animated dashed line: ← model -->
