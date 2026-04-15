@@ -1,25 +1,25 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onActivated } from 'vue'
 
 const terminal = ref(null)
 let debounce = null
 
+// When returning to this slide (backward nav via KeepAlive)
+onActivated(() => {
+  if (!terminal.value) return
+  // Show all lines instantly, no stagger
+  terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
+    el.style.opacity = '1'
+    el.style.animation = 'none'
+  })
+  // Scroll to bottom instantly
+  terminal.value.scrollTop = terminal.value.scrollHeight
+})
+
+// First time entering (forward nav)
 onMounted(() => {
   if (!terminal.value) return
-
-  // Check if coming from backward navigation (all v-clicks resolved)
-  const hasHidden = terminal.value.querySelector('.slidev-vclick-hidden')
-  if (!hasHidden) {
-    // Show everything instantly, no stagger, scroll to bottom
-    terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
-      el.style.opacity = '1'
-      el.style.animation = 'none'
-    })
-    terminal.value.scrollTop = terminal.value.scrollHeight
-  } else {
-    // Forward navigation - start from top
-    terminal.value.scrollTop = 0
-  }
+  terminal.value.scrollTop = 0
 
   const observer = new MutationObserver(() => {
     clearTimeout(debounce)
