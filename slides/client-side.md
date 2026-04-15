@@ -45,7 +45,7 @@
     <rect x="195" y="192" width="330" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
     <text x="360" y="208" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Composable Recipe</text>
     <text x="360" y="222" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.5">model · strategy · target data · num_rounds</text>
-    <text x="360" y="236" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">What to train · How to aggregate · On which columns · How long</text>
+    <text x="360" y="236" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">What to train · How to aggregate · On which data · How long</text>
     <text x="360" y="248" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">Privacy is server-enforced, not analyst-chosen</text>
   </g>
 
