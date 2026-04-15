@@ -70,14 +70,15 @@ li { margin-bottom: 0.3em; }
 strong { color: #f0e8e0 !important; }
 
 a {
-  color: #FFD000 !important;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
+  color: #1a3fff !important;
+  text-decoration: none !important;
+  font-family: 'Roboto Mono', monospace;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #f0e8e0 !important;
+  color: #4d6fff !important;
+  text-decoration: underline !important;
 }
 
 /* ————————————————————————————————
