@@ -173,25 +173,30 @@ td {
    Animated flow lines (CSS)
    ———————————————————————————————— */
 
-@keyframes dashFlow {
-  to { stroke-dashoffset: -10; }
+@keyframes marchRight {
+  from { background-position: 0 0; }
+  to { background-position: 12px 0; }
 }
 
-.line-out {
-  stroke: #FFD000;
-  stroke-width: 2.5;
-  stroke-dasharray: 6 4;
-  fill: none;
-  animation: dashFlow 0.8s linear infinite;
+@keyframes marchLeft {
+  from { background-position: 12px 0; }
+  to { background-position: 0 0; }
 }
 
-.line-in {
-  stroke: #66ddaa;
-  stroke-width: 2.5;
-  stroke-dasharray: 6 4;
-  fill: none;
-  animation: dashFlow 0.8s linear infinite;
-  animation-direction: reverse;
+.marching-line {
+  border-radius: 2px;
+}
+
+.marching-right {
+  background: repeating-linear-gradient(90deg, #88ccff 0, #88ccff 6px, transparent 6px, transparent 12px);
+  background-size: 12px 100%;
+  animation: marchRight 0.6s linear infinite;
+}
+
+.marching-left {
+  background: repeating-linear-gradient(90deg, #ffaacc 0, #ffaacc 6px, transparent 6px, transparent 12px);
+  background-size: 12px 100%;
+  animation: marchLeft 0.6s linear infinite;
 }
 
 /* ————————————————————————————————

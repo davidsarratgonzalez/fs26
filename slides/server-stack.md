@@ -72,15 +72,13 @@
 <!-- CONNECTION LINES + ANALYST (HTML over SVG, positions from viewBox math) -->
 <!-- viewBox: 0 -15 720 355 → left% = svgX/720*100, top% = (svgY+15)/355*100 -->
 
-<!-- Yellow dashed line: weights → (y=103 in SVG) -->
-<div v-click="2" style="position:absolute; left:74.3%; top:33.2%; width:9%; height:0; border-top:3px dashed #FFD000;"></div>
-<!-- Label for yellow line -->
-<div v-click="2" style="position:absolute; left:74.3%; top:30%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.55em; color:#FFD000;">weights →</div>
+<!-- Animated dashed line: weights → -->
+<div v-click="2" class="marching-line marching-right" style="position:absolute; left:74.3%; top:33.2%; width:9%; height:3px;"></div>
+<div v-click="2" style="position:absolute; left:74.3%; top:30%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.55em; color:#88ccff;">weights →</div>
 
-<!-- Green dashed line: ← model (y=118 in SVG) -->
-<div v-click="2" style="position:absolute; left:74.3%; top:37.5%; width:9%; height:0; border-top:3px dashed #66ddaa;"></div>
-<!-- Label for green line -->
-<div v-click="2" style="position:absolute; left:74.3%; top:39.5%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.55em; color:#66ddaa;">← model</div>
+<!-- Animated dashed line: ← model -->
+<div v-click="2" class="marching-line marching-left" style="position:absolute; left:74.3%; top:37.5%; width:9%; height:3px;"></div>
+<div v-click="2" style="position:absolute; left:74.3%; top:39.5%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.55em; color:#ffaacc;">← model</div>
 
 <!-- Analyst box (x=600, y=90, w=110, h=40 in SVG) -->
 <div v-click="2" style="position:absolute; left:83.3%; top:29.6%; width:15.3%; height:11.3%; border:1px solid rgba(136,204,255,0.2); background:rgba(136,204,255,0.06); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
@@ -89,7 +87,7 @@
 </div>
 
 <!-- Protection border (click 5, covers lines + analyst area) -->
-<div v-click="5" style="position:absolute; left:73%; top:27%; width:27%; height:16%; border:2px dashed rgba(102,221,170,0.35); border-radius:8px;">
+<div v-click="5" style="position:absolute; left:73%; top:28.5%; width:27%; height:16%; border:2px dashed #66ddaa; border-radius:8px;">
   <span style="position:absolute; top:-16px; left:50%; transform:translateX(-50%); white-space:nowrap; font-family:'Roboto Mono',monospace; font-size:0.5em; color:#66ddaa;">encrypted · disclosure-controlled</span>
 </div>
 
