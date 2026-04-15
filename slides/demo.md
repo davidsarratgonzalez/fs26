@@ -54,19 +54,44 @@ onMounted(() => {
 <div ref="terminal" style="overflow-y: auto; scroll-behavior: smooth; height: 430px; margin-top: 0.3em; scrollbar-width: none;">
 <div style="font-size: 0.55em; line-height: 1.4; font-family: 'Roboto Mono', monospace;">
 
-<!-- Context (always visible initially) -->
-<div style="background: rgba(136,204,255,0.06); border: 1px solid rgba(136,204,255,0.15); border-radius: 8px; padding: 0.6em 1em; margin-bottom: 8px; color: #e0d8d0;">
-<div style="color: #88ccff; font-size: 1.1em; font-weight: 500; margin-bottom: 4px;">Federated Tabular Classification (3 Nodes)</div>
-<div style="color: #b0b8c0; line-height: 1.6;">
-<span style="color:#ffb366;">Dataset:</span> CLINICAL.breast_cancer (malignant vs benign)<br/>
-<span style="color:#ffb366;">Sites:</span> 3 hospital servers, each with their own patient cohort<br/>
-<span style="color:#ffb366;">Goal:</span> Train a classifier without sharing patient data<br/>
-<span style="color:#ffb366;">Plan:</span> sklearn LogReg → PyTorch MLP + FedProx → Compare results
+<!-- Experiment setup (always visible) -->
+<div style="background: rgba(136,204,255,0.04); border: 1px solid rgba(136,204,255,0.12); border-radius: 8px; padding: 0.7em 1em; margin-bottom: 8px;">
+<div style="color: #88ccff; font-size: 1.15em; font-weight: 500; margin-bottom: 8px;">Federated Tabular Classification</div>
+
+<div style="display: flex; gap: 8px; margin-bottom: 8px;">
+  <div style="flex:1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 6px 8px;">
+    <div style="color: #FFD000; font-weight: 500;">site1</div>
+    <div style="color: #b0b8c0;">opal1.hospital-a.org</div>
+    <div style="color: #999;">847 rows x 12 cols</div>
+  </div>
+  <div style="flex:1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 6px 8px;">
+    <div style="color: #FFD000; font-weight: 500;">site2</div>
+    <div style="color: #b0b8c0;">opal2.hospital-b.org</div>
+    <div style="color: #999;">623 rows x 12 cols</div>
+  </div>
+  <div style="flex:1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 6px 8px;">
+    <div style="color: #FFD000; font-weight: 500;">site3</div>
+    <div style="color: #b0b8c0;">opal3.hospital-c.org</div>
+    <div style="color: #999;">531 rows x 12 cols</div>
+  </div>
+</div>
+
+<div style="color: #b0b8c0; line-height: 1.5; margin-bottom: 6px;">
+<span style="color:#ffb366;">Table:</span> CLINICAL.breast_cancer &nbsp;&nbsp;
+<span style="color:#ffb366;">Target:</span> malignant <span style="color:#888;">(binary)</span><br/>
+<span style="color:#ffb366;">Features:</span> <span style="color:#999;">radius, texture, perimeter, area, smoothness, compactness, concavity, symmetry...</span>
+</div>
+
+<div style="color: #b0b8c0; line-height: 1.5;">
+<span style="color:#88ccff;">Plan:</span><br/>
+<span style="color:#999;">&nbsp; 1.</span> <span style="color:#e0d8d0;">sklearn LogReg</span> <span style="color:#888;">(FedAvg)</span><br/>
+<span style="color:#999;">&nbsp; 2.</span> <span style="color:#e0d8d0;">PyTorch MLP</span> <span style="color:#888;">(FedProx, hidden: 32,16)</span><br/>
+<span style="color:#999;">&nbsp; 3.</span> <span style="color:#e0d8d0;">Compare final losses</span>
 </div>
 </div>
 
-<!-- Libraries -->
-<div style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; color: #c8b8a8;">
+<!-- Libraries (first click) -->
+<div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; color: #c8b8a8;">
 <span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">DSI</span>)
 <br/><span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">DSOpal</span>)
 <br/><span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">dsFlowerClient</span>)
