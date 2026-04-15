@@ -10,4 +10,4 @@
 | `clinical_update_noise` | yes | noise | 200 | aggregate | Update-level DP |
 | `high_sensitivity_dp` | yes | Opacus | 500 | aggregate | Patient-level DP |
 
-Profiles are **server-enforced**. The researcher cannot bypass them.
+Profiles are **server-enforced**, configured by the server administrator in the DataSHIELD settings. The researcher cannot bypass them. In multi-site runs, the **most restrictive** profile across all servers is automatically adopted.
