@@ -1,19 +1,22 @@
 <script setup>
-import { ref, watch, nextTick } from 'vue'
-import { useSlideContext } from '@slidev/client'
+import { ref, onMounted } from 'vue'
 
-const { $clicks } = useSlideContext()
 const terminal = ref(null)
 
-watch($clicks, async () => {
-  await nextTick()
-  await nextTick()
-  if (terminal.value) {
-    terminal.value.scrollTo({
-      top: terminal.value.scrollHeight,
-      behavior: 'smooth'
-    })
-  }
+onMounted(() => {
+  if (!terminal.value) return
+  const observer = new MutationObserver(() => {
+    setTimeout(() => {
+      terminal.value?.scrollTo({
+        top: terminal.value.scrollHeight,
+        behavior: 'smooth'
+      })
+    }, 50)
+  })
+  observer.observe(terminal.value, {
+    childList: true, subtree: true,
+    attributes: true, attributeFilter: ['class']
+  })
 })
 </script>
 
