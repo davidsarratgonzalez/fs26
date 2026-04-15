@@ -35,6 +35,8 @@
   animation: bgShift 15s ease infinite;
   overflow: hidden;
   pointer-events: none;
+  will-change: background-position;
+  z-index: -1;
 }
 
 .lava-blobs {
@@ -51,6 +53,7 @@
     radial-gradient(circle at 50% 45%, rgba(255, 136, 1, 0.4) 0%, transparent 35%);
   animation: lavaFlow 25s ease-in-out infinite;
   filter: blur(40px);
+  will-change: transform;
 }
 
 .lava-blobs-2 {
@@ -65,5 +68,6 @@
     radial-gradient(circle at 80% 70%, rgba(255, 255, 230, 0.5) 0%, transparent 25%);
   animation: lavaFlow2 30s ease-in-out infinite;
   filter: blur(50px);
+  will-change: transform;
 }
 </style>
