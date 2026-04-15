@@ -127,7 +127,7 @@ css: unocss
 </svg>
 </div>
 
-Data **never leaves** the hospital. Only aggregated results travel back and get pooled locally by the analyst.
+Data **never leaves** the hospital. Only non-disclosive summaries travel back — pooling is handled automatically by DataSHIELD.
 
 ---
 
