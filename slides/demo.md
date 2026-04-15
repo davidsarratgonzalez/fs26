@@ -49,6 +49,17 @@ onMounted(() => {
 <div ref="terminal" style="overflow-y: auto; scroll-behavior: smooth; height: 430px; margin-top: 0.3em; scrollbar-width: none;">
 <div style="font-size: 0.55em; line-height: 1.4; font-family: 'Roboto Mono', monospace;">
 
+<!-- Context (always visible initially) -->
+<div style="background: rgba(136,204,255,0.06); border: 1px solid rgba(136,204,255,0.15); border-radius: 8px; padding: 0.6em 1em; margin-bottom: 8px; color: #e0d8d0;">
+<div style="color: #88ccff; font-size: 1.1em; font-weight: 500; margin-bottom: 4px;">Federated Tabular Classification (3 Nodes)</div>
+<div style="color: #b0b8c0; line-height: 1.6;">
+<span style="color:#ffb366;">Dataset:</span> CLINICAL.breast_cancer (malignant vs benign)<br/>
+<span style="color:#ffb366;">Sites:</span> 3 hospital servers, each with their own patient cohort<br/>
+<span style="color:#ffb366;">Goal:</span> Train a classifier without sharing patient data<br/>
+<span style="color:#ffb366;">Plan:</span> sklearn LogReg → PyTorch MLP + FedProx → Compare results
+</div>
+</div>
+
 <!-- Libraries -->
 <div style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; color: #c8b8a8;">
 <span style="color:#78a9ff;">library</span>(<span style="color:#FFD000;">DSI</span>)
