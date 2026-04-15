@@ -109,8 +109,8 @@ Hospitals want to train ML models together **without sharing patient data**.
   </g>
 
   <!-- Server-side annotation (right of Hospital C) -->
-  <text x="670" y="64" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Local Compute +</text>
-  <text x="670" y="74" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Disclosure Measures</text>
+  <text x="670" y="60" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Local Compute +</text>
+  <text x="670" y="72" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">Disclosure controls applied</text>
 
   <!-- Researcher node (bottom center) -->
   <g transform="translate(350,280)">
@@ -123,7 +123,7 @@ Hospitals want to train ML models together **without sharing patient data**.
   </g>
 
   <!-- Result pooling label (right of researcher) -->
-  <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Result Pooling</text>
+  <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Result Pooling</text>
   <text x="470" y="290" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">ds.glm() · ds.mean() · ds.var()</text>
 
   <!-- Query paths (researcher → hospitals) — left side of each connection -->
