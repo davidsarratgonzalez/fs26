@@ -57,57 +57,85 @@ onMounted(() => {
 <div style="font-size: 0.55em; line-height: 1.4; font-family: 'Roboto Mono', monospace;">
 
 <!-- Experiment setup -->
-<div style="background: rgba(136,204,255,0.04); border: 1px solid rgba(136,204,255,0.12); border-radius: 8px; padding: 0.7em 1em; margin-bottom: 8px;">
-<div style="color: #88ccff; font-size: 1.15em; font-weight: 500; margin-bottom: 8px;">Federated ICU Mortality Prediction (5 Hospitals)</div>
+<div style="background: rgba(136,204,255,0.04); border: 1px solid rgba(136,204,255,0.12); border-radius: 10px; padding: 0.8em 1.2em; margin-bottom: 10px;">
 
-<div style="display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap;">
-  <div style="flex:1; min-width: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 7px;">
-    <div style="color: #FFD000; font-weight: 500;">BCN</div>
-    <div style="color: #b0b8c0; font-size: 0.9em;">Hospital Clinic</div>
-    <div style="color: #999; font-size: 0.85em;">2,341 patients</div>
+<div style="color: #88ccff; font-size: 1.2em; font-weight: 600; margin-bottom: 10px;">Federated ICU Mortality Prediction</div>
+
+<!-- Hospitals grid -->
+<div style="display: flex; gap: 8px; margin-bottom: 12px;">
+  <div style="flex:1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 8px 10px; text-align: center;">
+    <div style="color: #FFD000; font-weight: 600; font-size: 1.05em;">BCN</div>
+    <div style="color: #c8c0b8; font-size: 0.85em;">Hospital Clinic</div>
+    <div style="color: #88ccff; font-size: 0.9em; margin-top: 2px;">2,341</div>
   </div>
-  <div style="flex:1; min-width: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 7px;">
-    <div style="color: #FFD000; font-weight: 500;">MAD</div>
-    <div style="color: #b0b8c0; font-size: 0.9em;">La Paz</div>
-    <div style="color: #999; font-size: 0.85em;">1,876 patients</div>
+  <div style="flex:1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 8px 10px; text-align: center;">
+    <div style="color: #FFD000; font-weight: 600; font-size: 1.05em;">MAD</div>
+    <div style="color: #c8c0b8; font-size: 0.85em;">La Paz</div>
+    <div style="color: #88ccff; font-size: 0.9em; margin-top: 2px;">1,876</div>
   </div>
-  <div style="flex:1; min-width: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 7px;">
-    <div style="color: #FFD000; font-weight: 500;">LDN</div>
-    <div style="color: #b0b8c0; font-size: 0.9em;">King's College</div>
-    <div style="color: #999; font-size: 0.85em;">3,102 patients</div>
+  <div style="flex:1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 8px 10px; text-align: center;">
+    <div style="color: #FFD000; font-weight: 600; font-size: 1.05em;">LDN</div>
+    <div style="color: #c8c0b8; font-size: 0.85em;">King's College</div>
+    <div style="color: #88ccff; font-size: 0.9em; margin-top: 2px;">3,102</div>
   </div>
-  <div style="flex:1; min-width: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 7px;">
-    <div style="color: #FFD000; font-weight: 500;">BER</div>
-    <div style="color: #b0b8c0; font-size: 0.9em;">Charit&eacute;</div>
-    <div style="color: #999; font-size: 0.85em;">1,245 patients</div>
+  <div style="flex:1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 8px 10px; text-align: center;">
+    <div style="color: #FFD000; font-weight: 600; font-size: 1.05em;">BER</div>
+    <div style="color: #c8c0b8; font-size: 0.85em;">Charit&eacute;</div>
+    <div style="color: #88ccff; font-size: 0.9em; margin-top: 2px;">1,245</div>
   </div>
-  <div style="flex:1; min-width: 100px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 7px;">
-    <div style="color: #FFD000; font-weight: 500;">AMS</div>
-    <div style="color: #b0b8c0; font-size: 0.9em;">AMC</div>
-    <div style="color: #999; font-size: 0.85em;">2,567 patients</div>
+  <div style="flex:1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; padding: 8px 10px; text-align: center;">
+    <div style="color: #FFD000; font-weight: 600; font-size: 1.05em;">AMS</div>
+    <div style="color: #c8c0b8; font-size: 0.85em;">AMC</div>
+    <div style="color: #88ccff; font-size: 0.9em; margin-top: 2px;">2,567</div>
   </div>
 </div>
 
-<div style="color: #b0b8c0; line-height: 1.5; margin-bottom: 5px;">
-<span style="color:#ffb366;">Table:</span> ICU.admissions &nbsp;&nbsp;
-<span style="color:#ffb366;">Target:</span> <span style="background:rgba(102,221,170,0.1); border:1px solid rgba(102,221,170,0.2); border-radius:3px; padding:1px 6px; color:#66ddaa;">icu_mortality</span> <span style="color:#888;">(binary, 14.2% prevalence)</span><br/>
-<span style="color:#ffb366;">Features:</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">age</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">heart_rate</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">systolic_bp</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">spo2</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">creatinine</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">lactate</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">gcs</span>
-<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 4px; color:#FFD000; display:inline-block; margin:1px;">ventilation</span>
-<span style="color:#888; margin-left:2px;">+9 more</span>
+<!-- Dataset + Features -->
+<div style="display: flex; gap: 16px; margin-bottom: 10px;">
+  <div style="flex: 1;">
+    <div style="color: #ffb366; font-weight: 500; margin-bottom: 3px;">Dataset</div>
+    <div style="color: #e0d8d0;">ICU.admissions</div>
+    <div style="color: #999; font-size: 0.9em;">11,131 patients total (data never pooled)</div>
+  </div>
+  <div style="flex: 1;">
+    <div style="color: #ffb366; font-weight: 500; margin-bottom: 3px;">Target</div>
+    <div><span style="background:rgba(102,221,170,0.12); border:1px solid rgba(102,221,170,0.25); border-radius:4px; padding:2px 8px; color:#66ddaa;">icu_mortality</span></div>
+    <div style="color: #999; font-size: 0.9em;">binary, 14.2% prevalence</div>
+  </div>
 </div>
 
-<div style="color: #b0b8c0;">
-<span style="color:#88ccff;">Model:</span> <span style="color:#e0d8d0;">PyTorch MLP (128-64-32)</span> &nbsp;
-<span style="color:#88ccff;">Strategy:</span> <span style="color:#e0d8d0;">FedProx</span> <span style="color:#888;">(non-IID across hospitals)</span> &nbsp;
-<span style="color:#88ccff;">Rounds:</span> <span style="color:#e0d8d0;">10</span>
+<!-- Features -->
+<div style="margin-bottom: 10px;">
+  <div style="color: #ffb366; font-weight: 500; margin-bottom: 4px;">Features <span style="color: #888; font-weight: 400;">(17 clinical variables)</span></div>
+  <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">age</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">heart_rate</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">systolic_bp</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">spo2</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">creatinine</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">lactate</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">gcs</span>
+    <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">ventilation</span>
+    <span style="color:#888;">+9 more</span>
+  </div>
 </div>
+
+<!-- Model config -->
+<div style="display: flex; gap: 20px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.06);">
+  <div>
+    <span style="color:#88ccff; font-weight: 500;">Model</span>
+    <span style="color:#e0d8d0; margin-left: 6px;">PyTorch MLP (128-64-32)</span>
+  </div>
+  <div>
+    <span style="color:#88ccff; font-weight: 500;">Strategy</span>
+    <span style="color:#e0d8d0; margin-left: 6px;">FedProx</span>
+  </div>
+  <div>
+    <span style="color:#88ccff; font-weight: 500;">Rounds</span>
+    <span style="color:#e0d8d0; margin-left: 6px;">10</span>
+  </div>
+</div>
+
 </div>
 
 <!-- Libraries -->
@@ -118,11 +146,11 @@ onMounted(() => {
 <!-- Login -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 builder <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">newDSLoginBuilder</span>()
-<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BCN"</span>, url = <span style="color:#ffaacc;">"https://rock.clinic.cat:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>) <span style="color:#666;"># + credentials</span>
-<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"MAD"</span>, url = <span style="color:#ffaacc;">"https://rock.lapaz.salud.es:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
-<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"LDN"</span>, url = <span style="color:#ffaacc;">"https://rock.kcl.nhs.uk:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
-<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BER"</span>, url = <span style="color:#ffaacc;">"https://rock.charite.de:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
-<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"AMS"</span>, url = <span style="color:#ffaacc;">"https://rock.amsterdamumc.nl:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BCN"</span>, url = <span style="color:#ffaacc;">"https://datashield.clinic.cat:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>) <span style="color:#666;"># + credentials</span>
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"MAD"</span>, url = <span style="color:#ffaacc;">"https://datashield.lapaz.salud.es:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"LDN"</span>, url = <span style="color:#ffaacc;">"https://datashield.kcl.nhs.uk:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BER"</span>, url = <span style="color:#ffaacc;">"https://datashield.charite.de:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
+<br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"AMS"</span>, url = <span style="color:#ffaacc;">"https://datashield.amsterdamumc.nl:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
 <br/>conns <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">datashield.login</span>(logins = builder$<span style="color:#78a9ff;">build</span>(), assign = <span style="color:#88ccff;">TRUE</span>, symbol = <span style="color:#ffaacc;">"D"</span>)
 </div>
 
