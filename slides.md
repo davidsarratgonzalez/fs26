@@ -10,18 +10,31 @@ css: unocss
 ---
 
 <div class="flex flex-col items-center justify-center h-full">
-  <div style="font-family: 'Roboto Mono', monospace; font-weight: 300; font-size: 4em; text-transform: uppercase; color: #f5ebe0;">
-    ds<span class="flower-title" style="font-weight: 400;">Flower</span>
+  <div style="font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 4em; color: #000000;">
+    ds<span class="flower-title">Flower</span>
   </div>
-  <div style="font-size: 1.2em; color: #a89888; margin-top: 0.5em; letter-spacing: 0.02em;">
-    Federated Learning for DataSHIELD
+  <div style="font-size: 1.1em; color: #000000; margin-top: 0.3em; letter-spacing: 0.02em;">
+    Privacy-Preserving Federated Learning for Biomedical Research
   </div>
-  <div style="font-size: 0.9em; color: #998a7a; margin-top: 0.3em;">
-    Powered by <a href="https://flower.ai">flower.ai</a>
+  <div class="flex items-center justify-center gap-6" style="margin-top: 2em;">
+    <div class="flex flex-col items-center gap-1">
+      <img src="/david-sarrat.jpg" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,0,0,0.15);" />
+      <span style="font-family: 'Roboto Mono', monospace; font-size: 0.8em; color: #333333;">David Sarrat Gonz&aacute;lez</span>
+    </div>
+    <div class="flex flex-col items-center gap-1">
+      <img src="/juan-gonzalez.jpg" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,0,0,0.15);" />
+      <span style="font-family: 'Roboto Mono', monospace; font-size: 0.8em; color: #333333;">Juan R Gonz&aacute;lez</span>
+    </div>
   </div>
-  <div style="font-family: 'Roboto Mono', monospace; font-size: 0.75em; color: #998a7a; margin-top: 2.5em;">
-    David Sarrat Gonz&aacute;lez &nbsp;&middot;&nbsp; Juan R Gonz&aacute;lez<br/>
-    <span style="color: #887868;">ISGlobal &middot; Barcelona</span>
+  <div class="flex flex-col items-center gap-3" style="margin-top: 1.2em; width: 420px;">
+    <div class="flex items-center gap-4 " style="width: 100%;">
+      <div class="logo-badge"><img src="/isglobal-logo.png" style="height: 34px;" /></div>
+      <div class="logo-badge"><img src="/brge-logo.png" style="height: 38px;" /></div>
+    </div>
+    <div class="flex items-center gap-4 " style="width: 100%;">
+      <div class="logo-badge"><img src="/datashield-logo.png" style="height: 32px;" /></div>
+      <div class="logo-badge"><img src="/flower-logo.png" style="height: 30px;" /></div>
+    </div>
   </div>
 </div>
 
@@ -80,20 +93,20 @@ DataSHIELD handles orchestration. **Flower** handles weight transport via gRPC. 
 ## How it works
 
 <div class="grid grid-cols-3 gap-6 mt-8">
-<div class="glass-card" style="text-align: center;">
-  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; background: linear-gradient(135deg, #FFD000, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1</div>
-  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #d4a574; letter-spacing: 0.05em;">Connect</div>
-  <div style="font-size: 0.8em; color: #9a8b7b; margin-top: 0.4em;">Researcher connects to N hospital nodes via DataSHIELD</div>
+<div class="step-card" style="text-align: center;">
+  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; color: #FFD000;">1</div>
+  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #f0e8e0; letter-spacing: 0.05em;">Connect</div>
+  <div style="font-size: 0.8em; color: #a89888; margin-top: 0.4em;">Researcher connects to N hospital nodes via DataSHIELD</div>
 </div>
-<div class="glass-card" style="text-align: center;">
-  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; background: linear-gradient(135deg, #FFD000, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2</div>
-  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #d4a574; letter-spacing: 0.05em;">Train</div>
-  <div style="font-size: 0.8em; color: #9a8b7b; margin-top: 0.4em;">Each node trains on local data, sends weight updates to SuperLink</div>
+<div class="step-card" style="text-align: center;">
+  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; color: #FFD000;">2</div>
+  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #f0e8e0; letter-spacing: 0.05em;">Train</div>
+  <div style="font-size: 0.8em; color: #a89888; margin-top: 0.4em;">Each node trains on local data, sends weight updates to SuperLink</div>
 </div>
-<div class="glass-card" style="text-align: center;">
-  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; background: linear-gradient(135deg, #FFD000, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3</div>
-  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #d4a574; letter-spacing: 0.05em;">Aggregate</div>
-  <div style="font-size: 0.8em; color: #9a8b7b; margin-top: 0.4em;">SuperLink averages updates, sends global model back. Repeat N rounds.</div>
+<div class="step-card" style="text-align: center;">
+  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; color: #FFD000;">3</div>
+  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #f0e8e0; letter-spacing: 0.05em;">Aggregate</div>
+  <div style="font-size: 0.8em; color: #a89888; margin-top: 0.4em;">SuperLink averages updates, sends global model back. Repeat N rounds.</div>
 </div>
 </div>
 
@@ -273,16 +286,32 @@ r3 <- ds.flower.run(flower, ds.flower.recipe(
 ---
 
 <div class="flex flex-col items-center justify-center h-full">
-  <div style="font-family: 'Roboto Mono', monospace; font-weight: 300; font-size: 3em; text-transform: uppercase; color: #f5ebe0;">
-    ds<span class="flower-title" style="font-weight: 400;">Flower</span>
+  <div style="font-family: 'Roboto Mono', monospace; font-weight: 700; font-size: 4em; color: #000000;">
+    ds<span class="flower-title">Flower</span>
   </div>
-  <div style="font-size: 1em; color: #a89888; margin-top: 0.5em;">
-    github.com/isglobal-brge/dsFlower
+  <div style="font-family: 'Roboto Mono', monospace; font-size: 0.9em; color: #000000; margin-top: 0.3em;">
+    <a href="https://github.com/isglobal-brge/dsFlower" style="color: #000000; text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.3);">github.com/isglobal-brge/dsFlower</a>
   </div>
-  <div style="font-size: 0.85em; color: #998a7a; margin-top: 2em;">
-    David Sarrat Gonz&aacute;lez &nbsp;&middot;&nbsp; Juan R Gonz&aacute;lez
+  <div class="flex items-center justify-center gap-6" style="margin-top: 2em;">
+    <div class="flex flex-col items-center gap-1">
+      <img src="/david-sarrat.jpg" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,0,0,0.15);" />
+      <span style="font-family: 'Roboto Mono', monospace; font-size: 0.8em; color: #333333;">David Sarrat Gonz&aacute;lez</span>
+      <span style="font-family: 'Roboto Mono', monospace; font-size: 0.7em; color: #555555;">david.sarrat@isglobal.org</span>
+    </div>
+    <div class="flex flex-col items-center gap-1">
+      <img src="/juan-gonzalez.jpg" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(0,0,0,0.15);" />
+      <span style="font-family: 'Roboto Mono', monospace; font-size: 0.8em; color: #333333;">Juan R Gonz&aacute;lez</span>
+      <span style="font-family: 'Roboto Mono', monospace; font-size: 0.7em; color: #555555;">juanr.gonzalez@isglobal.org</span>
+    </div>
   </div>
-  <div style="font-size: 0.75em; color: #887868; margin-top: 0.2em;">
-    ISGlobal &middot; Barcelona
+  <div class="flex flex-col items-center gap-3" style="margin-top: 1.4em; width: 420px;">
+    <div class="flex items-center gap-4 " style="width: 100%;">
+      <div class="logo-badge"><img src="/isglobal-logo.png" style="height: 34px;" /></div>
+      <div class="logo-badge"><img src="/brge-logo.png" style="height: 38px;" /></div>
+    </div>
+    <div class="flex items-center gap-4 " style="width: 100%;">
+      <div class="logo-badge"><img src="/datashield-logo.png" style="height: 32px;" /></div>
+      <div class="logo-badge"><img src="/flower-logo.png" style="height: 30px;" /></div>
+    </div>
   </div>
 </div>

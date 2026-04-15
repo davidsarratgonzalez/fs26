@@ -1,84 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
 
 /* ————————————————————————————————
-   Keyframes
+   Transparent slide layers
+   (lava lives in global-bottom.vue)
    ———————————————————————————————— */
 
-@keyframes bgShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.slidev-page {
+  background: transparent !important;
 }
-
-@keyframes orbDrift1 {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(30px, -40px); }
-  66% { transform: translate(-20px, 25px); }
-}
-
-@keyframes orbDrift2 {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(-35px, 30px); }
-  66% { transform: translate(25px, -35px); }
-}
-
-@keyframes shimmerText {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
-}
-
-/* ————————————————————————————————
-   Base layout & animated gradient
-   ———————————————————————————————— */
 
 .slidev-layout {
-  background: linear-gradient(-45deg, #0a0604, #150c07, #0e0705, #120a06) !important;
-  background-size: 400% 400% !important;
-  animation: bgShift 20s ease infinite !important;
-  color: #ede4db !important;
-  font-family: 'Inter', sans-serif !important;
+  background: transparent !important;
+  color: #c8b8a8 !important;
+  font-family: 'Montserrat', sans-serif !important;
   overflow: hidden !important;
   position: relative !important;
-  isolation: isolate;
 }
 
-/* Floating orb — warm orange, top-right */
-.slidev-layout::before {
-  content: '';
-  position: absolute;
-  top: -25%;
-  right: -15%;
-  width: 55%;
-  height: 75%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 136, 1, 0.22) 0%,
-    rgba(199, 75, 26, 0.10) 40%,
-    transparent 70%
-  );
-  filter: blur(40px);
-  animation: orbDrift1 18s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Floating orb — golden brown, bottom-left */
+/* Dark tint — lets lava glow through */
 .slidev-layout::after {
   content: '';
   position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 50%;
-  height: 65%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(224, 150, 0, 0.18) 0%,
-    rgba(139, 69, 19, 0.08) 40%,
-    transparent 70%
-  );
-  filter: blur(50px);
-  animation: orbDrift2 24s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
+  inset: 0;
+  background: rgba(10, 6, 4, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1;
+}
+
+/* Content above tint */
+.slidev-layout > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* ————————————————————————————————
@@ -92,43 +45,39 @@ h1, h2, h3 {
 h1 {
   font-weight: 600 !important;
   font-size: 1.8em !important;
-  background: linear-gradient(135deg, #FFD000 0%, #FF8801 50%, #E05A00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #f0e8e0 !important;
 }
 
 h2 {
   font-weight: 400 !important;
   font-size: 1.35em !important;
-  color: #f5ebe0 !important;
+  color: #f0e8e0 !important;
   letter-spacing: -0.01em;
 }
 
 h3 {
   font-weight: 500 !important;
   font-size: 0.95em !important;
-  color: #d4a574 !important;
+  color: #FFD000 !important;
 }
 
 p, li {
-  color: #b8a898;
+  color: #c8b8a8;
   line-height: 1.7;
 }
 
 li { margin-bottom: 0.3em; }
-strong { color: #FF8801 !important; }
+strong { color: #f0e8e0 !important; }
 
 a {
-  color: #FF8801 !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid rgba(255, 136, 1, 0.3);
-  transition: all 0.3s ease;
+  color: #FFD000 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #FFD000 !important;
-  border-bottom-color: rgba(255, 208, 0, 0.5);
+  color: #f0e8e0 !important;
 }
 
 /* ————————————————————————————————
@@ -137,26 +86,25 @@ a:hover {
 
 code {
   font-family: 'Roboto Mono', monospace !important;
-  background: rgba(255, 136, 1, 0.08) !important;
+  background: rgba(255, 208, 0, 0.08) !important;
   color: #FFD000 !important;
   padding: 0.15em 0.4em;
   border-radius: 4px;
   font-size: 0.85em;
-  border: 1px solid rgba(255, 136, 1, 0.12);
+  border: 1px solid rgba(255, 208, 0, 0.12);
 }
 
 pre code {
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
-  color: #c8b8a8 !important;
+  color: #d4c8bc !important;
 }
 
 .slidev-code {
-  background: rgba(10, 6, 4, 0.75) !important;
-  border: 1px solid rgba(255, 136, 1, 0.10) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
   border-radius: 10px !important;
-  backdrop-filter: blur(12px);
 }
 
 /* ————————————————————————————————
@@ -175,8 +123,8 @@ th {
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #FF8801 !important;
-  border-bottom: 2px solid rgba(255, 136, 1, 0.25) !important;
+  color: #FFD000 !important;
+  border-bottom: 2px solid rgba(255, 208, 0, 0.25) !important;
   text-align: left;
   padding: 0.5em 0.6em;
 }
@@ -184,34 +132,34 @@ th {
 td {
   border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
   padding: 0.4em 0.6em;
-  color: #b8a898;
+  color: #c8b8a8;
 }
 
 /* ————————————————————————————————
-   Utility classes
+   Utility
    ———————————————————————————————— */
 
 .flower-title {
-  background: linear-gradient(90deg, #FFD000, #FF8801, #E05A00, #FF8801, #FFD000);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmerText 5s linear infinite;
+  color: #FFD000;
 }
 
-.glass-card {
-  background: rgba(255, 136, 1, 0.04);
-  border: 1px solid rgba(255, 136, 1, 0.10);
+.logo-badge {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 12px;
-  backdrop-filter: blur(10px);
-  padding: 1.2em;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
-.glass-card:hover {
-  border-color: rgba(255, 136, 1, 0.20);
-  background: rgba(255, 136, 1, 0.06);
+
+.step-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 1.2em;
 }
 
 /* ————————————————————————————————
@@ -219,9 +167,96 @@ td {
    ———————————————————————————————— */
 
 blockquote {
-  border-left: 3px solid rgba(255, 136, 1, 0.4) !important;
+  border-left: 3px solid rgba(255, 208, 0, 0.3) !important;
   padding-left: 1em;
-  color: #b8a898 !important;
+  color: #c8b8a8 !important;
 }
 
-ul li::marker { color: #C74B1A; }
+ul li::marker { color: #FF8801; }
+
+/* ————————————————————————————————
+   Cover & closing — raw lava, no overlay
+   ———————————————————————————————— */
+
+/* No overlay on cover & closing */
+.slidev-page-1 .slidev-layout::after,
+.slidev-page-12 .slidev-layout::after {
+  opacity: 0;
+}
+
+/* Overlay fades in on first content slide */
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.slidev-page-2 .slidev-layout::after {
+  animation: overlayFadeIn 1s ease forwards;
+}
+
+/* Cover & closing text styles */
+.slidev-page-1 .slidev-layout,
+.slidev-page-1 .slidev-layout *,
+.slidev-page-12 .slidev-layout,
+.slidev-page-12 .slidev-layout * {
+  text-shadow: none;
+}
+
+.slidev-page-1 .flower-title,
+.slidev-page-12 .flower-title {
+  color: #000000 !important;
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.slidev-page-1 .slidev-layout a,
+.slidev-page-12 .slidev-layout a {
+  color: #333333 !important;
+}
+
+/* ————————————————————————————————
+   Fade transitions: cover↔slide2, slide11↔closing
+   Override slide-left to pure fade (no horizontal movement)
+   ———————————————————————————————— */
+
+/* Cover leaves with fade */
+.slidev-page-1[class*="-leave"] {
+  transform: none !important;
+}
+.slidev-page-1[class*="-leave-active"] {
+  transition: opacity 0.8s ease !important;
+}
+.slidev-page-1[class*="-leave-to"] {
+  opacity: 0 !important;
+}
+
+/* Slide 2 enters with fade (from cover) */
+.slidev-page-2[class*="-enter"] {
+  transform: none !important;
+}
+.slidev-page-2[class*="-enter-active"] {
+  transition: opacity 0.8s ease !important;
+}
+.slidev-page-2[class*="-enter-from"] {
+  opacity: 0 !important;
+}
+
+/* Slide 11 leaves with fade (to closing) */
+.slidev-page-11[class*="-leave"] {
+  transform: none !important;
+}
+.slidev-page-11[class*="-leave-active"] {
+  transition: opacity 0.8s ease !important;
+}
+.slidev-page-11[class*="-leave-to"] {
+  opacity: 0 !important;
+}
+
+/* Closing enters with fade */
+.slidev-page-12[class*="-enter"] {
+  transform: none !important;
+}
+.slidev-page-12[class*="-enter-active"] {
+  transition: opacity 0.8s ease !important;
+}
+.slidev-page-12[class*="-enter-from"] {
+  opacity: 0 !important;
+}
