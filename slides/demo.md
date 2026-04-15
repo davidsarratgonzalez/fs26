@@ -9,19 +9,18 @@ let debounce = null
 function resetDemo() {
   slideCtx.$clicks.value = 0
   nextTick(() => {
-    if (terminal.value) {
-      terminal.value.scrollTop = 0
-      // Force animation re-trigger: set none, then clear in next frame
-      terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
-        el.style.opacity = ''
-        el.style.animation = 'none'
-      })
-      requestAnimationFrame(() => {
-        terminal.value?.querySelectorAll('.exec-lines > div').forEach(el => {
+    nextTick(() => {
+      if (terminal.value) {
+        terminal.value.scrollTop = 0
+        // Force-reset animations via reflow trick
+        terminal.value.querySelectorAll('.exec-lines > div').forEach(el => {
+          el.style.animation = 'none'
+          void el.offsetHeight  // force reflow - resets animation state
           el.style.animation = ''
+          el.style.opacity = ''
         })
-      })
-    }
+      }
+    })
   })
 }
 
@@ -224,6 +223,11 @@ result$history
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 <span style="color:#78a9ff;">ds.flower.disconnect</span>(flower)
 <br/><span style="color:#78a9ff;">datashield.logout</span>(conns)
+</div>
+
+<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+<div style="animation-delay:0.2s">Cleaning up dsFlower handles...</div>
+<div style="animation-delay:0.6s">Logged out from BCN, MAD, LDN, BER, AMS</div>
 </div>
 
 </div>
