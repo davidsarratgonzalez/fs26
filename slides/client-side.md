@@ -56,9 +56,11 @@
     <text x="360" y="283" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">SHA-256 verified against all servers before execution</text>
   </g>
 
-  <!-- Hospital label (left side, below lines) -->
-  <text x="90" y="140" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">N Hospital Servers</text>
-  <text x="90" y="152" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">(dsFlower installed)</text>
+  <!-- Hospital label (appears with SuperLink, click 2) -->
+  <g v-click="2">
+    <text x="90" y="140" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">N Hospital Servers</text>
+    <text x="90" y="152" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">(dsFlower installed)</text>
+  </g>
 
 </svg>
 
