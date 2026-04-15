@@ -204,7 +204,7 @@ recipe <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds
 <div style="animation-delay:4.8s">&nbsp; LDN: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div style="animation-delay:5.6s">&nbsp; BER: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div style="animation-delay:6.2s">&nbsp; AMS: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:7.0s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers</div>
+<div style="animation-delay:7.0s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers <span style="color:#b0a8a0;">(SHA-256 template match)</span></div>
 <div style="animation-delay:8.5s"><span style="color:#88ccff;">[ROUND &nbsp;1/10]</span> 5 clients &mdash; loss: 0.6814</div>
 <div style="animation-delay:10.0s"><span style="color:#88ccff;">[ROUND &nbsp;2/10]</span> 5 clients &mdash; loss: 0.5923</div>
 <div style="animation-delay:11.3s"><span style="color:#88ccff;">[ROUND &nbsp;3/10]</span> 5 clients &mdash; loss: 0.5107</div>
