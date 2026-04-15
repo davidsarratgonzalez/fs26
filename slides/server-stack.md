@@ -69,31 +69,28 @@
 
 </svg>
 
-<!-- ===== CONNECTION LINES + ANALYST BOX (HTML, outside SVG) ===== -->
-<!-- These are positioned absolutely over the SVG to guarantee rendering with v-click -->
+<!-- CONNECTION LINES + ANALYST (HTML over SVG, positions from viewBox math) -->
+<!-- viewBox: 0 -15 720 355 → left% = svgX/720*100, top% = (svgY+15)/355*100 -->
 
-<div v-click="2" style="position:absolute; top:28%; right:3%; display:flex; align-items:center; gap:6px;">
-  <!-- Lines -->
-  <div style="display:flex; flex-direction:column; gap:10px; width:50px;">
-    <div style="position:relative;">
-      <div style="height:3px; background:#FFD000; border-radius:2px;"></div>
-      <span style="position:absolute; top:-14px; left:0; right:0; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.45em; color:#FFD000;">weights →</span>
-    </div>
-    <div style="position:relative;">
-      <div style="height:3px; background:#66ddaa; border-radius:2px;"></div>
-      <span style="position:absolute; bottom:-14px; left:0; right:0; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.45em; color:#66ddaa;">← model</span>
-    </div>
-  </div>
-  <!-- Analyst box -->
-  <div style="border:1px solid rgba(136,204,255,0.2); background:rgba(136,204,255,0.06); border-radius:8px; padding:8px 14px; text-align:center;">
-    <div style="font-family:'Roboto Mono',monospace; font-size:0.65em; color:#88ccff; font-weight:500;">Analyst</div>
-    <div style="font-family:'Roboto Mono',monospace; font-size:0.5em; color:#b0b8c0;">SuperLink</div>
-  </div>
+<!-- Yellow line: weights → (y=103 in SVG) -->
+<div v-click="2" style="position:absolute; left:74.3%; top:33.2%; width:9%; height:3px; background:#FFD000; border-radius:2px;"></div>
+<!-- Label for yellow line -->
+<div v-click="2" style="position:absolute; left:74.3%; top:30%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.42em; color:#FFD000;">weights →</div>
+
+<!-- Green line: ← model (y=118 in SVG) -->
+<div v-click="2" style="position:absolute; left:74.3%; top:37.5%; width:9%; height:3px; background:#66ddaa; border-radius:2px;"></div>
+<!-- Label for green line -->
+<div v-click="2" style="position:absolute; left:74.3%; top:39%; width:9%; text-align:center; font-family:'Roboto Mono',monospace; font-size:0.42em; color:#66ddaa;">← model</div>
+
+<!-- Analyst box (x=600, y=90, w=110, h=40 in SVG) -->
+<div v-click="2" style="position:absolute; left:83.3%; top:29.6%; width:15.3%; height:11.3%; border:1px solid rgba(136,204,255,0.2); background:rgba(136,204,255,0.06); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+  <div style="font-family:'Roboto Mono',monospace; font-size:0.65em; color:#88ccff; font-weight:500;">Analyst</div>
+  <div style="font-family:'Roboto Mono',monospace; font-size:0.45em; color:#b0b8c0;">SuperLink</div>
 </div>
 
-<!-- Protection border (appears on click 5) -->
-<div v-click="5" style="position:absolute; top:26%; right:2%; width:180px; height:60px; border:1px dashed rgba(102,221,170,0.3); border-radius:8px;">
-  <span style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); font-family:'Roboto Mono',monospace; font-size:0.42em; color:#66ddaa;">encrypted · disclosure-controlled</span>
+<!-- Protection border (click 5, covers lines + analyst area) -->
+<div v-click="5" style="position:absolute; left:73%; top:27%; width:27%; height:16%; border:1px dashed rgba(102,221,170,0.3); border-radius:8px;">
+  <span style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); white-space:nowrap; font-family:'Roboto Mono',monospace; font-size:0.38em; color:#66ddaa;">encrypted · disclosure-controlled</span>
 </div>
 
 </div>
