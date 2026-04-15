@@ -167,35 +167,6 @@ td {
    Animated flow lines
    ———————————————————————————————— */
 
-@keyframes dashDown {
-  to { stroke-dashoffset: -14; }
-}
-
-@keyframes dashUp {
-  to { stroke-dashoffset: 14; }
-}
-
-.flow-query {
-  stroke: #FFD000;
-  stroke-width: 2.5;
-  stroke-dasharray: 8 6;
-  fill: none;
-  animation: dashDown 0.8s linear infinite;
-}
-
-.flow-result {
-  stroke: #66ddaa;
-  stroke-width: 2;
-  stroke-dasharray: 8 6;
-  fill: none;
-  animation: dashDown 0.8s linear infinite;
-}
-
-.flow-arrow {
-  fill: none;
-  stroke-dasharray: none;
-  stroke-width: 1.5;
-}
 
 
 /* ————————————————————————————————

@@ -50,25 +50,33 @@
   <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Result Pooling</text>
   <text x="470" y="290" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">ds.glm() · ds.mean() · ds.var()</text>
 
-  <!-- Query paths (researcher → hospitals) -->
-  <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none"/>
-  <path id="qB" d="M335,242 L340,105" fill="none"/>
+  <!-- Queries flowing UP (yellow, SVG animate) -->
+  <path d="M335,242 C260,185 125,145 105,105" fill="none" stroke="#FFD000" stroke-width="2.5" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M335,242 L340,105" fill="none" stroke="#FFD000" stroke-width="2.5" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M335,242 C400,185 535,145 565,105" fill="none" stroke="#FFD000" stroke-width="2.5" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Results flowing DOWN (green, SVG animate) -->
+  <path d="M140,105 C170,155 305,195 365,242" fill="none" stroke="#66ddaa" stroke-width="2" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M360,105 L365,242" fill="none" stroke="#66ddaa" stroke-width="2" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M600,105 C570,155 435,195 365,242" fill="none" stroke="#66ddaa" stroke-width="2" stroke-dasharray="8 6">
+    <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="0.8s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Keep path IDs for label textPaths -->
+  <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none" stroke="none"/>
   <path id="qC" d="M335,242 C400,185 535,145 565,105" fill="none"/>
-
-  <!-- Result paths (hospitals → researcher) -->
-  <path id="rA" d="M140,105 C170,155 305,195 365,242" fill="none"/>
-  <path id="rB" d="M360,105 L365,242" fill="none"/>
-  <path id="rC" d="M600,105 C570,155 435,195 365,242" fill="none"/>
-
-  <!-- Queries flowing UP (yellow) -->
-  <use href="#qA" class="flow-query"/>
-  <use href="#qB" class="flow-query"/>
-  <use href="#qC" class="flow-query"/>
-
-  <!-- Results flowing DOWN (green) -->
-  <use href="#rA" class="flow-result"/>
-  <use href="#rB" class="flow-result"/>
-  <use href="#rC" class="flow-result"/>
+  <path id="rA" d="M140,105 C170,155 305,195 365,242" fill="none" stroke="none"/>
+  <path id="rC" d="M600,105 C570,155 435,195 365,242" fill="none" stroke="none"/>
 
   <!-- Label paths -->
   <path id="lblQL" d="M82,118 C108,160 245,200 320,258" fill="none" stroke="none"/>
