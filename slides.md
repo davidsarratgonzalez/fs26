@@ -4,23 +4,24 @@ title: dsFlower
 class: text-center
 drawings:
   persist: false
-transition: fade
+transition: slide-left
+colorSchema: dark
 css: unocss
 ---
 
 <div class="flex flex-col items-center justify-center h-full">
-  <div style="font-family: 'Roboto Mono', monospace; font-weight: 400; font-size: 4em; text-transform: uppercase;">
-    ds<span style="color: #E09600;">Flower</span>
+  <div style="font-family: 'Roboto Mono', monospace; font-weight: 300; font-size: 4em; text-transform: uppercase; color: #f5ebe0;">
+    ds<span class="flower-title" style="font-weight: 400;">Flower</span>
   </div>
-  <div style="font-size: 1.2em; color: #666; margin-top: 0.4em;">
+  <div style="font-size: 1.2em; color: #a89888; margin-top: 0.5em; letter-spacing: 0.02em;">
     Federated Learning for DataSHIELD
   </div>
-  <div style="font-size: 0.9em; color: #999; margin-top: 0.2em;">
+  <div style="font-size: 0.9em; color: #998a7a; margin-top: 0.3em;">
     Powered by <a href="https://flower.ai">flower.ai</a>
   </div>
-  <div style="font-family: 'Roboto Mono', monospace; font-size: 0.75em; color: #999; margin-top: 2.5em;">
+  <div style="font-family: 'Roboto Mono', monospace; font-size: 0.75em; color: #998a7a; margin-top: 2.5em;">
     David Sarrat Gonz&aacute;lez &nbsp;&middot;&nbsp; Juan R Gonz&aacute;lez<br/>
-    <span style="color: #bbb;">ISGlobal &middot; Barcelona</span>
+    <span style="color: #887868;">ISGlobal &middot; Barcelona</span>
   </div>
 </div>
 
@@ -79,20 +80,20 @@ DataSHIELD handles orchestration. **Flower** handles weight transport via gRPC. 
 ## How it works
 
 <div class="grid grid-cols-3 gap-6 mt-8">
-<div style="background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 1.2em; text-align: center;">
-  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; color: #E09600;">1</div>
-  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase;">Connect</div>
-  <div style="font-size: 0.8em; color: #888; margin-top: 0.4em;">Researcher connects to N hospital nodes via DataSHIELD</div>
+<div class="glass-card" style="text-align: center;">
+  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; background: linear-gradient(135deg, #FFD000, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1</div>
+  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #d4a574; letter-spacing: 0.05em;">Connect</div>
+  <div style="font-size: 0.8em; color: #9a8b7b; margin-top: 0.4em;">Researcher connects to N hospital nodes via DataSHIELD</div>
 </div>
-<div style="background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 1.2em; text-align: center;">
-  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; color: #E09600;">2</div>
-  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase;">Train</div>
-  <div style="font-size: 0.8em; color: #888; margin-top: 0.4em;">Each node trains on local data, sends weight updates to SuperLink</div>
+<div class="glass-card" style="text-align: center;">
+  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; background: linear-gradient(135deg, #FFD000, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2</div>
+  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #d4a574; letter-spacing: 0.05em;">Train</div>
+  <div style="font-size: 0.8em; color: #9a8b7b; margin-top: 0.4em;">Each node trains on local data, sends weight updates to SuperLink</div>
 </div>
-<div style="background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 1.2em; text-align: center;">
-  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; color: #E09600;">3</div>
-  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase;">Aggregate</div>
-  <div style="font-size: 0.8em; color: #888; margin-top: 0.4em;">SuperLink averages updates, sends global model back. Repeat N rounds.</div>
+<div class="glass-card" style="text-align: center;">
+  <div style="font-family: 'Roboto Mono'; font-size: 1.6em; background: linear-gradient(135deg, #FFD000, #FF8801); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3</div>
+  <div style="font-family: 'Roboto Mono'; font-size: 0.8em; text-transform: uppercase; color: #d4a574; letter-spacing: 0.05em;">Aggregate</div>
+  <div style="font-size: 0.8em; color: #9a8b7b; margin-top: 0.4em;">SuperLink averages updates, sends global model back. Repeat N rounds.</div>
 </div>
 </div>
 
@@ -190,7 +191,7 @@ Individual weight updates are encrypted. The researcher only sees the **aggregat
 </div>
 <div>
 
-### Layer 3 ��� DP-SGD
+### Layer 3 — DP-SGD
 Each node adds calibrated noise before sending. Formal guarantees via Opacus.
 
 ### Layer 4 — Disclosure control
@@ -272,16 +273,16 @@ r3 <- ds.flower.run(flower, ds.flower.recipe(
 ---
 
 <div class="flex flex-col items-center justify-center h-full">
-  <div style="font-family: 'Roboto Mono', monospace; font-weight: 400; font-size: 3em; text-transform: uppercase;">
-    ds<span style="color: #E09600;">Flower</span>
+  <div style="font-family: 'Roboto Mono', monospace; font-weight: 300; font-size: 3em; text-transform: uppercase; color: #f5ebe0;">
+    ds<span class="flower-title" style="font-weight: 400;">Flower</span>
   </div>
-  <div style="font-size: 1em; color: #666; margin-top: 0.5em;">
+  <div style="font-size: 1em; color: #a89888; margin-top: 0.5em;">
     github.com/isglobal-brge/dsFlower
   </div>
-  <div style="font-size: 0.85em; color: #999; margin-top: 2em;">
+  <div style="font-size: 0.85em; color: #998a7a; margin-top: 2em;">
     David Sarrat Gonz&aacute;lez &nbsp;&middot;&nbsp; Juan R Gonz&aacute;lez
   </div>
-  <div style="font-size: 0.75em; color: #bbb; margin-top: 0.2em;">
+  <div style="font-size: 0.75em; color: #887868; margin-top: 0.2em;">
     ISGlobal &middot; Barcelona
   </div>
 </div>
