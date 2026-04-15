@@ -48,10 +48,14 @@
     <text x="655" y="108" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3">Analyst</text>
     <text x="655" y="122" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">SuperLink</text>
 
-    <!-- Solid connection bars -->
-    <rect x="535" y="103" width="65" height="2.5" rx="1" fill="#FFD000"/>
+    <!-- Connection lines via foreignObject (HTML inside SVG) -->
+    <foreignObject x="535" y="96" width="65" height="36">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;flex-direction:column;justify-content:space-between;height:100%;padding:2px 0;">
+        <div style="height:3px;background:#FFD000;border-radius:2px;"></div>
+        <div style="height:3px;background:#66ddaa;border-radius:2px;"></div>
+      </div>
+    </foreignObject>
     <text x="567" y="101" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2">weights →</text>
-    <rect x="535" y="118" width="65" height="2.5" rx="1" fill="#66ddaa"/>
     <text x="567" y="129" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">← model</text>
   </g>
 
