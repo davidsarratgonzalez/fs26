@@ -1,6 +1,6 @@
 ## Privacy Model
 
-Four layers of protection against an untrusted researcher:
+Four layers of protection against the analyst:
 
 <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 1.2em;">
 
