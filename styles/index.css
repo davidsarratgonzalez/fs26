@@ -188,7 +188,7 @@ td {
   stroke-width: 2;
   stroke-dasharray: 8 6;
   fill: none;
-  animation: dashUp 0.8s linear infinite;
+  animation: dashDown 0.8s linear infinite;
 }
 
 
