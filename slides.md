@@ -107,6 +107,10 @@ Hospitals want to train ML models together **without sharing patient data**.
     <text y="26" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Researcher</text>
   </g>
 
+  <!-- Aggregation label (right of researcher) -->
+  <text x="470" y="280" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic" opacity="0.9">Federated Aggregation</text>
+  <text x="470" y="287" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">(FedAvg · FedProx · FedAdam)</text>
+
   <!-- Query paths (researcher → hospitals) — left side of each connection -->
   <path id="qA" d="M335,242 C260,185 125,145 105,105" fill="none"/>
   <path id="qB" d="M335,242 L340,105" fill="none"/>
