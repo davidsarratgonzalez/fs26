@@ -6,6 +6,7 @@ let debounce = null
 
 onMounted(() => {
   if (!terminal.value) return
+  terminal.value.scrollTop = 0
   const observer = new MutationObserver(() => {
     clearTimeout(debounce)
     debounce = setTimeout(() => {
