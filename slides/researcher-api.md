@@ -1,5 +1,7 @@
 ## Analyst API
 
+<div class="flex items-center" style="height: 75%; margin-top: -1em;">
+
 ```r
 library(dsFlowerClient)
 
@@ -19,3 +21,5 @@ recipe <- ds.flower.recipe(
 # Train across all hospitals
 result <- ds.flower.run(flower, recipe)
 ```
+
+</div>

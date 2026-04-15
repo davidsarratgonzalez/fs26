@@ -8,6 +8,8 @@
 | **FedAdagrad** | Server-side Adagrad | Sparse features |
 | **FedBN** | Excludes BatchNorm from aggregation | Different scanners per site |
 
+<div style="margin-top: 0.5em;">
+
 ```r
 recipe <- ds.flower.recipe(
   model    = ds.flower.model.pytorch_resnet18(),
@@ -15,3 +17,5 @@ recipe <- ds.flower.recipe(
   ...
 )
 ```
+
+</div>

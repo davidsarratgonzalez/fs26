@@ -116,7 +116,7 @@ onMounted(() => {
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">lactate</span>
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">gcs</span>
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">ventilation</span>
-    <span style="color:#b0a8a0;">+9 more</span>
+    <span style="color:#b0a8a0; display:inline-flex; align-items:center; height:22px;">+9 more</span>
   </div>
 </div>
 
