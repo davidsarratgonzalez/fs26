@@ -83,7 +83,7 @@
 <!-- Analyst box (x=600, y=90, w=110, h=40 in SVG) -->
 <div v-click="2" style="position:absolute; left:83.3%; top:29.6%; width:15.3%; height:11.3%; border:1px solid rgba(136,204,255,0.2); background:rgba(136,204,255,0.06); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
   <div style="font-family:'Roboto Mono',monospace; font-size:0.65em; color:#88ccff; font-weight:500;">SuperLink</div>
-  <div style="font-family:'Roboto Mono',monospace; font-size:0.45em; color:#b0b8c0;">Analyst</div>
+  <div style="font-family:'Roboto Mono',monospace; font-size:0.55em; color:#b0b8c0;">Analyst</div>
 </div>
 
 <!-- Protection border (click 5, covers lines + analyst area) -->
