@@ -119,11 +119,11 @@ builder <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;"
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>Logging into the collaborating servers</div>
-<div>&nbsp; Login site1: <span style="color:#66ddaa;">OK</span></div>
-<div>&nbsp; Login site2: <span style="color:#66ddaa;">OK</span></div>
-<div>&nbsp; Login site3: <span style="color:#66ddaa;">OK</span></div>
-<div>Assigned table CLINICAL.breast_cancer to symbol "D"</div>
+<div style="animation-delay:0.2s">Logging into the collaborating servers</div>
+<div style="animation-delay:0.8s">&nbsp; Login site1: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:1.5s">&nbsp; Login site2: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:2.0s">&nbsp; Login site3: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:2.2s">Assigned table CLINICAL.breast_cancer to symbol "D"</div>
 </div>
 
 <!-- Connect -->
@@ -133,11 +133,12 @@ flower <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.fl
 
 <!-- Describe -->
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>&nbsp; site1: dsFlower v0.1.0 <span style="color:#888;">(847 rows x 12 cols)</span></div>
-<div>&nbsp; site2: dsFlower v0.1.0 <span style="color:#888;">(623 rows x 12 cols)</span></div>
-<div>&nbsp; site3: dsFlower v0.1.0 <span style="color:#888;">(531 rows x 12 cols)</span></div>
-<div>&nbsp; Available templates: sklearn_logreg, pytorch_mlp, pytorch_resnet18, xgboost, <span style="color:#888;">...</span></div>
-<div>&nbsp; Trust profile: <span style="color:#66ddaa;">clinical_default</span> (SecAgg+ required)</div>
+<div style="animation-delay:0.3s">Initializing dsFlower federation on 3 servers...</div>
+<div style="animation-delay:0.9s">&nbsp; site1: dsFlower v0.1.0 <span style="color:#888;">(847 rows x 12 cols)</span></div>
+<div style="animation-delay:1.4s">&nbsp; site2: dsFlower v0.1.0 <span style="color:#888;">(623 rows x 12 cols)</span></div>
+<div style="animation-delay:1.8s">&nbsp; site3: dsFlower v0.1.0 <span style="color:#888;">(531 rows x 12 cols)</span></div>
+<div style="animation-delay:2.2s">&nbsp; Available templates: sklearn_logreg, pytorch_mlp, pytorch_resnet18, xgboost, <span style="color:#888;">...</span></div>
+<div style="animation-delay:2.4s">&nbsp; Trust profile: <span style="color:#66ddaa;">clinical_default</span> (SecAgg+ required)</div>
 </div>
 
 <!-- Run 1: LogReg -->
@@ -151,22 +152,22 @@ recipe_logreg <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>SuperLink started (PID: 26677)</div>
-<div>&nbsp; Fleet API (SuperNodes): 127.0.0.1:9092</div>
-<div>&nbsp; site1: SuperLink reachable at host.docker.internal:9092</div>
-<div>&nbsp; site2: SuperLink reachable at host.docker.internal:9092</div>
-<div>&nbsp; site3: SuperLink reachable at host.docker.internal:9092</div>
-<div>&nbsp; site1: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div>&nbsp; site2: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div>&nbsp; site3: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div>&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers</div>
-<div><span style="color:#88ccff;">[ROUND 1/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 2/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 3/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 4/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 5/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#66ddaa;">Model saved to ./dsflower_output/sklearn_logreg_FedAvg_5r_20260325_223015</span></div>
-<div>SuperLink stopped.</div>
+<div style="animation-delay:0.5s">SuperLink started (PID: 26677)</div>
+<div style="animation-delay:0.7s">&nbsp; Fleet API (SuperNodes): 127.0.0.1:9092</div>
+<div style="animation-delay:1.3s">&nbsp; site1: SuperLink reachable at host.docker.internal:9092</div>
+<div style="animation-delay:1.6s">&nbsp; site2: SuperLink reachable at host.docker.internal:9092</div>
+<div style="animation-delay:1.8s">&nbsp; site3: SuperLink reachable at host.docker.internal:9092</div>
+<div style="animation-delay:2.5s">&nbsp; site1: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:2.8s">&nbsp; site2: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:3.0s">&nbsp; site3: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:3.5s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers</div>
+<div style="animation-delay:4.2s"><span style="color:#88ccff;">[ROUND 1/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:5.0s"><span style="color:#88ccff;">[ROUND 2/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:5.7s"><span style="color:#88ccff;">[ROUND 3/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:6.3s"><span style="color:#88ccff;">[ROUND 4/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:6.9s"><span style="color:#88ccff;">[ROUND 5/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:7.2s"><span style="color:#66ddaa;">Model saved to ./dsflower_output/sklearn_logreg_FedAvg_5r_20260325_223015</span></div>
+<div style="animation-delay:7.4s">SuperLink stopped.</div>
 </div>
 
 <!-- Final loss 1 -->
@@ -174,8 +175,9 @@ recipe_logreg <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;
 <span style="color:#78a9ff;">cat</span>(<span style="color:#ffaacc;">"Final loss:"</span>, <span style="color:#78a9ff;">tail</span>(result_logreg$history$loss, <span style="color:#88ccff;">1</span>), <span style="color:#ffaacc;">"\n"</span>)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>Final loss: <span style="color:#FFD000;">0.6095233</span></div>
+<!-- Instant output (in-memory read) -->
+<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+Final loss: <span style="color:#FFD000;">0.6095233</span>
 </div>
 
 <!-- Run 2: MLP + FedProx -->
@@ -193,34 +195,34 @@ recipe_mlp <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">d
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>SuperLink started (PID: 29346)</div>
-<div>&nbsp; Fleet API (SuperNodes): 127.0.0.1:9092</div>
-<div>&nbsp; site1: SuperLink reachable at host.docker.internal:9092</div>
-<div>&nbsp; site2: SuperLink reachable at host.docker.internal:9092</div>
-<div>&nbsp; site3: SuperLink reachable at host.docker.internal:9092</div>
-<div>&nbsp; site1: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div>&nbsp; site2: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div>&nbsp; site3: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div>&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers</div>
-<div><span style="color:#88ccff;">[ROUND 1/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 2/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 3/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 4/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#88ccff;">[ROUND 5/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
-<div><span style="color:#66ddaa;">Model saved to ./dsflower_output/pytorch_mlp_FedProx_5r_20260325_223934</span></div>
-<div>SuperLink stopped.</div>
+<div style="animation-delay:0.4s">SuperLink started (PID: 29346)</div>
+<div style="animation-delay:0.6s">&nbsp; Fleet API (SuperNodes): 127.0.0.1:9092</div>
+<div style="animation-delay:1.0s">&nbsp; site1: SuperLink reachable at host.docker.internal:9092</div>
+<div style="animation-delay:1.2s">&nbsp; site2: SuperLink reachable at host.docker.internal:9092</div>
+<div style="animation-delay:1.4s">&nbsp; site3: SuperLink reachable at host.docker.internal:9092</div>
+<div style="animation-delay:1.9s">&nbsp; site1: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:2.1s">&nbsp; site2: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:2.3s">&nbsp; site3: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:2.8s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers</div>
+<div style="animation-delay:3.8s"><span style="color:#88ccff;">[ROUND 1/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:4.9s"><span style="color:#88ccff;">[ROUND 2/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:5.8s"><span style="color:#88ccff;">[ROUND 3/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:6.7s"><span style="color:#88ccff;">[ROUND 4/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:7.5s"><span style="color:#88ccff;">[ROUND 5/5]</span> sampled 3 clients &mdash; received 3 results, 0 failures</div>
+<div style="animation-delay:7.9s"><span style="color:#66ddaa;">Model saved to ./dsflower_output/pytorch_mlp_FedProx_5r_20260325_223934</span></div>
+<div style="animation-delay:8.1s">SuperLink stopped.</div>
 </div>
 
-<!-- Final loss 2 -->
+<!-- Final loss 2 (instant, in-memory) -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 <span style="color:#78a9ff;">cat</span>(<span style="color:#ffaacc;">"Final loss:"</span>, <span style="color:#78a9ff;">tail</span>(result_mlp$history$loss, <span style="color:#88ccff;">1</span>), <span style="color:#ffaacc;">"\n"</span>)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>Final loss: <span style="color:#FFD000;">0.6473228</span></div>
+<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+Final loss: <span style="color:#FFD000;">0.6473228</span>
 </div>
 
-<!-- Comparison -->
+<!-- Comparison (instant) -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 results <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">data.frame</span>(
 <br/>&nbsp;&nbsp;model &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span style="color:#78a9ff;">c</span>(<span style="color:#ffaacc;">"sklearn_logreg"</span>, <span style="color:#ffaacc;">"pytorch_mlp"</span>),
@@ -231,22 +233,22 @@ results <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">data
 <br/><span style="color:#78a9ff;">print</span>(results)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model final_loss</div>
-<div>&nbsp; 1 sklearn_logreg &nbsp;<span style="color:#FFD000;">0.6095233</span></div>
-<div>&nbsp; 2 &nbsp;&nbsp;&nbsp;pytorch_mlp &nbsp;<span style="color:#FFD000;">0.6473228</span></div>
+<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; model final_loss<br/>
+&nbsp; 1 sklearn_logreg &nbsp;<span style="color:#FFD000;">0.6095233</span><br/>
+&nbsp; 2 &nbsp;&nbsp;&nbsp;pytorch_mlp &nbsp;<span style="color:#FFD000;">0.6473228</span>
 </div>
 
-<!-- Predict -->
+<!-- Predict (instant) -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 preds <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.predict</span>(result_logreg, newdata = test_data)
 <br/><span style="color:#78a9ff;">table</span>(preds, test_data$malignant)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;1</div>
-<div>&nbsp; benign &nbsp;48 &nbsp;&nbsp;3</div>
-<div>&nbsp; malign &nbsp;&nbsp;5 &nbsp;31</div>
+<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0 &nbsp;&nbsp;1<br/>
+&nbsp; benign &nbsp;48 &nbsp;&nbsp;3<br/>
+&nbsp; malign &nbsp;&nbsp;5 &nbsp;31
 </div>
 
 <!-- Disconnect -->
