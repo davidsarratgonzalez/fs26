@@ -204,7 +204,7 @@ recipe <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds
 <div style="animation-delay:4.8s">&nbsp; LDN: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div style="animation-delay:5.6s">&nbsp; BER: SuperNode <span style="color:#66ddaa;">connected</span></div>
 <div style="animation-delay:6.2s">&nbsp; AMS: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:7.0s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers <span style="color:#b0a8a0;">(SHA-256 template match)</span></div>
+<div style="animation-delay:7.0s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers <span style="color:#b0a8a0;">(app hash matches server templates)</span></div>
 <div style="animation-delay:8.5s"><span style="color:#88ccff;">[ROUND &nbsp;1/10]</span> 5 clients &mdash; loss: 0.6814</div>
 <div style="animation-delay:10.0s"><span style="color:#88ccff;">[ROUND &nbsp;2/10]</span> 5 clients &mdash; loss: 0.5923</div>
 <div style="animation-delay:11.3s"><span style="color:#88ccff;">[ROUND &nbsp;3/10]</span> 5 clients &mdash; loss: 0.5107</div>
@@ -225,11 +225,11 @@ result$history
 </div>
 
 <div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
-&nbsp; round &nbsp;&nbsp;loss &nbsp;&nbsp;&nbsp;n_clients<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp; 0.6814 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp; 0.5923 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
-&nbsp;&nbsp;&nbsp; ... &nbsp;&nbsp; ... &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
-&nbsp;&nbsp;&nbsp; 10 &nbsp; <span style="color:#FFD000;">0.3148</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5
+&nbsp; round &nbsp;&nbsp;&nbsp;&nbsp;loss &nbsp;&nbsp;&nbsp;n_clients<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp; 0.6814 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp; 0.5923 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
+&nbsp;&nbsp;&nbsp; ... &nbsp;&nbsp;&nbsp;&nbsp; ... &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp; <span style="color:#FFD000;">0.3148</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5
 </div>
 
 <!-- Predict on a real patient -->
