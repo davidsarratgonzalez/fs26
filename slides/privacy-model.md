@@ -1,24 +1,39 @@
-## Privacy model
+## Privacy Model
 
 Four layers of protection against an untrusted researcher:
 
-<div class="grid grid-cols-2 gap-6 mt-4">
-<div>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 1.2em;">
 
-### Layer 1:DataSHIELD
-Raw data stays on the server. The researcher only calls approved methods.
-
-### Layer 2:SecAgg+
-Individual weight updates are encrypted. The researcher only sees the **aggregate**.
-
+<div v-click style="background: rgba(102,221,170,0.06); border: 1px solid rgba(102,221,170,0.15); border-radius: 10px; padding: 0.7em 1.2em;">
+  <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+    <span style="font-family: 'Roboto Mono', monospace; color: #66ddaa; font-weight: 600; font-size: 1.1em;">Layer 1</span>
+    <span style="color: #e0d8d0; font-weight: 500;">DataSHIELD</span>
+  </div>
+  <div style="color: #b8b0a8; font-size: 0.9em;">Raw data stays on the server. The researcher only calls approved methods.</div>
 </div>
-<div>
 
-### Layer 3:DP-SGD
-Each node adds calibrated noise before sending. Formal guarantees via Opacus.
-
-### Layer 4:Disclosure control
-Bucketed counts, suppressed per-node metrics, minimum sample sizes.
-
+<div v-click style="background: rgba(102,221,170,0.06); border: 1px solid rgba(102,221,170,0.15); border-radius: 10px; padding: 0.7em 1.2em;">
+  <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+    <span style="font-family: 'Roboto Mono', monospace; color: #66ddaa; font-weight: 600; font-size: 1.1em;">Layer 2</span>
+    <span style="color: #e0d8d0; font-weight: 500;">SecAgg+</span>
+  </div>
+  <div style="color: #b8b0a8; font-size: 0.9em;">Individual weight updates are encrypted. The researcher only sees the <strong>aggregate</strong>.</div>
 </div>
+
+<div v-click style="background: rgba(102,221,170,0.06); border: 1px solid rgba(102,221,170,0.15); border-radius: 10px; padding: 0.7em 1.2em;">
+  <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+    <span style="font-family: 'Roboto Mono', monospace; color: #66ddaa; font-weight: 600; font-size: 1.1em;">Layer 3</span>
+    <span style="color: #e0d8d0; font-weight: 500;">DP-SGD</span>
+  </div>
+  <div style="color: #b8b0a8; font-size: 0.9em;">Each node adds calibrated noise before sending. Formal guarantees via Opacus.</div>
+</div>
+
+<div v-click style="background: rgba(102,221,170,0.06); border: 1px solid rgba(102,221,170,0.15); border-radius: 10px; padding: 0.7em 1.2em;">
+  <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px;">
+    <span style="font-family: 'Roboto Mono', monospace; color: #66ddaa; font-weight: 600; font-size: 1.1em;">Layer 4</span>
+    <span style="color: #e0d8d0; font-weight: 500;">Disclosure control</span>
+  </div>
+  <div style="color: #b8b0a8; font-size: 0.9em;">Bucketed counts, suppressed per-node metrics, minimum sample sizes.</div>
+</div>
+
 </div>
