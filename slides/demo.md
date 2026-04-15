@@ -54,7 +54,7 @@ onMounted(() => {
 ## Live Demo
 
 <div ref="terminal" style="overflow-y: auto; scroll-behavior: smooth; height: 430px; margin-top: 0.3em; scrollbar-width: none;">
-<div style="font-size: 0.55em; line-height: 1.4; font-family: 'Roboto Mono', monospace;">
+<div style="font-size: 0.62em; line-height: 1.4; font-family: 'Roboto Mono', monospace;">
 
 <!-- Experiment setup -->
 <div style="background: rgba(136,204,255,0.04); border: 1px solid rgba(136,204,255,0.12); border-radius: 10px; padding: 0.8em 1.2em; margin-bottom: 10px;">
@@ -95,12 +95,12 @@ onMounted(() => {
   <div style="flex: 1;">
     <div style="color: #ffb366; font-weight: 500; margin-bottom: 3px;">Dataset</div>
     <div style="color: #e0d8d0;">ICU.admissions</div>
-    <div style="color: #999; font-size: 0.9em;">11,131 patients total (data never pooled)</div>
+    <div style="color: #b8b0a8; font-size: 0.9em;">11,131 patients total (data never pooled)</div>
   </div>
   <div style="flex: 1;">
     <div style="color: #ffb366; font-weight: 500; margin-bottom: 3px;">Target</div>
-    <div><span style="background:rgba(102,221,170,0.12); border:1px solid rgba(102,221,170,0.25); border-radius:4px; padding:2px 8px; color:#66ddaa;">icu_mortality</span></div>
-    <div style="color: #999; font-size: 0.9em;">binary, 14.2% prevalence</div>
+    <div style="margin-bottom: 4px;"><span style="background:rgba(102,221,170,0.12); border:1px solid rgba(102,221,170,0.25); border-radius:4px; padding:3px 10px; color:#66ddaa;">icu_mortality</span></div>
+    <div style="color: #c0b8b0; font-size: 0.9em;">binary &middot; 14.2% prevalence</div>
   </div>
 </div>
 
@@ -116,7 +116,7 @@ onMounted(() => {
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">lactate</span>
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">gcs</span>
     <span style="background:rgba(255,208,0,0.10); border:1px solid rgba(255,208,0,0.18); border-radius:4px; padding:2px 7px; color:#FFD000;">ventilation</span>
-    <span style="color:#888;">+9 more</span>
+    <span style="color:#b0a8a0;">+9 more</span>
   </div>
 </div>
 
@@ -145,16 +145,16 @@ onMounted(() => {
 
 <!-- Login -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
-builder <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">newDSLoginBuilder</span>()
+builder <span style="color:#b0a8a0;">&lt;-</span> DSI::<span style="color:#78a9ff;">newDSLoginBuilder</span>()
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BCN"</span>, url = <span style="color:#ffaacc;">"https://datashield.clinic.cat:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>) <span style="color:#666;"># + credentials</span>
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"MAD"</span>, url = <span style="color:#ffaacc;">"https://datashield.lapaz.salud.es:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"LDN"</span>, url = <span style="color:#ffaacc;">"https://datashield.kcl.nhs.uk:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"BER"</span>, url = <span style="color:#ffaacc;">"https://datashield.charite.de:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
 <br/>builder$<span style="color:#78a9ff;">append</span>(server = <span style="color:#ffaacc;">"AMS"</span>, url = <span style="color:#ffaacc;">"https://datashield.amsterdamumc.nl:8443"</span>, table = <span style="color:#ffaacc;">"ICU.admissions"</span>, <span style="color:#666;">...</span>)
-<br/>conns <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;">datashield.login</span>(logins = builder$<span style="color:#78a9ff;">build</span>(), assign = <span style="color:#88ccff;">TRUE</span>, symbol = <span style="color:#ffaacc;">"D"</span>)
+<br/>conns <span style="color:#b0a8a0;">&lt;-</span> DSI::<span style="color:#78a9ff;">datashield.login</span>(logins = builder$<span style="color:#78a9ff;">build</span>(), assign = <span style="color:#88ccff;">TRUE</span>, symbol = <span style="color:#ffaacc;">"D"</span>)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
 <div style="animation-delay:0.2s">Logging into the collaborating servers</div>
 <div style="animation-delay:1.2s">&nbsp; Login BCN: <span style="color:#66ddaa;">OK</span></div>
 <div style="animation-delay:2.5s">&nbsp; Login MAD: <span style="color:#66ddaa;">OK</span></div>
@@ -166,23 +166,23 @@ builder <span style="color:#888;">&lt;-</span> DSI::<span style="color:#78a9ff;"
 
 <!-- Connect -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
-flower <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.connect</span>(conns, symbol = <span style="color:#ffaacc;">"D"</span>)
+flower <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.connect</span>(conns, symbol = <span style="color:#ffaacc;">"D"</span>)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
 <div style="animation-delay:0.3s">Initializing dsFlower federation on 5 servers...</div>
-<div style="animation-delay:0.8s">&nbsp; BCN: dsFlower v0.1.0 <span style="color:#888;">(2,341 rows x 17 cols)</span></div>
-<div style="animation-delay:1.2s">&nbsp; MAD: dsFlower v0.1.0 <span style="color:#888;">(1,876 rows x 17 cols)</span></div>
-<div style="animation-delay:1.7s">&nbsp; LDN: dsFlower v0.1.0 <span style="color:#888;">(3,102 rows x 17 cols)</span></div>
-<div style="animation-delay:2.1s">&nbsp; BER: dsFlower v0.1.0 <span style="color:#888;">(1,245 rows x 17 cols)</span></div>
-<div style="animation-delay:2.4s">&nbsp; AMS: dsFlower v0.1.0 <span style="color:#888;">(2,567 rows x 17 cols)</span></div>
+<div style="animation-delay:0.8s">&nbsp; BCN: dsFlower v0.1.0 <span style="color:#b0a8a0;">(2,341 rows x 17 cols)</span></div>
+<div style="animation-delay:1.2s">&nbsp; MAD: dsFlower v0.1.0 <span style="color:#b0a8a0;">(1,876 rows x 17 cols)</span></div>
+<div style="animation-delay:1.7s">&nbsp; LDN: dsFlower v0.1.0 <span style="color:#b0a8a0;">(3,102 rows x 17 cols)</span></div>
+<div style="animation-delay:2.1s">&nbsp; BER: dsFlower v0.1.0 <span style="color:#b0a8a0;">(1,245 rows x 17 cols)</span></div>
+<div style="animation-delay:2.4s">&nbsp; AMS: dsFlower v0.1.0 <span style="color:#b0a8a0;">(2,567 rows x 17 cols)</span></div>
 <div style="animation-delay:2.8s">&nbsp; Total: <span style="color:#e0d8d0;">11,131 patients</span> across 5 sites (data never pooled)</div>
 <div style="animation-delay:3.1s">&nbsp; Trust profile: <span style="color:#66ddaa;">clinical_default</span> (SecAgg+ required)</div>
 </div>
 
 <!-- Recipe -->
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
-recipe <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.recipe</span>(
+recipe <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.recipe</span>(
 <br/>&nbsp;&nbsp;model &nbsp;&nbsp;&nbsp;&nbsp;= ds.flower.model.<span style="color:#FFD000;">pytorch_mlp</span>(
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hidden_layers = <span style="color:#ffaacc;">"128,64,32"</span>,
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;learning_rate = <span style="color:#88ccff;">0.001</span>,
@@ -192,11 +192,11 @@ recipe <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.fl
 <br/>&nbsp;&nbsp;target_column = <span style="color:#ffaacc;">"icu_mortality"</span>,
 <br/>&nbsp;&nbsp;num_rounds &nbsp;&nbsp;&nbsp;= <span style="color:#88ccff;">10L</span>
 <br/>)
-<br/>result <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.run</span>(flower, recipe)
+<br/>result <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds.flower.run</span>(flower, recipe)
 </div>
 
 <!-- Run output -->
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
 <div style="animation-delay:0.8s">SuperLink started (PID: 41823, TLS)</div>
 <div style="animation-delay:1.1s">&nbsp; Fleet API: 127.0.0.1:9092</div>
 <div style="animation-delay:2.5s">&nbsp; BCN: SuperNode <span style="color:#66ddaa;">connected</span></div>
@@ -224,7 +224,7 @@ recipe <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">ds.fl
 result$history
 </div>
 
-<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
 &nbsp; round &nbsp;&nbsp;loss &nbsp;&nbsp;&nbsp;n_clients<br/>
 &nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp; 0.6814 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
 &nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp; 0.5923 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
@@ -236,15 +236,15 @@ result$history
 <div v-click style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; margin-top: 4px; color: #c8b8a8;">
 <span style="color:#666;"># Predict on a new ICU admission</span>
 <br/><span style="color:#666;"># 72yo, tachycardic, hypotensive, elevated lactate, on ventilator</span>
-<br/>patient <span style="color:#888;">&lt;-</span> <span style="color:#78a9ff;">data.frame</span>(
+<br/>patient <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">data.frame</span>(
 <br/>&nbsp;&nbsp;age = <span style="color:#88ccff;">72</span>, heart_rate = <span style="color:#88ccff;">112</span>, systolic_bp = <span style="color:#88ccff;">85</span>,
 <br/>&nbsp;&nbsp;spo2 = <span style="color:#88ccff;">89</span>, creatinine = <span style="color:#88ccff;">2.4</span>, lactate = <span style="color:#88ccff;">4.1</span>,
 <br/>&nbsp;&nbsp;gcs = <span style="color:#88ccff;">10</span>, ventilation = <span style="color:#88ccff;">1</span>, <span style="color:#666;">...</span>)
 <br/><span style="color:#78a9ff;">ds.flower.predict</span>(result, newdata = patient, type = <span style="color:#ffaacc;">"prob"</span>)
 </div>
 
-<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
-[1] <span style="color:#FFD000;">0.7321</span> <span style="color:#888;">&nbsp;&nbsp;# 73% ICU mortality risk</span>
+<div v-click style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
+[1] <span style="color:#FFD000;">0.7321</span> <span style="color:#b0a8a0;">&nbsp;&nbsp;# 73% ICU mortality risk</span>
 </div>
 
 <!-- Disconnect -->
@@ -253,7 +253,7 @@ result$history
 <br/><span style="color:#78a9ff;">datashield.logout</span>(conns)
 </div>
 
-<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #999;">
+<div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
 <div style="animation-delay:0.2s">Cleaning up dsFlower handles...</div>
 <div style="animation-delay:0.6s">Logged out from BCN, MAD, LDN, BER, AMS</div>
 </div>
