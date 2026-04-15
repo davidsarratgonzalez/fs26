@@ -176,7 +176,7 @@ td {
 }
 
 .flow-query {
-  stroke: #1a3fff;
+  stroke: #FFD000;
   stroke-width: 2.5;
   stroke-dasharray: 8 6;
   fill: none;
@@ -184,10 +184,9 @@ td {
 }
 
 .flow-result {
-  stroke: #1a3fff;
-  stroke-width: 2.5;
+  stroke: #66ddaa;
+  stroke-width: 2;
   stroke-dasharray: 8 6;
-  stroke-opacity: 0.35;
   fill: none;
   animation: dashUp 0.8s linear infinite;
 }
