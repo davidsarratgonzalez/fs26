@@ -22,8 +22,8 @@
   <text x="115" y="174" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">dsMicrobiome</text>
   <text x="115" y="190" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">...</text>
   <text x="115" y="215" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Non-disclosive results</text>
-  <text x="115" y="230" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Server-enforced</text>
-  <text x="115" y="245" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Sandboxed execution</text>
+  <text x="115" y="230" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Sandboxed execution</text>
+  <text x="115" y="245" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">...</text>
   <text x="115" y="260" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">...</text>
 
   <!-- Patient Data bar (bottom) -->
@@ -40,41 +40,41 @@
 
   <!-- ===== CLICK 2: SuperNode + connection bars ===== -->
   <g v-click>
-    <rect x="200" y="88" width="335" height="38" rx="8" fill="rgba(136,204,255,0.08)" stroke="rgba(136,204,255,0.20)" stroke-width="0.8"/>
-    <text x="367" y="106" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-weight="500">Flower SuperNode</text>
-    <text x="367" y="120" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">gRPC client, spawned on demand</text>
+    <rect x="200" y="90" width="335" height="40" rx="8" fill="rgba(136,204,255,0.08)" stroke="rgba(136,204,255,0.20)" stroke-width="0.8"/>
+    <text x="367" y="108" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-weight="500">Flower SuperNode</text>
+    <text x="367" y="123" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">gRPC client, spawned on demand</text>
 
     <!-- Analyst box -->
-    <rect x="600" y="88" width="110" height="38" rx="8" fill="rgba(136,204,255,0.06)" stroke="rgba(136,204,255,0.15)" stroke-width="0.8"/>
-    <text x="655" y="106" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3">Analyst</text>
-    <text x="655" y="119" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">SuperLink</text>
+    <rect x="600" y="90" width="110" height="40" rx="8" fill="rgba(136,204,255,0.06)" stroke="rgba(136,204,255,0.15)" stroke-width="0.8"/>
+    <text x="655" y="108" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3">Analyst</text>
+    <text x="655" y="122" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">SuperLink</text>
 
-    <!-- Solid connection bars (rect guaranteed to render) -->
-    <rect x="535" y="101" width="65" height="2.5" rx="1" fill="#FFD000"/>
-    <text x="567" y="99" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2">weights →</text>
-    <rect x="535" y="115" width="65" height="2.5" rx="1" fill="#66ddaa"/>
-    <text x="567" y="127" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">← model</text>
+    <!-- Solid connection bars -->
+    <rect x="535" y="103" width="65" height="2.5" rx="1" fill="#FFD000"/>
+    <text x="567" y="101" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2">weights →</text>
+    <rect x="535" y="118" width="65" height="2.5" rx="1" fill="#66ddaa"/>
+    <text x="567" y="129" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">← model</text>
   </g>
 
   <!-- ===== CLICK 3: Python environments ===== -->
   <g v-click>
-    <rect x="200" y="134" width="335" height="40" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-    <text x="367" y="150" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Python environments (via uv)</text>
-    <text x="367" y="166" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.8">scikit-learn · PyTorch + Opacus · XGBoost</text>
+    <rect x="200" y="140" width="335" height="42" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    <text x="367" y="157" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Python environments (via uv)</text>
+    <text x="367" y="174" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.8">scikit-learn · PyTorch + Opacus · XGBoost</text>
   </g>
 
   <!-- ===== CLICK 4: Templates ===== -->
   <g v-click>
-    <rect x="200" y="180" width="335" height="50" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-    <text x="367" y="197" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">18 Pre-approved Templates (Flower Apps)</text>
-    <text x="367" y="211" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">Common biomedical research operations</text>
-    <text x="367" y="224" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">LogReg · MLP · ResNet-18 · U-Net · LSTM · Cox PH · XGBoost ...</text>
+    <rect x="200" y="190" width="335" height="52" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+    <text x="367" y="208" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">18 Pre-approved Templates (Flower Apps)</text>
+    <text x="367" y="222" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">Common biomedical research operations</text>
+    <text x="367" y="235" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">LogReg · MLP · ResNet-18 · U-Net · LSTM · Cox PH · XGBoost ...</text>
   </g>
 
   <!-- ===== CLICK 5: Security ===== -->
   <g v-click>
-    <rect x="200" y="236" width="335" height="26" rx="6" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
-    <text x="367" y="253" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Trust profiles · SecAgg+ · DP-SGD · Disclosure control</text>
+    <rect x="200" y="248" width="335" height="18" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
+    <text x="367" y="260" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Trust profiles · SecAgg+ · DP-SGD · Disclosure control</text>
 
     <!-- Protection border around connection -->
     <rect x="530" y="94" width="185" height="38" rx="6" fill="none" stroke="rgba(102,221,170,0.30)" stroke-width="1" stroke-dasharray="3 2"/>
