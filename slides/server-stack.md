@@ -58,9 +58,8 @@
     <text x="625" y="120" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.5">Analyst SuperLink interaction</text>
   </g>
 
-  <!-- ===== CLICK 3: Python envs + Templates ===== -->
+  <!-- ===== CLICK 3: Python environments ===== -->
   <g v-click>
-    <!-- Python envs -->
     <rect x="200" y="122" width="335" height="50" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
     <text x="367" y="136" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Python environments (via uv)</text>
 
@@ -72,8 +71,10 @@
 
     <rect x="425" y="142" width="95" height="22" rx="4" fill="rgba(255,208,0,0.06)" stroke="rgba(255,208,0,0.10)" stroke-width="0.5"/>
     <text x="472" y="155" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.5">XGBoost</text>
+  </g>
 
-    <!-- Templates -->
+  <!-- ===== CLICK 4: Pre-approved Templates ===== -->
+  <g v-click>
     <rect x="200" y="180" width="335" height="38" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
     <text x="367" y="195" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">18 Pre-approved Templates (Flower Apps)</text>
     <text x="367" y="208" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">Common biomedical research: LogReg · MLP · ResNet-18 · Cox PH · XGBoost ...</text>
