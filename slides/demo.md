@@ -76,10 +76,19 @@ onMounted(() => {
   </div>
 </div>
 
-<div style="color: #b0b8c0; line-height: 1.5; margin-bottom: 6px;">
+<div style="color: #b0b8c0; line-height: 1.6; margin-bottom: 6px;">
 <span style="color:#ffb366;">Table:</span> CLINICAL.breast_cancer &nbsp;&nbsp;
-<span style="color:#ffb366;">Target:</span> malignant <span style="color:#888;">(binary)</span><br/>
-<span style="color:#ffb366;">Features:</span> <span style="color:#999;">radius, texture, perimeter, area, smoothness, compactness, concavity, symmetry...</span>
+<span style="color:#ffb366;">Target:</span> <span style="background:rgba(102,221,170,0.1); border:1px solid rgba(102,221,170,0.2); border-radius:3px; padding:1px 6px; color:#66ddaa;">malignant</span> <span style="color:#888;">(binary)</span><br/>
+<span style="color:#ffb366;">Features:</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">radius</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">texture</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">perimeter</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">area</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">smoothness</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">compactness</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">concavity</span>
+<span style="background:rgba(255,208,0,0.08); border:1px solid rgba(255,208,0,0.12); border-radius:3px; padding:1px 5px; color:#FFD000; margin:1px; display:inline-block;">symmetry</span>
+<span style="color:#888; margin-left:2px;">+4 more</span>
 </div>
 
 <div style="color: #b0b8c0; line-height: 1.5;">
