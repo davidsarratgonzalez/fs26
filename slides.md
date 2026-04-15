@@ -87,7 +87,7 @@ Hospitals want to train ML models together **without sharing patient data**.
     <line x1="0" y1="-20" x2="0" y2="-12" stroke="#e0d8d0" stroke-width="1.3"/>
     <line x1="-4" y1="-16" x2="4" y2="-16" stroke="#e0d8d0" stroke-width="1.3"/>
     <text y="14" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital A</text>
-    <text y="24" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.8" opacity="0.7">local data · local compute</text>
+    <text y="28" text-anchor="middle" fill="#ffb366" font-family="Roboto Mono" font-size="2.8">own data</text>
   </g>
 
   <g transform="translate(350,65)">
@@ -96,7 +96,7 @@ Hospitals want to train ML models together **without sharing patient data**.
     <line x1="0" y1="-20" x2="0" y2="-12" stroke="#e0d8d0" stroke-width="1.3"/>
     <line x1="-4" y1="-16" x2="4" y2="-16" stroke="#e0d8d0" stroke-width="1.3"/>
     <text y="14" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital B</text>
-    <text y="24" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.8" opacity="0.7">local data · local compute</text>
+    <text y="28" text-anchor="middle" fill="#ffb366" font-family="Roboto Mono" font-size="2.8">own data</text>
   </g>
 
   <g transform="translate(580,65)">
@@ -105,8 +105,12 @@ Hospitals want to train ML models together **without sharing patient data**.
     <line x1="0" y1="-20" x2="0" y2="-12" stroke="#e0d8d0" stroke-width="1.3"/>
     <line x1="-4" y1="-16" x2="4" y2="-16" stroke="#e0d8d0" stroke-width="1.3"/>
     <text y="14" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4.5" font-weight="500">Hospital C</text>
-    <text y="24" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.8" opacity="0.7">local data · local compute</text>
+    <text y="28" text-anchor="middle" fill="#ffb366" font-family="Roboto Mono" font-size="2.8">own data</text>
   </g>
+
+  <!-- Server-side annotation (right of Hospital C) -->
+  <text x="670" y="58" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-style="italic">Local Compute</text>
+  <text x="670" y="70" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">Disclosure controls applied</text>
 
   <!-- Researcher node (bottom center) -->
   <g transform="translate(350,280)">
