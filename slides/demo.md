@@ -2,20 +2,27 @@
 import { ref, onMounted } from 'vue'
 
 const terminal = ref(null)
+let debounce = null
 
 onMounted(() => {
   if (!terminal.value) return
   const observer = new MutationObserver(() => {
-    setTimeout(() => {
-      terminal.value?.scrollTo({
-        top: terminal.value.scrollHeight,
-        behavior: 'smooth'
-      })
-    }, 50)
+    clearTimeout(debounce)
+    debounce = setTimeout(() => {
+      if (!terminal.value) return
+      const inner = terminal.value.firstElementChild
+      if (!inner) return
+      const visible = Array.from(inner.children).filter(
+        el => !el.classList.contains('slidev-vclick-hidden')
+      )
+      const last = visible[visible.length - 1]
+      if (last) {
+        last.scrollIntoView({ behavior: 'smooth', block: 'end' })
+      }
+    }, 120)
   })
   observer.observe(terminal.value, {
-    childList: true, subtree: true,
-    attributes: true, attributeFilter: ['class']
+    subtree: true, attributes: true, attributeFilter: ['class']
   })
 })
 </script>
