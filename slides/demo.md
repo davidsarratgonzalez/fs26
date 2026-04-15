@@ -1,7 +1,7 @@
 ## Live Demo
 
 <div style="overflow: hidden; height: 440px; margin-top: 0.3em;">
-<div style="font-size: 0.6em; line-height: 1.45; font-family: 'Roboto Mono', monospace;" v-motion :initial="{ y: 0 }" :click-6="{ y: -50 }" :click-7="{ y: -100 }" :click-8="{ y: -210 }" :click-9="{ y: -260 }" :click-10="{ y: -340 }" :click-11="{ y: -400 }" :click-12="{ y: -440 }" :click-13="{ y: -500 }">
+<div style="font-size: 0.6em; line-height: 1.45; font-family: 'Roboto Mono', monospace;" v-motion :initial="{ y: 0 }" :click-5="{ y: -20 }" :click-6="{ y: -50 }" :click-7="{ y: -80 }" :click-8="{ y: -200 }" :click-9="{ y: -250 }" :click-10="{ y: -320 }" :click-11="{ y: -380 }" :click-12="{ y: -430 }" :click-13="{ y: -480 }" :click-14="{ y: -520 }">
 
 <!-- Login code -->
 <div style="background: rgba(15,10,8,0.7); border-radius: 6px; padding: 0.5em 0.8em; color: #c8b8a8;">
