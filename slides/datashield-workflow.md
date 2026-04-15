@@ -48,7 +48,7 @@
 
   <!-- Result pooling label (right of researcher) -->
   <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Result Pooling</text>
-  <text x="470" y="290" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">ds.glm() · ds.mean() · ds.var()</text>
+  <text x="470" y="290" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">Orchestrator Role</text>
 
   <!-- Queries flowing UP (yellow, SVG animate) -->
   <path d="M335,242 C260,185 125,145 105,105" fill="none" stroke="#FFD000" stroke-width="2.5" stroke-dasharray="8 6">
