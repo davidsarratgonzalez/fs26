@@ -18,10 +18,10 @@
 ### 20 templates
 
 Each includes:
-- `client_app.py` ·training loop
-- `server_app.py` ·aggregation
-- `task.py` ·data loading
-- `privacy_utils.py` ·DP, clipping
+- `client_app.py` -training loop
+- `server_app.py` -aggregation
+- `task.py` -data loading
+- `privacy_utils.py` -DP, clipping
 
 The researcher picks a model. The server does the rest.
 
