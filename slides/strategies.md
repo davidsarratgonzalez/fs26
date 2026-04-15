@@ -8,7 +8,7 @@
 | **FedAdagrad** | Server-side Adagrad | Sparse features |
 | **FedBN** | Excludes BatchNorm from aggregation | Different scanners per site |
 
-<div style="margin-top: 0.5em;">
+<div style="margin-top: 1.5em;">
 
 ```r
 recipe <- ds.flower.recipe(
