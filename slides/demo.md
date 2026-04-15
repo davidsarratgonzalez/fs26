@@ -202,7 +202,7 @@ result$history
 &nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp; 0.6814 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
 &nbsp;&nbsp;&nbsp;&nbsp; 2 &nbsp; 0.5923 &nbsp;&nbsp;&nbsp;&nbsp; 5<br/>
 &nbsp;&nbsp;&nbsp; ... &nbsp;&nbsp; ... &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br/>
-&nbsp;&nbsp;&nbsp;10 &nbsp; <span style="color:#FFD000;">0.3148</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5
+&nbsp;&nbsp;&nbsp; 10 &nbsp;<span style="color:#FFD000;">0.3148</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5
 </div>
 
 <!-- Predict on a real patient -->
