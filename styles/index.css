@@ -170,6 +170,31 @@ td {
 
 
 /* ————————————————————————————————
+   Animated flow lines (CSS)
+   ———————————————————————————————— */
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -10; }
+}
+
+.line-out {
+  stroke: #FFD000;
+  stroke-width: 2.5;
+  stroke-dasharray: 6 4;
+  fill: none;
+  animation: dashFlow 0.8s linear infinite;
+}
+
+.line-in {
+  stroke: #66ddaa;
+  stroke-width: 2.5;
+  stroke-dasharray: 6 4;
+  fill: none;
+  animation: dashFlow 0.8s linear infinite;
+  animation-direction: reverse;
+}
+
+/* ————————————————————————————————
    Miscellaneous
    ———————————————————————————————— */
 
