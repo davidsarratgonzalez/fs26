@@ -71,14 +71,6 @@ Hospitals want to train ML models together **without sharing patient data**.
 
 <div style="margin-top: 0.5em;">
 <svg viewBox="0 0 780 340" style="width: 100%; max-height: 390px;">
-  <defs>
-    <marker id="arrowQ" viewBox="0 0 6 4" refX="5" refY="2" markerWidth="5" markerHeight="3" orient="auto">
-      <path d="M0,0.5 L5,2 L0,3.5 Z" fill="#FFD000"/>
-    </marker>
-    <marker id="arrowR" viewBox="0 0 6 4" refX="5" refY="2" markerWidth="5" markerHeight="3" orient="auto">
-      <path d="M0,0.5 L5,2 L0,3.5 Z" fill="#66ddaa"/>
-    </marker>
-  </defs>
 
   <!-- Hospital nodes (top row) -->
   <g transform="translate(120,65)">
@@ -146,13 +138,6 @@ Hospitals want to train ML models together **without sharing patient data**.
   <use href="#rB" class="flow-result"/>
   <use href="#rC" class="flow-result"/>
 
-  <!-- Static arrowheads (solid, not animated) -->
-  <line x1="115" y1="115" x2="106" y2="106" class="flow-arrow" stroke="#FFD000" marker-end="url(#arrowQ)"/>
-  <line x1="340" y1="115" x2="340" y2="106" class="flow-arrow" stroke="#FFD000" marker-end="url(#arrowQ)"/>
-  <line x1="555" y1="115" x2="564" y2="106" class="flow-arrow" stroke="#FFD000" marker-end="url(#arrowQ)"/>
-  <line x1="358" y1="232" x2="362" y2="240" class="flow-arrow" stroke="#66ddaa" marker-end="url(#arrowR)"/>
-  <line x1="360" y1="232" x2="360" y2="240" class="flow-arrow" stroke="#66ddaa" marker-end="url(#arrowR)"/>
-  <line x1="362" y1="232" x2="358" y2="240" class="flow-arrow" stroke="#66ddaa" marker-end="url(#arrowR)"/>
 
   <!-- Label paths — physically offset from flow lines -->
   <!-- Left queries: BELOW/outside the yellow qA line -->
