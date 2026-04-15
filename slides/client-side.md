@@ -7,7 +7,7 @@
   <!-- ===== ALWAYS VISIBLE: Analyst machine ===== -->
 
   <!-- Analyst machine box -->
-  <rect x="170" y="5" width="380" height="320" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-width="0.8"/>
+  <rect x="170" y="5" width="380" height="300" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)" stroke-width="0.8"/>
   <text x="360" y="24" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="4" font-weight="500">Analyst Machine</text>
 
   <!-- ===== CLICK 1: dsFlowerClient ===== -->
@@ -52,14 +52,13 @@
   <!-- ===== CLICK 5: Code integrity ===== -->
   <g v-click>
     <rect x="195" y="260" width="330" height="28" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
-    <text x="360" y="272" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">App authenticity</text>
+    <text x="360" y="272" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Template (app) authenticity</text>
     <text x="360" y="283" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">SHA-256 verified against all servers before execution</text>
   </g>
 
-  <!-- Hospital indicators (right side, always visible) -->
-  <rect x="30" y="90" width="120" height="30" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.6"/>
-  <text x="90" y="107" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">N Hospital Servers</text>
-  <text x="90" y="117" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">(dsFlower installed)</text>
+  <!-- Hospital label (left side, below lines) -->
+  <text x="90" y="125" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">N Hospital Servers</text>
+  <text x="90" y="137" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="1.8">(dsFlower installed)</text>
 
 </svg>
 
