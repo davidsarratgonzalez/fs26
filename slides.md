@@ -79,5 +79,9 @@ src: ./slides/demo.md
 ---
 
 ---
+src: ./slides/discussion.md
+---
+
+---
 src: ./slides/closing.md
 ---

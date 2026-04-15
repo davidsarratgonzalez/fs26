@@ -155,13 +155,13 @@ builder <span style="color:#b0a8a0;">&lt;-</span> DSI::<span style="color:#78a9f
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
-<div style="animation-delay:0.2s">Logging into the collaborating servers</div>
-<div style="animation-delay:1.2s">&nbsp; Login BCN: <span style="color:#66ddaa;">OK</span></div>
-<div style="animation-delay:2.5s">&nbsp; Login MAD: <span style="color:#66ddaa;">OK</span></div>
-<div style="animation-delay:4.0s">&nbsp; Login LDN: <span style="color:#66ddaa;">OK</span></div>
-<div style="animation-delay:5.2s">&nbsp; Login BER: <span style="color:#66ddaa;">OK</span></div>
-<div style="animation-delay:6.1s">&nbsp; Login AMS: <span style="color:#66ddaa;">OK</span></div>
-<div style="animation-delay:6.4s">Assigned table ICU.admissions to symbol "D"</div>
+<div style="animation-delay:0.1s">Logging into the collaborating servers</div>
+<div style="animation-delay:0.6s">&nbsp; Login BCN: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:1.2s">&nbsp; Login MAD: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:2.0s">&nbsp; Login LDN: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:2.6s">&nbsp; Login BER: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:3.0s">&nbsp; Login AMS: <span style="color:#66ddaa;">OK</span></div>
+<div style="animation-delay:3.2s">Assigned table ICU.admissions to symbol "D"</div>
 </div>
 
 <!-- Connect -->
@@ -170,14 +170,14 @@ flower <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
-<div style="animation-delay:0.3s">Initializing dsFlower federation on 5 servers...</div>
-<div style="animation-delay:0.8s">&nbsp; BCN: dsFlower v0.1.0 <span style="color:#b0a8a0;">(2,341 rows x 17 cols)</span></div>
-<div style="animation-delay:1.2s">&nbsp; MAD: dsFlower v0.1.0 <span style="color:#b0a8a0;">(1,876 rows x 17 cols)</span></div>
-<div style="animation-delay:1.7s">&nbsp; LDN: dsFlower v0.1.0 <span style="color:#b0a8a0;">(3,102 rows x 17 cols)</span></div>
-<div style="animation-delay:2.1s">&nbsp; BER: dsFlower v0.1.0 <span style="color:#b0a8a0;">(1,245 rows x 17 cols)</span></div>
-<div style="animation-delay:2.4s">&nbsp; AMS: dsFlower v0.1.0 <span style="color:#b0a8a0;">(2,567 rows x 17 cols)</span></div>
-<div style="animation-delay:2.8s">&nbsp; Total: <span style="color:#e0d8d0;">11,131 patients</span> across 5 sites (data never pooled)</div>
-<div style="animation-delay:3.1s">&nbsp; Trust profile: <span style="color:#66ddaa;">clinical_default</span> (SecAgg+ required)</div>
+<div style="animation-delay:0.1s">Initializing dsFlower federation on 5 servers...</div>
+<div style="animation-delay:0.4s">&nbsp; BCN: dsFlower v0.1.0 <span style="color:#b0a8a0;">(2,341 rows x 17 cols)</span></div>
+<div style="animation-delay:0.6s">&nbsp; MAD: dsFlower v0.1.0 <span style="color:#b0a8a0;">(1,876 rows x 17 cols)</span></div>
+<div style="animation-delay:0.8s">&nbsp; LDN: dsFlower v0.1.0 <span style="color:#b0a8a0;">(3,102 rows x 17 cols)</span></div>
+<div style="animation-delay:1.1s">&nbsp; BER: dsFlower v0.1.0 <span style="color:#b0a8a0;">(1,245 rows x 17 cols)</span></div>
+<div style="animation-delay:1.2s">&nbsp; AMS: dsFlower v0.1.0 <span style="color:#b0a8a0;">(2,567 rows x 17 cols)</span></div>
+<div style="animation-delay:1.4s">&nbsp; Total: <span style="color:#e0d8d0;">11,131 patients</span> across 5 sites (data never pooled)</div>
+<div style="animation-delay:1.6s">&nbsp; Trust profile: <span style="color:#66ddaa;">clinical_default</span> (SecAgg+ required)</div>
 </div>
 
 <!-- Recipe -->
@@ -197,26 +197,26 @@ recipe <span style="color:#b0a8a0;">&lt;-</span> <span style="color:#78a9ff;">ds
 
 <!-- Run output -->
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
-<div style="animation-delay:0.8s">SuperLink started (PID: 41823, TLS)</div>
-<div style="animation-delay:1.1s">&nbsp; Fleet API: 127.0.0.1:9092</div>
-<div style="animation-delay:2.5s">&nbsp; BCN: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:3.5s">&nbsp; MAD: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:4.8s">&nbsp; LDN: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:5.6s">&nbsp; BER: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:6.2s">&nbsp; AMS: SuperNode <span style="color:#66ddaa;">connected</span></div>
-<div style="animation-delay:7.0s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers <span style="color:#b0a8a0;">(app hash matches server templates)</span></div>
-<div style="animation-delay:8.5s"><span style="color:#88ccff;">[ROUND &nbsp;1/10]</span> 5 clients &mdash; loss: 0.6814</div>
-<div style="animation-delay:10.0s"><span style="color:#88ccff;">[ROUND &nbsp;2/10]</span> 5 clients &mdash; loss: 0.5923</div>
-<div style="animation-delay:11.3s"><span style="color:#88ccff;">[ROUND &nbsp;3/10]</span> 5 clients &mdash; loss: 0.5107</div>
-<div style="animation-delay:12.6s"><span style="color:#88ccff;">[ROUND &nbsp;4/10]</span> 5 clients &mdash; loss: 0.4489</div>
-<div style="animation-delay:13.8s"><span style="color:#88ccff;">[ROUND &nbsp;5/10]</span> 5 clients &mdash; loss: 0.4021</div>
-<div style="animation-delay:14.9s"><span style="color:#88ccff;">[ROUND &nbsp;6/10]</span> 5 clients &mdash; loss: 0.3712</div>
-<div style="animation-delay:16.0s"><span style="color:#88ccff;">[ROUND &nbsp;7/10]</span> 5 clients &mdash; loss: 0.3498</div>
-<div style="animation-delay:17.0s"><span style="color:#88ccff;">[ROUND &nbsp;8/10]</span> 5 clients &mdash; loss: 0.3341</div>
-<div style="animation-delay:17.9s"><span style="color:#88ccff;">[ROUND &nbsp;9/10]</span> 5 clients &mdash; loss: 0.3219</div>
-<div style="animation-delay:18.8s"><span style="color:#88ccff;">[ROUND 10/10]</span> 5 clients &mdash; loss: 0.3148</div>
-<div style="animation-delay:19.3s"><span style="color:#66ddaa;">Model saved to ./dsflower_output/pytorch_mlp_FedProx_10r_20260415</span></div>
-<div style="animation-delay:19.6s">SuperLink stopped.</div>
+<div style="animation-delay:0.4s">SuperLink started (PID: 41823, TLS)</div>
+<div style="animation-delay:0.6s">&nbsp; Fleet API: 127.0.0.1:9092</div>
+<div style="animation-delay:1.2s">&nbsp; BCN: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:1.8s">&nbsp; MAD: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:2.4s">&nbsp; LDN: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:2.8s">&nbsp; BER: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:3.1s">&nbsp; AMS: SuperNode <span style="color:#66ddaa;">connected</span></div>
+<div style="animation-delay:3.5s">&nbsp; Code verification <span style="color:#66ddaa;">passed</span> on all servers <span style="color:#b0a8a0;">(app hash matches server templates)</span></div>
+<div style="animation-delay:4.2s"><span style="color:#88ccff;">[ROUND &nbsp;1/10]</span> 5 clients &mdash; loss: 0.6814</div>
+<div style="animation-delay:5.0s"><span style="color:#88ccff;">[ROUND &nbsp;2/10]</span> 5 clients &mdash; loss: 0.5923</div>
+<div style="animation-delay:5.7s"><span style="color:#88ccff;">[ROUND &nbsp;3/10]</span> 5 clients &mdash; loss: 0.5107</div>
+<div style="animation-delay:6.3s"><span style="color:#88ccff;">[ROUND &nbsp;4/10]</span> 5 clients &mdash; loss: 0.4489</div>
+<div style="animation-delay:6.9s"><span style="color:#88ccff;">[ROUND &nbsp;5/10]</span> 5 clients &mdash; loss: 0.4021</div>
+<div style="animation-delay:7.5s"><span style="color:#88ccff;">[ROUND &nbsp;6/10]</span> 5 clients &mdash; loss: 0.3712</div>
+<div style="animation-delay:8.0s"><span style="color:#88ccff;">[ROUND &nbsp;7/10]</span> 5 clients &mdash; loss: 0.3498</div>
+<div style="animation-delay:8.5s"><span style="color:#88ccff;">[ROUND &nbsp;8/10]</span> 5 clients &mdash; loss: 0.3341</div>
+<div style="animation-delay:8.9s"><span style="color:#88ccff;">[ROUND &nbsp;9/10]</span> 5 clients &mdash; loss: 0.3219</div>
+<div style="animation-delay:9.4s"><span style="color:#88ccff;">[ROUND 10/10]</span> 5 clients &mdash; loss: 0.3148</div>
+<div style="animation-delay:9.7s"><span style="color:#66ddaa;">Model saved to ./dsflower_output/pytorch_mlp_FedProx_10r_20260415</span></div>
+<div style="animation-delay:9.8s">SuperLink stopped.</div>
 </div>
 
 <!-- Results -->
@@ -254,8 +254,8 @@ result$history
 </div>
 
 <div v-click class="exec-lines" style="background: rgba(15,10,8,0.5); border-left: 3px solid #444; border-radius: 0 6px 6px 0; padding: 0.3em 0.7em; margin: 2px 0; color: #b8b0a8;">
-<div style="animation-delay:0.2s">Cleaning up dsFlower handles...</div>
-<div style="animation-delay:0.6s">Logged out from BCN, MAD, LDN, BER, AMS</div>
+<div style="animation-delay:0.1s">Cleaning up dsFlower handles...</div>
+<div style="animation-delay:0.3s">Logged out from BCN, MAD, LDN, BER, AMS</div>
 </div>
 
 </div>
