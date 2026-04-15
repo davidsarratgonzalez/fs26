@@ -5,7 +5,7 @@
 
 - External SuperLink instead of client-hosted?
 - Allow analysts to create custom apps with security checks?
-- Grow horizontally by supporting more templates?
+- Grow horizontally by just supporting more templates?
 - Verified apps store for community templates?
 - Discussion with DataSHIELD about privacy model - **get involved!**
 
