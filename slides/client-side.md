@@ -51,9 +51,9 @@
 
   <!-- ===== CLICK 5: Code integrity ===== -->
   <g v-click>
-    <rect x="195" y="266" width="330" height="28" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
-    <text x="360" y="278" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Template (app) authenticity</text>
-    <text x="360" y="289" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">SHA-256 verified against all servers before execution</text>
+    <rect x="195" y="263" width="330" height="28" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
+    <text x="360" y="275" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Template (app) authenticity</text>
+    <text x="360" y="286" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2">SHA-256 verified against all servers before execution</text>
   </g>
 
   <!-- Hospital label (appears with SuperLink, click 2) -->
