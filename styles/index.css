@@ -187,7 +187,7 @@ ul li::marker { color: #FF8801; }
 
 /* No overlay on cover & closing */
 .slidev-page-1 .slidev-layout::after,
-.slidev-page-12 .slidev-layout::after {
+.slidev-page-13 .slidev-layout::after {
   opacity: 0;
 }
 
@@ -203,19 +203,19 @@ ul li::marker { color: #FF8801; }
 /* Cover & closing text styles */
 .slidev-page-1 .slidev-layout,
 .slidev-page-1 .slidev-layout *,
-.slidev-page-12 .slidev-layout,
-.slidev-page-12 .slidev-layout * {
+.slidev-page-13 .slidev-layout,
+.slidev-page-13 .slidev-layout * {
   text-shadow: none;
 }
 
 .slidev-page-1 .flower-title,
-.slidev-page-12 .flower-title {
+.slidev-page-13 .flower-title {
   color: #000000 !important;
   font-family: 'Roboto Mono', monospace !important;
 }
 
 .slidev-page-1 .slidev-layout a,
-.slidev-page-12 .slidev-layout a {
+.slidev-page-13 .slidev-layout a {
   color: #333333 !important;
 }
 

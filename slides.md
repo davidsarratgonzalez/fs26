@@ -43,6 +43,10 @@ src: ./slides/datashield-workflow.md
 ---
 
 ---
+src: ./slides/server-stack.md
+---
+
+---
 src: ./slides/problem.md
 ---
 
