@@ -1,7 +1,7 @@
 ## Server-Side Stack
 
 <div style="margin-top: 0.2em;">
-<svg viewBox="0 0 720 280" style="width: 100%; max-height: 400px;">
+<svg viewBox="0 0 720 300" style="width: 100%; max-height: 400px;">
 
   <!-- ===== ALWAYS VISIBLE: Server box + DataSHIELD ecosystem + Patient Data ===== -->
 
@@ -12,7 +12,7 @@
   <!-- DataSHIELD ecosystem column (left) -->
   <rect x="50" y="32" width="130" height="200" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" stroke-width="0.8"/>
   <text x="115" y="50" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="3.5" font-weight="500">DataSHIELD</text>
-  <text x="115" y="62" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">Ecosystem</text>
+  <text x="115" y="62" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.5">Ecosystem</text>
   <text x="115" y="82" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">dsBase</text>
   <text x="115" y="96" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">dsOmics</text>
   <text x="115" y="110" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5">dsOMOP</text>
@@ -44,19 +44,18 @@
     <text x="367" y="97" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-weight="500">Flower SuperNode</text>
     <text x="367" y="108" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">gRPC client, spawned on demand</text>
 
-    <!-- Animated lines from SuperNode to analyst (right side) -->
-    <path d="M535,90 C580,90 620,82 780,82" fill="none" stroke="#FFD000" stroke-width="1.5" stroke-dasharray="6 4">
+    <!-- Animated lines from SuperNode edge to off-screen (analyst) -->
+    <path d="M535,88 L720,88" fill="none" stroke="#FFD000" stroke-width="1.5" stroke-dasharray="6 4">
       <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.8s" repeatCount="indefinite"/>
     </path>
-    <path d="M780,100 C620,100 580,95 535,95" fill="none" stroke="#66ddaa" stroke-width="1.5" stroke-dasharray="6 4">
+    <path d="M720,98 L535,98" fill="none" stroke="#66ddaa" stroke-width="1.5" stroke-dasharray="6 4">
       <animate attributeName="stroke-dashoffset" from="0" to="-10" dur="0.8s" repeatCount="indefinite"/>
     </path>
 
-    <!-- Label on lines -->
-    <text x="660" y="78" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.2">weight updates</text>
-    <text x="660" y="108" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">global model</text>
-    <text x="790" y="93" fill="#88ccff" font-family="Roboto Mono" font-size="3">Analyst</text>
-    <text x="790" y="103" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">SuperLink</text>
+    <!-- Labels along lines -->
+    <text x="625" y="85" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.2">weight updates →</text>
+    <text x="625" y="108" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">← global model</text>
+    <text x="625" y="120" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="2.5">Analyst SuperLink interaction</text>
   </g>
 
   <!-- ===== CLICK 3: Python envs + Templates ===== -->
@@ -87,8 +86,8 @@
     <text x="367" y="234" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.5">Trust profiles · SecAgg+ · DP-SGD · Disclosure control</text>
 
     <!-- Protection line over the analyst connection -->
-    <rect x="533" y="78" width="252" height="28" rx="6" fill="none" stroke="rgba(102,221,170,0.25)" stroke-width="0.8" stroke-dasharray="3 2"/>
-    <text x="659" y="72" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">encrypted · disclosure-controlled</text>
+    <rect x="533" y="80" width="190" height="24" rx="6" fill="none" stroke="rgba(102,221,170,0.25)" stroke-width="0.8" stroke-dasharray="3 2"/>
+    <text x="628" y="76" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2">encrypted · disclosure-controlled</text>
   </g>
 
 </svg>
