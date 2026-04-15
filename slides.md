@@ -69,24 +69,68 @@ Hospitals want to train ML models together **without sharing patient data**.
 
 ## Architecture
 
-```
-  Researcher (R)                     Hospital A (Rock)
-  +------------------+               +----------------------+
-  | dsFlowerClient   |  DataSHIELD   | dsFlower             |
-  |   ds.flower.*()  |-------------->|   flowerInitDS()     |
-  |                  |               |   flowerPrepareDS()  |
-  | SuperLink        |   gRPC/TLS   |   SuperNode          |
-  |   (localhost)    |<=============>|   (Flower ClientApp) |
-  +------------------+    weights    +----------------------+
-          |
-          |              Hospital B (Rock)
-          |              +----------------------+
-          +==============>  SuperNode            |
-                 gRPC    |  (Flower ClientApp)  |
-                         +----------------------+
-```
+<div style="margin-top: 0.5em;">
+<svg viewBox="0 0 700 330" style="width: 100%; max-height: 380px;">
 
-DataSHIELD handles orchestration. **Flower** handles weight transport via gRPC. Raw data stays on each hospital's server.
+  <!-- Flow paths (defined once, drawn twice for bidirectional flow) -->
+  <path id="pA" d="M350,72 C250,150 140,200 120,255" fill="none"/>
+  <path id="pB" d="M350,72 L350,255" fill="none"/>
+  <path id="pC" d="M350,72 C450,150 560,200 580,255" fill="none"/>
+
+  <!-- Query flow — blue dashes flowing down -->
+  <use href="#pA" class="flow-query"/>
+  <use href="#pB" class="flow-query"/>
+  <use href="#pC" class="flow-query"/>
+
+  <!-- Result flow — lighter blue dashes flowing up -->
+  <use href="#pA" class="flow-result"/>
+  <use href="#pB" class="flow-result"/>
+  <use href="#pC" class="flow-result"/>
+
+  <!-- Flow labels -->
+  <text x="210" y="148" fill="#1a3fff" font-family="Roboto Mono" font-size="9" opacity="0.8" transform="rotate(-28,210,148)">queries</text>
+  <text x="470" y="148" fill="#1a3fff" font-family="Roboto Mono" font-size="9" opacity="0.8" transform="rotate(28,470,148)">queries</text>
+  <text x="360" y="168" fill="#1a3fff" font-family="Roboto Mono" font-size="9" opacity="0.5">pooled results</text>
+
+  <!-- Researcher node -->
+  <g transform="translate(350,45)">
+    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
+    <rect x="-10" y="-16" width="20" height="14" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
+    <line x1="-14" y1="1" x2="14" y2="1" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Researcher</text>
+  </g>
+
+  <!-- Hospital A -->
+  <g transform="translate(120,285)">
+    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
+    <rect x="-10" y="-18" width="20" height="20" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
+    <line x1="0" y1="-14" x2="0" y2="-4" stroke="#333" stroke-width="1.5"/>
+    <line x1="-5" y1="-9" x2="5" y2="-9" stroke="#333" stroke-width="1.5"/>
+    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Hospital A</text>
+  </g>
+
+  <!-- Hospital B -->
+  <g transform="translate(350,285)">
+    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
+    <rect x="-10" y="-18" width="20" height="20" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
+    <line x1="0" y1="-14" x2="0" y2="-4" stroke="#333" stroke-width="1.5"/>
+    <line x1="-5" y1="-9" x2="5" y2="-9" stroke="#333" stroke-width="1.5"/>
+    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Hospital B</text>
+  </g>
+
+  <!-- Hospital C -->
+  <g transform="translate(580,285)">
+    <rect x="-75" y="-28" width="150" height="56" rx="12" class="node-card"/>
+    <rect x="-10" y="-18" width="20" height="20" rx="2" fill="none" stroke="#333" stroke-width="1.5"/>
+    <line x1="0" y1="-14" x2="0" y2="-4" stroke="#333" stroke-width="1.5"/>
+    <line x1="-5" y1="-9" x2="5" y2="-9" stroke="#333" stroke-width="1.5"/>
+    <text y="20" text-anchor="middle" fill="#333" font-family="Roboto Mono" font-size="11" font-weight="500">Hospital C</text>
+  </g>
+
+</svg>
+</div>
+
+Data **never leaves** the hospital. Only aggregated results travel back via DataSHIELD.
 
 ---
 

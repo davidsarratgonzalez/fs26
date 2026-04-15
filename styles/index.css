@@ -164,6 +164,41 @@ td {
 }
 
 /* ————————————————————————————————
+   Animated flow lines
+   ———————————————————————————————— */
+
+@keyframes dashDown {
+  to { stroke-dashoffset: -14; }
+}
+
+@keyframes dashUp {
+  to { stroke-dashoffset: 14; }
+}
+
+.flow-query {
+  stroke: #1a3fff;
+  stroke-width: 2.5;
+  stroke-dasharray: 8 6;
+  fill: none;
+  animation: dashDown 0.8s linear infinite;
+}
+
+.flow-result {
+  stroke: #1a3fff;
+  stroke-width: 2.5;
+  stroke-dasharray: 8 6;
+  stroke-opacity: 0.35;
+  fill: none;
+  animation: dashUp 0.8s linear infinite;
+}
+
+.node-card {
+  fill: rgba(255, 255, 255, 0.55);
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 1;
+}
+
+/* ————————————————————————————————
    Miscellaneous
    ———————————————————————————————— */
 
