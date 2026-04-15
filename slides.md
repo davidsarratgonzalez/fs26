@@ -101,8 +101,8 @@ Hospitals want to train ML models together **without sharing patient data**.
   </g>
 
   <!-- Server-side annotation (right of Hospital C) -->
-  <text x="670" y="60" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Local Compute +</text>
-  <text x="670" y="72" fill="#88ccff" font-family="Roboto Mono" font-size="2.5" opacity="0.6">Disclosure controls applied</text>
+  <text x="670" y="60" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Local Compute</text>
+  <text x="670" y="70" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">+ Disclosure Control</text>
 
   <!-- Researcher node (bottom center) -->
   <g transform="translate(350,280)">
