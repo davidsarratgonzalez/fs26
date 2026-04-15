@@ -43,15 +43,15 @@ src: ./slides/datashield-workflow.md
 ---
 
 ---
+src: ./slides/dsflower-workflow.md
+---
+
+---
 src: ./slides/server-stack.md
 ---
 
 ---
 src: ./slides/client-side.md
----
-
----
-src: ./slides/dsflower-workflow.md
 ---
 
 ---
