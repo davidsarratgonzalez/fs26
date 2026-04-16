@@ -28,7 +28,7 @@
   <!-- Server-side annotation -->
   <text x="735" y="52" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" text-anchor="middle">Local Training</text>
   <text x="735" y="64" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.5" text-anchor="middle">+</text>
-  <text x="735" y="76" fill="#b0b8c0" font-family="Roboto Mono" font-size="3" text-anchor="middle">Privacy Controls</text>
+  <text x="735" y="76" fill="#b0b8c0" font-family="Roboto Mono" font-size="3" text-anchor="middle" class="g-term" data-g="Trust profiles" style="cursor:pointer;">Privacy Controls</text>
 
   <!-- SuperLink node (bottom center) -->
   <g transform="translate(350,280)">
@@ -38,7 +38,7 @@
   </g>
 
   <!-- Aggregation label (right of SuperLink) -->
-  <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5">Federated Aggregation</text>
+  <text x="470" y="276" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" class="g-term" data-g="FedAvg / FedProx / FedOpt" style="cursor:pointer;">Federated Aggregation</text>
   <text x="470" y="290" fill="#b0b8c0" font-family="Roboto Mono" font-size="3">Orchestrator Role</text>
 
   <!-- Global model broadcast UP (yellow) -->

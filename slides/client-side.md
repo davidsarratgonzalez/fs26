@@ -21,7 +21,7 @@
   <g v-click>
     <rect x="195" y="90" width="330" height="40" rx="8" fill="rgba(136,204,255,0.08)" stroke="rgba(136,204,255,0.20)" stroke-width="0.8"/>
     <text x="360" y="108" text-anchor="middle" fill="#88ccff" font-family="Roboto Mono" font-size="3.5" font-weight="500">Flower SuperLink</text>
-    <text x="360" y="123" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2">gRPC coordinator, TLS certificates</text>
+    <text x="360" y="123" text-anchor="middle" fill="#b0b8c0" font-family="Roboto Mono" font-size="2.2" class="g-term" data-g="gRPC/TLS" style="cursor:pointer;">gRPC coordinator, TLS certificates</text>
 
     <!-- Annotation: auto-discoverability -->
     <text x="560" y="100" fill="#88ccff" font-family="Roboto Mono" font-size="3">Auto-discovery</text>
