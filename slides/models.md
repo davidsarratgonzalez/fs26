@@ -10,7 +10,7 @@
 | **PyTorch (survival)** | Cox PH, Log-Normal AFT, Cause-Specific Cox |
 | **PyTorch (vision)** | ResNet-18, DenseNet-121, U-Net 2D |
 | **PyTorch (sequence)** | LSTM, TCN |
-| **XGBoost** | Secure histogram aggregation |
+| **XGBoost** | <span class="g-term" data-g="Secure histogram">Secure histogram aggregation</span> |
 
 </div>
 <div>
