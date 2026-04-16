@@ -10,4 +10,4 @@
 | `clinical_update_noise` | yes | noise | 200 | aggregate | Update-level DP |
 | `high_sensitivity_dp` | yes | Opacus | 500 | aggregate | Patient-level DP |
 
-<Glossary term="Trust profiles" /> are **server-enforced**, configured by the server administrator in the DataSHIELD settings. The analyst cannot bypass them. The **most restrictive** profile across all servers is adopted by all.
+<p style="color: #c8b8a8;"><Glossary term="Trust profiles" /> are <strong>server-enforced</strong>, configured by the server administrator in the DataSHIELD settings. The analyst cannot bypass them. The <strong>most restrictive</strong> profile across all servers is adopted by all.</p>
