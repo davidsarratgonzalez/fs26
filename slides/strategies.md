@@ -2,11 +2,11 @@
 
 | Strategy | Description | When to use |
 |---|---|---|
-| **FedAvg** | Standard averaging | Default |
-| **FedProx** | Proximal penalty term | Non-IID data across hospitals |
-| **FedAdam** | Server-side Adam optimizer | Unstable convergence |
-| **FedAdagrad** | Server-side Adagrad | Sparse features |
-| **FedBN** | Excludes BatchNorm from aggregation | Different scanners per site |
+| <span class="g-term" data-g="FedAvg">**FedAvg**</span> | Standard averaging | Default |
+| <span class="g-term" data-g="FedProx">**FedProx**</span> | Proximal penalty term | Non-IID data across hospitals |
+| <span class="g-term" data-g="FedAvg / FedProx / FedOpt">**FedAdam**</span> | Server-side Adam optimizer | Unstable convergence |
+| <span class="g-term" data-g="FedAvg / FedProx / FedOpt">**FedAdagrad**</span> | Server-side Adagrad | Sparse features |
+| <span class="g-term" data-g="FedAvg / FedProx / FedOpt">**FedBN**</span> | Excludes BatchNorm from aggregation | Different scanners per site |
 
 <div style="margin-top: 1.5em;">
 
