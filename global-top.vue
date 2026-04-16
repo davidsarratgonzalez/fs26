@@ -35,9 +35,9 @@ const glossaryMap = {
 }
 
 function onGlossaryClick(e) {
-  const el = e.target.closest('.g-term')
+  const el = e.target.closest('.g-term') || (e.target.classList?.contains('g-term') ? e.target : null)
   if (!el) return
-  const term = el.dataset.g
+  const term = el.dataset?.g || el.getAttribute('data-g')
   const entry = glossaryMap[term]
   if (entry) {
     glossaryTitle.value = entry.title

@@ -50,7 +50,7 @@
   <g v-click>
     <rect x="200" y="140" width="335" height="42" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
     <text x="367" y="157" text-anchor="middle" fill="#e0d8d0" font-family="Roboto Mono" font-size="2.8">Python environments (via uv)</text>
-    <text x="367" y="174" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.8">scikit-learn · PyTorch + Opacus · XGBoost</text>
+    <text x="367" y="174" text-anchor="middle" fill="#FFD000" font-family="Roboto Mono" font-size="2.8">scikit-learn · PyTorch + <tspan class="g-term" data-g="Opacus" style="cursor:pointer;">Opacus</tspan> · <tspan class="g-term" data-g="Secure histogram" style="cursor:pointer;">XGBoost</tspan></text>
   </g>
 
   <!-- ===== CLICK 4: Templates ===== -->
@@ -64,7 +64,7 @@
   <!-- ===== CLICK 5: Security (SVG part) ===== -->
   <g v-click>
     <rect x="200" y="248" width="335" height="18" rx="5" fill="rgba(102,221,170,0.06)" stroke="rgba(102,221,170,0.15)" stroke-width="0.6"/>
-    <text x="367" y="260" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2">Trust profiles · SecAgg+ · DP-SGD · Disclosure control</text>
+    <text x="367" y="260" text-anchor="middle" fill="#66ddaa" font-family="Roboto Mono" font-size="2.2" class="g-term" data-g="Trust profiles" style="cursor:pointer;">Trust profiles · SecAgg+ · DP-SGD · Disclosure control</text>
   </g>
 
 </svg>
