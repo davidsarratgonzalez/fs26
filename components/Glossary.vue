@@ -10,45 +10,45 @@ const open = ref(false)
 const glossary = {
   'SecAgg+': {
     title: 'Secure Aggregation Plus (SecAgg+)',
-    body: `Encrypts individual weight updates via secret sharing so the SuperLink (analyst) only sees the <strong>aggregate</strong>, never any single hospital's contribution.\n\nEach participant splits its update into secret shares distributed among peers. Only the combined sum can be reconstructed. Requires 3+ participants.\n\nIn dsFlower, SecAgg+ is enforced at both server-side (Flower SecAggPlusWorkflow) and client-side (secaggplus_mod) as defense-in-depth.`
+    body: `Each hospital splits its weight update into <strong>secret shares</strong> distributed among the other participants. Only the <strong>combined sum</strong> can be reconstructed by the SuperLink.<br/><br/>This means the analyst running the SuperLink can never inspect what any single hospital contributed. They only see the final aggregate.<br/><br/>Requires at least <strong>3 participants</strong>. In dsFlower, SecAgg+ is enforced at both the server side (Flower's SecAggPlusWorkflow) and the client side (secaggplus_mod) as defense-in-depth. XGBoost requires SecAgg+ by design.`
   },
   'DP-SGD': {
     title: 'Differential Privacy with SGD (DP-SGD)',
-    body: `Per-sample gradient clipping + calibrated noise during training, implemented via <strong>Opacus</strong> (Meta). Each patient's gradient is clipped individually before aggregation, then noise is added.\n\nProvides formal <strong>(ε, δ)-differential privacy</strong> guarantees: mathematically bounded information leakage per patient.\n\nOnly available for PyTorch models. Validated for: MLP, LogReg, Linear, Multiclass, Multilabel, Poisson.\n\n<em>Compare with Update noise: DP-SGD is per-sample (formal guarantee), update noise is per-update (no formal guarantee).</em>`
+    body: `Instead of clipping the overall weight update after training, DP-SGD clips <strong>each individual patient's gradient</strong> during training, then adds calibrated Gaussian noise.<br/><br/>This provides <strong>formal (ε, δ)-differential privacy</strong>: a mathematical bound on how much information any single patient contributes to the model. Implemented via <strong>Opacus</strong> (Meta's PyTorch DP library).<br/><br/>Only available for <strong>PyTorch</strong> models. Validated for MLP, LogReg, Linear, Multiclass, Multilabel, and Poisson. Has a higher accuracy cost than update noise, but provides provable guarantees.<br/><br/>The privacy budget (ε/δ) is tracked per-dataset in a persistent ledger on the server. Once exhausted, no more training is allowed.`
   },
   'Update noise': {
     title: 'Update-Level Noise',
-    body: `After local training, the <strong>weight delta</strong> (new weights - old weights) is clipped by L2 norm and <strong>Gaussian noise</strong> is added.\n\nProvides meaningful obfuscation but <strong>NO formal DP guarantee</strong>. The noise scale is calibrated from epsilon/delta parameters but without per-sample accounting.\n\nWorks with <strong>any framework</strong> (sklearn, PyTorch, XGBoost). Lighter impact on model accuracy than DP-SGD.\n\n<em>Use when you want practical privacy without the accuracy cost of formal DP.</em>`
+    body: `After local training, the <strong>weight delta</strong> (new weights minus old weights) is clipped by its L2 norm, and <strong>Gaussian noise</strong> is added before sending to the SuperLink.<br/><br/>This provides meaningful obfuscation but <strong>no formal DP guarantee</strong>. The noise scale is calibrated from epsilon/delta parameters, but without the per-sample accounting that makes DP-SGD formally private.<br/><br/>Works with <strong>any framework</strong> (sklearn, PyTorch, XGBoost) because it operates on the weight delta, not on individual gradients. Lighter accuracy cost than DP-SGD.<br/><br/>Use when you want practical privacy without the overhead and accuracy loss of formal DP.`
   },
   'Bucketed counts': {
     title: 'Bucketed Counts',
-    body: `Sample counts are rounded to the <strong>nearest power of 2</strong> before being reported to the analyst.\n\nExamples: 847 → 1024, 623 → 512, 1245 → 1024\n\nPrevents the analyst from inferring exact dataset sizes, which could be used for re-identification or membership inference attacks.\n\nApplied in all clinical privacy profiles. Only sandbox_open reports exact counts.`
+    body: `When hospitals report how many samples they used for training, the exact count is rounded to the <strong>nearest power of 2</strong> before the analyst sees it.<br/><br/>Examples: 847 patients → reported as <strong>1024</strong>. 623 → <strong>512</strong>. 1245 → <strong>1024</strong>.<br/><br/>This prevents the analyst from knowing the exact dataset size of each hospital, which could otherwise be used for re-identification or membership inference attacks.<br/><br/>Applied in all clinical privacy profiles. Only sandbox_open allows exact counts.`
   },
   'Suppressed metrics': {
     title: 'Suppressed Per-Node Metrics',
-    body: `In clinical profiles, training metrics (loss, accuracy, F1, etc.) are reported <strong>only as aggregates</strong>, never per-hospital.\n\nIf per-node loss were visible, the analyst could infer properties of individual hospital datasets (e.g., one hospital has much higher loss → smaller or unusual population).\n\nImplementation: each client returns <strong>loss: 0.0</strong> (dummy value) when allow_per_node_metrics = FALSE. The server aggregates only the combined result.`
+    body: `In clinical profiles, training metrics like loss, accuracy, or F1 score are reported <strong>only as aggregates across all hospitals</strong>, never individually.<br/><br/>If the analyst could see each hospital's loss separately, they might infer properties of that hospital's data (e.g., unusually high loss → small or atypical population). This is a form of <strong>membership inference</strong> attack.<br/><br/>Implementation: each client returns <strong>loss: 0.0</strong> (dummy) when per-node metrics are suppressed. The server aggregates only the combined result, which remains meaningful while individual values are hidden.`
   },
   'FedAvg / FedProx / FedOpt': {
     title: 'Federated Aggregation Strategies',
-    body: `<strong>FedAvg</strong> (Federated Averaging): weighted mean of model weights from all participants. Simple, effective when data is similar across sites.\n\n<strong>FedProx</strong>: adds a proximal penalty that prevents each hospital's model from diverging too far from the global model. Essential for <strong>non-IID data</strong> (different patient populations).\n\n<strong>FedOpt</strong> (FedAdam, FedAdagrad): the server applies an <strong>adaptive optimizer</strong> (Adam or Adagrad) to the aggregated updates instead of simple averaging. Improves convergence in unstable scenarios.\n\n<strong>FedBN</strong>: excludes BatchNorm parameters from aggregation. Each site keeps its own normalization stats. For medical imaging with different scanners.`
+    body: `<strong>FedAvg</strong> (Federated Averaging): the SuperLink computes a weighted mean of all hospitals' model weights, proportional to their dataset sizes. Simple, effective when data distributions are similar across sites.<br/><br/><strong>FedProx</strong>: like FedAvg but adds a proximal penalty that prevents each hospital's model from diverging too far from the global model during local training. Essential when hospitals have <strong>non-IID data</strong> (e.g., different patient demographics, different disease prevalences).<br/><br/><strong>FedOpt</strong> (FedAdam, FedAdagrad): the SuperLink applies an <strong>adaptive optimizer</strong> (Adam or Adagrad) to the aggregated updates instead of simple averaging. Helps when training is unstable or features are sparse.<br/><br/><strong>FedBN</strong>: excludes BatchNorm parameters from aggregation. Each hospital keeps its own normalization statistics. Designed for medical imaging where different scanners produce different intensity distributions.`
   },
   'Secure histogram': {
     title: 'Secure Histogram Aggregation (XGBoost)',
-    body: `XGBoost builds decision trees, not neural networks. It can't exchange "weights" like PyTorch/sklearn.\n\nInstead, each hospital computes <strong>gradient/Hessian histograms</strong> per feature. These are <strong>quantized to int64</strong> (×1,000,000) for compatibility with SecAgg+.\n\nThe server receives only the <strong>aggregated</strong> histograms and selects the optimal tree split. Individual hospital contributions are never visible.\n\n<strong>SecAgg+ is mandatory</strong> for XGBoost in dsFlower.`
+    body: `XGBoost builds <strong>decision trees</strong>, not neural networks. It cannot exchange model weights like PyTorch or sklearn. Instead, dsFlower uses a histogram-based protocol.<br/><br/>Each hospital computes <strong>gradient and Hessian histograms</strong> per feature. These are quantized to <strong>int64</strong> (multiplied by 1,000,000) so they can be aggregated with SecAgg+ (which works on integers).<br/><br/>The SuperLink receives only the <strong>summed histograms</strong> from all hospitals and selects the optimal tree split point. No individual hospital's histogram is ever visible.<br/><br/>The process repeats for each node in each tree. SecAgg+ is <strong>mandatory</strong> for XGBoost in dsFlower.`
   },
   'Trust profiles': {
     title: 'Trust Profiles',
-    body: `Server-admin configured privacy levels in DataSHIELD settings. Range from <strong>sandbox_open</strong> (development, minimal restrictions) to <strong>high_sensitivity_dp</strong> (formal DP-SGD with Opacus).\n\nControls: minimum sample sizes, SecAgg+ requirement, DP mode, metric visibility, exact count reporting, model release policy.\n\nThe <strong>most restrictive</strong> profile across all servers in a federation is automatically adopted by all. The analyst <strong>cannot</strong> bypass or downgrade the profile.`
+    body: `Privacy levels configured by the <strong>server administrator</strong> in the DataSHIELD settings of each hospital. They range from:<br/><br/><strong>sandbox_open</strong>: development only, minimal restrictions, exact counts allowed.<br/><strong>clinical_default</strong>: recommended for hospital deployment. SecAgg+ required, per-node metrics suppressed, counts bucketed.<br/><strong>high_sensitivity_dp</strong>: formal DP-SGD with Opacus, 500+ sample minimum, privacy budget tracking.<br/><br/>In a multi-site federation, the <strong>most restrictive profile</strong> across all servers is automatically adopted by all. The analyst <strong>cannot bypass or downgrade</strong> the profile. This is enforced server-side in the manifest written before SuperNode launch.`
   },
   'Disclosure control': {
     title: 'Disclosure Control',
-    body: `A combination of measures to prevent information leakage:\n\n<strong>Bucketed counts</strong>: sample sizes rounded to nearest power of 2 (847 → 1024).\n\n<strong>Suppressed per-node metrics</strong>: individual hospital loss/accuracy hidden, only aggregate reported.\n\n<strong>Minimum sample sizes</strong>: training blocked if a hospital has fewer than the profile threshold (e.g., 100 for clinical_default).\n\n<strong>Class distribution checks</strong>: ensures minimum positive examples per class to prevent trivial inference.`
+    body: `A combination of server-enforced measures to prevent information leakage:<br/><br/><strong>Bucketed counts</strong>: sample sizes rounded to nearest power of 2 (847 → 1024).<br/><br/><strong>Suppressed per-node metrics</strong>: individual hospital loss/accuracy hidden, only the aggregate is reported.<br/><br/><strong>Minimum sample sizes</strong>: training blocked if a hospital has fewer patients than the profile threshold (e.g., 100 for clinical_default, 500 for high_sensitivity_dp).<br/><br/><strong>Class distribution checks</strong>: ensures minimum positive examples per class to prevent trivial inference (e.g., if only 2 patients have the target condition, a model could memorize them).`
   }
 }
 
 const entry = glossary[props.term] || { title: props.term, body: 'Definition not found.' }
 
-function close(e) {
+function closeBackdrop(e) {
   if (e.target === e.currentTarget) open.value = false
 }
 </script>
@@ -62,16 +62,18 @@ function close(e) {
   <Teleport to="body">
     <div
       v-if="open"
-      @click="close"
-      style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; align-items: center; justify-content: center;"
+      @click="closeBackdrop"
+      style="position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);"
     >
-      <div style="background: rgba(15,10,8,0.97); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; max-width: 520px; width: 90%; padding: 1.5em 2em; position: relative; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+      <div style="background: linear-gradient(135deg, rgba(20,14,10,0.98), rgba(30,20,14,0.98)); border: 1px solid rgba(255,208,0,0.15); border-radius: 16px; max-width: 580px; width: 92%; padding: 2em 2.4em; position: relative; box-shadow: 0 12px 48px rgba(0,0,0,0.5);">
         <button
           @click="open = false"
-          style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: #888; font-size: 1.3em; cursor: pointer; line-height: 1;"
+          style="position: absolute; top: 14px; right: 18px; background: none; border: none; color: #888; font-size: 1.5em; cursor: pointer; line-height: 1; transition: color 0.2s;"
+          @mouseenter="$event.target.style.color='#e0d8d0'"
+          @mouseleave="$event.target.style.color='#888'"
         >&times;</button>
-        <div style="color: #FFD000; font-family: 'Roboto Mono', monospace; font-size: 1.05em; font-weight: 600; margin-bottom: 0.8em;">{{ entry.title }}</div>
-        <div style="color: #d8d0c8; font-size: 0.88em; line-height: 1.7; white-space: pre-line;" v-html="entry.body.replace(/\n/g, '<br/>')" />
+        <div style="color: #FFD000; font-family: 'Roboto Mono', monospace; font-size: 1.15em; font-weight: 600; margin-bottom: 1em; padding-right: 1.5em;">{{ entry.title }}</div>
+        <div style="color: #d8d0c8; font-family: 'Montserrat', sans-serif; font-size: 0.95em; line-height: 1.85;" v-html="entry.body" />
       </div>
     </div>
   </Teleport>
