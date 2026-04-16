@@ -244,6 +244,12 @@ td {
    Miscellaneous
    ———————————————————————————————— */
 
+.g-term {
+  cursor: pointer;
+  border-bottom: 1px dotted currentColor;
+  padding-bottom: 1px;
+}
+
 blockquote {
   border-left: 3px solid rgba(255, 208, 0, 0.3) !important;
   padding-left: 1em;
